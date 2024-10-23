@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Tabela</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        form input,
+        form button {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tabela de CRUD</h1>
+
+    <form id="form">
+        <input type="text" id="topico" placeholder="Tópico" required>
+        <input type="text" id="imagem" placeholder="Imagem" required>
+        <input type="text" id="titulo" placeholder="Título" required>
+        <input type="date" id="dia" required>
+        <input type="time" id="hora" required>
+        <input type="text" id="local" placeholder="Local">
+        <input type="text" id="preco" placeholder="Preço">
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="url" id="link" placeholder="Link">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tópicos</th>
+                <th>Imagem</th>
+                <th>Título</th>
+                <th>Dia</th>
+                <th>Hora</th>
+                <th>Local</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Link</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Os dados serão adicionados aqui -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const topico = document.getElementById('topico').value;
+            const imagem = document.getElementById('imagem').value;
+            const titulo = document.getElementById('titulo').value;
+            const dia = document.getElementById('dia').value;
+            const hora = document.getElementById('hora').value;
+            const local = document.getElementById('local').value;
+            const preco = document.getElementById('preco').value;
+            const descricao = document.getElementById('descricao').value;
+            const link = document.getElementById('link').value;
+
+            const tableBody = document.getElementById('table-body');
+
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+    <td>${topico}</td>
+    <td>${imagem}</td>
+    <td>${titulo}</td>
+    <td>${dia}</td>
+    <td>${hora}</td>
+    <td>${local}</td>
+    <td>${preco}</td>
+    <td>${descricao}</td>
+    <td><a href="${link}" target="_blank">Link</a></td>
+    <td class="actions">
+      <button class="edit-btn">Editar</button>
+      <button class="delete-btn">Deletar</button>
+    </td>
+  `;
+
+            tableBody.appendChild(newRow);
+
+            clearForm();
+
+            const editBtn = newRow.querySelector('.edit-btn');
+            const deleteBtn = newRow.querySelector('.delete-btn');
+
+            editBtn.addEventListener('click', function () {
+                editRow(newRow);
+            });
+
+            deleteBtn.addEventListener('click', function () {
+                newRow.remove();
+            });
+        });
+
+        function clearForm() {
+            document.getElementById('form').reset();
+        }
+
+        function editRow(row) {
+            const cells = row.querySelectorAll('td');
+            document.getElementById('topico').value = cells[0].innerText;
+            document.getElementById('imagem').value = cells[1].innerText;
+            document.getElementById('titulo').value = cells[2].innerText;
+            document.getElementById('dia').value = cells[3].innerText;
+            document.getElementById('hora').value = cells[4].innerText;
+            document.getElementById('local').value = cells[5].innerText;
+            document.getElementById('preco').value = cells[6].innerText;
+            document.getElementById('descricao').value = cells[7].innerText;
+            document.getElementById('link').value = cells[8].querySelector('a').href;
+
+            row.remove();
+        }
+
+    </script>
+</body>
+
+</html>

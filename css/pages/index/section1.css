@@ -1,0 +1,63 @@
+/* prefixo: my-ixS1 */
+.my-ixS1-textoDestaque {
+    color: var(--cor-verdeDestaque);
+    font-weight: 700;
+}
+
+.my-ixS1-texto {
+    color: var(--cor-cinza);
+}
+
+.my-ixS1-btnVerMais {
+    background-color: var(--cor-verdeDestaque);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.my-ixS1-btnVerMais:hover {
+    color: var(--cor-branco);
+    opacity: 90%;
+}
+
+.my-ixS1-btnDoar {
+    color: var(--cor-verdeDestaque);
+    box-shadow: var(--sombra-preta);
+    font-weight: 500;
+    padding: 8px;
+    border: 2px solid var(--cor-verdeDestaque);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.6s ease;
+}
+
+.my-ixS1-btnDoar:hover {
+    color: var(--cor-branco);
+    background-color: var(--cor-verdeDestaque);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.my-ixS1-imagem {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease;
+}
+
+.my-ixS1-imagem:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .my-ixS1-imagem {
+        margin-top: 30px;
+    }
+}
+
+

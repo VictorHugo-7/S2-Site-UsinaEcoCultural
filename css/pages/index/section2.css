@@ -1,0 +1,38 @@
+/* prefixo: my-ixS2 */
+.my-ixS2-proposito {
+    display: inline-block;
+    position: relative;
+}
+
+.my-ixS2-proposito::after {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+.my-ixS2-card{
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);;
+}
+.my-ixS2-card:hover {
+    transition: transform 0.6s ease;
+    transform: scale(1.01);
+}
+
+
+.my-ixS2-imagem{
+    font-size: 60px;
+}
+
+.my-ixS2-titulo{
+    color: var(--cor-preto);
+}
+
+.my-ixS2-escrita{
+    color: var(--cor-cinza);
+}

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atualizar Card com Upload de Imagem</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .navbar {
+            text-align: center;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card {
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <div style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <!-- Logo à esquerda -->
+                    <a class="navbar-brand" href="#">Navbar</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Links à direita -->
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">História</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Doação</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Petição</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Parcerias</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Loja</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contato</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Divulgação</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Eventos</a></li>
+                                    <li><a class="dropdown-item" href="#">Notícias</a></li>
+                                    <li><a class="dropdown-item" href="#">Reportagens</a></li>
+                                    <li><a class="dropdown-item" href="#">Trabalhos Acadêmicos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- Botão de Login Verde com ícone que abre o modal -->
+                        <a href="#" class="btn btn-success ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-user"></i> Login
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Email input com ícone -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" id="loginEmail" class="form-control form-control-sm"
+                                placeholder="Email" />
+                        </div>
+
+                        <!-- Password input com ícone e botão de mostrar/ocultar -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="loginPassword" class="form-control form-control-sm"
+                                placeholder="Senha" />
+                            <button class="btn btn-outline-secondary" type="button" id="toggleLoginPassword">
+                                <i class="fas fa-eye" id="loginEyeIcon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Esqueceu a senha -->
+                        <div class="row mb-4">
+                            <div class="col text-end">
+                                <a href="#!" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"
+                                    data-bs-dismiss="modal" style="color: green;">Esqueceu sua senha?</a>
+                            </div>
+                        </div>
+
+                        <!-- Botão de Login -->
+                        <button type="button" class="btn btn-success btn-block btn-sm mb-2"
+                            style="width: 100%;">ENTRAR</button>
+                        <hr>
+                        <div class="text-center">
+                            <p class="mb-1">Ainda não tem conta? <a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#registerModal" data-bs-dismiss="modal" style="color: green;">Clique
+                                    aqui</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal de Cadastro -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Nome input -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" id="registerName" class="form-control form-control-sm"
+                                placeholder="Nome" />
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" id="registerEmail" class="form-control form-control-sm"
+                                placeholder="Email" />
+                        </div>
+
+                        <!-- Telefone input -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input type="tel" id="registerPhone" class="form-control form-control-sm"
+                                placeholder="Telefone" />
+                        </div>
+
+                        <!-- Password input com ícone e botão de mostrar/ocultar -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="registerPassword" class="form-control form-control-sm"
+                                placeholder="Senha" />
+                            <button class="btn btn-outline-secondary" type="button" id="toggleRegisterPassword">
+                                <i class="fas fa-eye" id="registerEyeIcon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Confirmar Password input com ícone e botão de mostrar/ocultar -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="registerConfirmPassword" class="form-control form-control-sm"
+                                placeholder="Confirmar Senha" />
+                            <button class="btn btn-outline-secondary" type="button" id="toggleRegisterConfirmPassword">
+                                <i class="fas fa-eye" id="registerConfirmEyeIcon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Botão de Cadastrar -->
+                        <button type="button" class="btn btn-success btn-block btn-sm mb-2"
+                            style="width: 100%;">CADASTRAR</button>
+                        <hr>
+                        <div class="text-center">
+                            <p class="mb-1">Já é membro? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                    data-bs-dismiss="modal" style="color: green;">Clique aqui</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal de Recuperação de Senha -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Recuperar Senha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Email input com ícone -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" id="forgotPasswordEmail" class="form-control form-control-sm"
+                                placeholder="Digite seu e-mail" required />
+                        </div>
+
+                        <!-- Botão de Recuperar Senha -->
+                        <button type="button" class="btn btn-success btn-block btn-sm mb-2"
+                            style="width: 100%;">RECUPERAR SENHA</button>
+                        <hr>
+                        <div class="text-center">
+                            <p class="mb-1">Lembrou a senha? <a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal" data-bs-dismiss="modal" style="color: green;">Clique
+                                    aqui</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para alternar visibilidade das senhas -->
+    <script>
+        // Função para o login (mostrar/ocultar senha)
+        const toggleLoginPassword = document.querySelector('#toggleLoginPassword');
+        const loginPassword = document.querySelector('#loginPassword');
+        const loginEyeIcon = document.querySelector('#loginEyeIcon');
+
+        toggleLoginPassword.addEventListener('click', function () {
+            const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            loginPassword.setAttribute('type', type);
+            loginEyeIcon.classList.toggle('fa-eye');
+            loginEyeIcon.classList.toggle('fa-eye-slash');
+        });
+
+        // Função para o cadastro (mostrar/ocultar senha)
+        const toggleRegisterPassword = document.querySelector('#toggleRegisterPassword');
+        const registerPassword = document.querySelector('#registerPassword');
+        const registerEyeIcon = document.querySelector('#registerEyeIcon');
+
+        toggleRegisterPassword.addEventListener('click', function () {
+            const type = registerPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            registerPassword.setAttribute('type', type);
+            registerEyeIcon.classList.toggle('fa-eye');
+            registerEyeIcon.classList.toggle('fa-eye-slash');
+        });
+
+        // Função para o cadastro (mostrar/ocultar confirmar senha)
+        const toggleRegisterConfirmPassword = document.querySelector('#toggleRegisterConfirmPassword');
+        const registerConfirmPassword = document.querySelector('#registerConfirmPassword');
+        const registerConfirmEyeIcon = document.querySelector('#registerConfirmEyeIcon');
+
+        toggleRegisterConfirmPassword.addEventListener('click', function () {
+            const type = registerConfirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            registerConfirmPassword.setAttribute('type', type);
+            registerConfirmEyeIcon.classList.toggle('fa-eye');
+            registerConfirmEyeIcon.classList.toggle('fa-eye-slash');
+        });
+
+        // Exemplo de JavaScript para enviar e-mail de recuperação
+        const forgotPasswordButton = document.querySelector('#forgotPasswordModal button');
+        const forgotPasswordEmail = document.querySelector('#forgotPasswordEmail');
+
+        forgotPasswordButton.addEventListener('click', function () {
+            const email = forgotPasswordEmail.value;
+
+            if (email) {
+                // Aqui você pode adicionar sua lógica para enviar a solicitação de recuperação de senha
+                alert(`Um e-mail de recuperação foi enviado para ${cururu995@gmail.com}.`);
+                // Limpar o campo de entrada após o envio
+                forgotPasswordEmail.value = '';
+            } else {
+                alert('Por favor, insira um e-mail válido.');
+            }
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

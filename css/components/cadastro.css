@@ -1,0 +1,23 @@
+/* prefixo: my-c */
+
+.my-c-btnCadastrar{
+    width: 100%;
+    background-color: var(--cor-verdeBotao);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-c-btnCadastrar:hover{
+    opacity: 90%;
+}
+
+
+.my-c-cliqueAqui{
+    color: var(--cor-verdeLink);
+    text-decoration: none;
+}
+.my-c-cliqueAqui:hover{
+    color: var(--cor-verdeLink);
+    text-decoration: underline;
+}

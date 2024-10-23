@@ -1,0 +1,83 @@
+/* prefixo: my-r */
+
+.my-r-rodape {
+    background-color: var(--cor-pretoSecundario);
+    padding: 20px 0 5px 0; 
+    margin-top: 50px;
+}
+
+.my-r-cardTitulo {
+    color: var(--cor-verdeLink);
+}
+
+
+
+
+.my-r-cardText {
+    color: var(--cor-cinza);
+}
+.my-r-cardTextLink {
+    color: var(--cor-cinza);
+    text-decoration: none;
+    display: block;
+}
+.my-r-cardTextLink:hover {
+    color: var(--cor-cinza);
+    text-decoration: underline;
+}
+
+
+
+
+.my-r-cardTextContato{
+    color: var(--cor-cinza);
+    font-size: 14px;
+}
+
+
+
+
+.my-r-cardIconMidiaSocial {
+    color: var(--cor-cinza);
+    font-size: 20px;
+    margin-right: 10px;
+}
+.my-r-cardIconMidiaSocial:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+.my-r-btnNewsletter{
+    width: 100%;
+    background-color: var(--cor-verdeBotao);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-r-btnNewsletter:hover{
+    opacity: 90%;
+}
+
+
+
+
+.my-r-hr{
+    color: var(--cor-cinza);
+}
+
+
+
+
+.my-r-iconeSeta{
+    color: var(--cor-verdeDestaque);
+}
+.my-r-iconeSeta:hover{
+    color: var(--cor-verdeDestaque);
+    transform: scale(1.2);
+}
+
+
+

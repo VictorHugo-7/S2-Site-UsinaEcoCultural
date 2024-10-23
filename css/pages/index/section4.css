@@ -1,0 +1,16 @@
+.my-ixS4-noticia {
+    display: inline-block;
+    position: relative;
+}
+
+.my-ixS4-noticia::after {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}

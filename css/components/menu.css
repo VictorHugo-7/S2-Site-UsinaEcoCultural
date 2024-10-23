@@ -1,0 +1,46 @@
+/* prefixo: my-m */
+
+.my-m-navbar {
+    text-align: center;
+}
+
+.my-m-efeito {
+    text-align: center;
+    box-shadow: var(--sombra-preta);
+    background-color: var(--cor-branco);
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 10; 
+}
+
+.my-m-logo {
+    height: 70px;
+}
+
+.my-m-links {
+    color: var(--cor-preto);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.my-m-links:hover {
+    color: var(--cor-verdeLink);
+}
+
+.my-m-btnLogin, .my-m-btnAdm {
+    background-color: var(--cor-verdeBotao);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.my-m-btnLogin:hover, .my-m-btnAdm:hover {
+    color: var(--cor-branco);
+    opacity: 90%;
+}
+

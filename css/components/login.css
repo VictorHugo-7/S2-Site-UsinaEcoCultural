@@ -1,0 +1,33 @@
+/* prefixo: my-l */
+
+.my-l-esqueceuSuaSenha{
+    color: var(--cor-verdeLink);
+    text-decoration: none;
+}
+.my-l-esqueceuSuaSenha:hover{
+    color: var(--cor-verdeLink);
+    text-decoration: underline;
+}
+
+
+.my-l-btnEntrar{
+    width: 100%;
+    background-color: var(--cor-verdeBotao);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-l-btnEntrar:hover{
+    opacity: 90%;
+}
+
+
+.my-l-cliqueAqui{
+    color: var(--cor-verdeLink);
+    text-decoration: none;
+}
+.my-l-cliqueAqui:hover{
+    color: var(--cor-verdeLink);
+    text-decoration: underline;
+}
