@@ -1,11 +1,13 @@
-<div class="my-m-efeito">
+<div class="my-menu-efeito">
     <div class="container">
-        <div class="navbar navbar-expand-lg bg-body-tertiary my-m-navbar">
+        <div class="my-menu-navbar navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
 
+
                 <!-- Logo -->
-                <a class="navbar-brand" href="#"><img class="my-m-logo" src="../../../media/img/global/logo.png"
-                        alt=""></a>
+                <a href="../../../html/pages/index/index.html"><img class="my-menu-logo"
+                        src="../../../media/img/global/logo.png" alt="Logo Usina"></a>
+
 
                 <!-- Responsividade -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -14,40 +16,57 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Links -->
+
+                <!-- Itens Menu -->
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="my-m-links my-m-linkHome" aria-current="page" href="../../../html/pages/index/index.html">Home</a></li>
-                        <li class="nav-item"><a class="my-m-links" aria-current="page" href="#">História</a></li>
-                        <li class="nav-item"><a class="my-m-links" aria-current="page" href="#">Doação</a></li>
-                        <li class="nav-item"><a class="my-m-links" aria-current="page" href="#">Petição</a></li>
-                        <li class="nav-item"><a class="my-m-links" aria-current="page" href="#">Parcerias</a></li>
-                        <li class="nav-item"><a class="my-m-links" aria-current="page" href="#">Loja</a></li>
-                        <li class="nav-item"><a class="my-m-links" aria-current="page" href="#">Contato</a></li>
+                        <!-- Links sem dropdown -->
+                        <li class="nav-item"><a class="my-menu-links" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="my-menu-links" aria-current="page" href="#">Doação</a></li>
+                        <li class="nav-item"><a class="my-menu-links" aria-current="page" href="#">Petição</a></li>
+                        <li class="nav-item"><a class="my-menu-links" aria-current="page" href="#">Loja</a></li>
+                        <li class="nav-item"><a class="my-menu-links" aria-current="page" href="#">Contato</a></li>
 
-                        <!-- Dropdown -->
+                        <!-- Links com dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle my-m-links" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="dropdown-toggle my-menu-links" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Usina</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="my-menu-links" href="#">História</a></li>
+                                <li><a class="my-menu-links" href="#">Impacto</a></li>
+                                <li><a class="my-menu-links" href="#">Parcerias</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Links com dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="my-menu-links dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">Divulgação</a>
                             <ul class="dropdown-menu">
-                                <li><a class="my-m-links" href="#">Eventos</a></li>
-                                <li><a class="my-m-links" href="#">Notícias</a></li>
-                                <li><a class="my-m-links" href="#">Trabalhos</a></li>
+                                <li><a class="my-menu-links" href="#">Eventos</a></li>
+                                <li><a class="my-menu-links" href="#">Notícias</a></li>
+                                <li><a class="my-menu-links" href="#">Trabalhos</a></li>
+                                <li><a class="my-menu-links" href="#">Galeria Fotos</a></li>
+                                <li><a class="my-menu-links" href="#">Galeria Vídeos</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <br>
 
-                    <!-- Btn Login -->
-                    <a href="#" class="my-m-btnLogin" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        <i class="fa-solid fa-user"></i> Login
-                    </a>
 
-                    <!-- Botão Admin (oculto por padrão) -->
-                    <a href="../../../html/pages/adm/adm.html" id="adminButton" class="my-m-btnAdm" style="display: none; display: inline;">
-                        <i class="fa-solid fa-cog"></i> Adm
-                    </a>
+                    <!-- Divisão -->
+                    <div class="my-menu-divisao">
 
+                        <!-- Ícone ADM -->
+                        <span id="adminButton" class="my-menu-iconeAdm">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </span>
+
+                        <!-- Btn Login -->
+                        <a href="#" class="my-menu-btnLogin" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            style="display: inline-block;">
+                            <i class="fa-solid fa-user"></i> Login
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,35 +1,91 @@
-/* prefixo: my-m */
+/* Usar o prefixo: (my-menu-) */
+/* Isso ajuda na padronização */
+/* Isso ajuda na hora de diferenciar das calsses predefinidas do bootstrap */
 
-.my-m-navbar {
+
+
+/* Menu: Alinhamento e Efeito */
+.my-menu-navbar {
     text-align: center;
 }
 
-.my-m-efeito {
+.my-menu-efeito {
     text-align: center;
     box-shadow: var(--sombra-preta);
     background-color: var(--cor-branco);
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    z-index: 10; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-.my-m-logo {
+
+
+/* Logo */
+.my-menu-logo {
     height: 70px;
 }
 
-.my-m-links {
+
+
+/* Links com dropdown */
+.my-menu-links {
     color: var(--cor-preto);
     margin: 0 10px;
     text-decoration: none;
     font-weight: 500;
 }
-
-.my-m-links:hover {
+.my-menu-links:hover {
     color: var(--cor-verdeLink);
 }
+@media (max-width: 990px) {
+    .my-menu-navbar .nav-item{
+        font-size: 20px;
+        margin: 10px 0px;
+    }
+}
 
-.my-m-btnLogin, .my-m-btnAdm {
+
+
+/* Links com dropdown */
+@media (max-width: 990px) {
+    .dropdown-menu .my-menu-links{
+        font-size: 20px;
+    }
+}
+
+
+
+/* Divisão */
+.my-menu-divisao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+@media (max-width: 990px) {
+    .my-menu-divisao {
+        margin: 20px 0px;
+        display: inline-flex;
+    }
+}
+
+
+
+/* Ícone ADM */
+.my-menu-iconeAdm {
+    font-size: 20px;
+    margin-left: 10px;
+}
+@media (max-width: 990px) {
+    .my-menu-iconeAdm {
+        font-size: 30px;
+    }
+}
+
+
+
+/* Btn Login */
+.my-menu-btnLogin {
     background-color: var(--cor-verdeBotao);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
@@ -38,9 +94,13 @@
     margin-left: 10px;
     text-decoration: none;
 }
-
-.my-m-btnLogin:hover, .my-m-btnAdm:hover {
+.my-menu-btnLogin:hover {
     color: var(--cor-branco);
     opacity: 90%;
+}
+@media (max-width: 990px) {
+    .my-menu-btnLogin {
+        font-size: 20px;
+    }
 }
 
