@@ -1,13 +1,21 @@
-/* my-ixS3 */
-.my-ixS3-evento {
+/* 
+Padronização
+Usar o prefixo: (my-index-s3-). 
+Colocar primeiro o prefixo (my-index-s3-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Eventos Próximos */
+.my-index-s3 {
     display: inline-block;
     position: relative;
 }
-
-.my-ixS3-evento::after {
+.my-index-s3::after {
     content: "";
     display: block;
-    width: 30%;
+    width: 30px;
     height: 3px;
     margin: 2px 0px;
     background-color: var(--cor-verdeDestaque);
@@ -15,3 +23,4 @@
     left: 0;
     border-radius: 20px;
 }
+

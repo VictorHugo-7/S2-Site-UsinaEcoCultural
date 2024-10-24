@@ -1,33 +1,53 @@
-/* prefixo: my-l */
+/* 
+Padronização
+Usar o prefixo: (my-login-). 
+Colocar primeiro o prefixo (my-login-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
 
-.my-l-esqueceuSuaSenha{
-    color: var(--cor-verdeLink);
+
+
+/* Esqueceu Sua Senha */
+.my-login-esqueceuSuaSenha{
+    color: var(--cor-verdeClaro);
     text-decoration: none;
 }
-.my-l-esqueceuSuaSenha:hover{
-    color: var(--cor-verdeLink);
+.my-login-esqueceuSuaSenha:hover{
+    color: var(--cor-verdeClaro);
     text-decoration: underline;
 }
 
 
-.my-l-btnEntrar{
+
+/* Btn Entrar */
+.my-login-btnEntrar{
     width: 100%;
-    background-color: var(--cor-verdeBotao);
+    background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
     padding: 5px;
     border-radius: 10px;
 }
-.my-l-btnEntrar:hover{
+.my-login-btnEntrar:hover{
     opacity: 90%;
 }
 
 
-.my-l-cliqueAqui{
-    color: var(--cor-verdeLink);
+
+/* Linha Horizontal */
+.my-login-hr{
+    color: var(cinza);
+}
+
+
+
+/* Clique Aqui */
+.my-login-cliqueAqui{
+    color: var(--cor-verdeClaro);
     text-decoration: none;
 }
-.my-l-cliqueAqui:hover{
-    color: var(--cor-verdeLink);
+.my-login-cliqueAqui:hover{
+    color: var(--cor-verdeClaro);
     text-decoration: underline;
 }
+

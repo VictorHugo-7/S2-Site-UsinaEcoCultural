@@ -1,23 +1,34 @@
-/* prefixo: my-c */
+/* 
+Padronização
+Usar o prefixo: (my-cadastro-). 
+Colocar primeiro o prefixo (my-cadastro-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
 
-.my-c-btnCadastrar{
+
+
+/* Btn Cadastrar */
+.my-cadastro-btnCadastrar{
     width: 100%;
-    background-color: var(--cor-verdeBotao);
+    background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
     padding: 5px;
     border-radius: 10px;
 }
-.my-c-btnCadastrar:hover{
+.my-cadastro-btnCadastrar:hover{
     opacity: 90%;
 }
 
 
-.my-c-cliqueAqui{
-    color: var(--cor-verdeLink);
+
+/* Clique Aqui */
+.my-cadastro-cliqueAqui{
+    color: var(--cor-verdeClaro);
     text-decoration: none;
 }
-.my-c-cliqueAqui:hover{
-    color: var(--cor-verdeLink);
+.my-cadastro-cliqueAqui:hover{
+    color: var(--cor-verdeClaro);
     text-decoration: underline;
 }
+

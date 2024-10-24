@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-            <!-- Login -->
+            <!-- Modal Login -->
             <div class="modal-header">
                 <h5 class="modal-title" id="loginModalLabel">Login</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -29,19 +29,21 @@
                     <!-- Esqueceu sua senha ?-->
                     <div class="row mb-4">
                         <div class="col text-end">
-                            <a class="my-l-esqueceuSuaSenha" href="#!" data-bs-toggle="modal"
+                            <a class="my-login-esqueceuSuaSenha" href="#!" data-bs-toggle="modal"
                                 data-bs-target="#forgotPasswordModal" data-bs-dismiss="modal">Esqueceu sua senha?</a>
                         </div>
                     </div>
 
                     <!-- Btn Entrar -->
-                    <button type="button" class="my-l-btnEntrar" onclick="checkLogin()">ENTRAR</button>
-                    <hr>
+                    <button type="button" class="my-login-btnEntrar" onclick="checkLogin()">ENTRAR</button>
+
+                    <!-- Linha horizontal -->
+                    <hr class="my-login-hr">
 
                     <!-- Ainda não tem conta ? -->
                     <div class="text-center">
                         <p class="mb-1">Ainda não tem conta?
-                            <a class="my-l-cliqueAqui" href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            <a class="my-login-cliqueAqui" href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
                                 data-bs-dismiss="modal"> Clique aqui</a>
                         </p>
                     </div>

@@ -2,7 +2,7 @@
 fetch('../../components/recuperarSenha.html')
 .then(response => response.text())
 .then(data => {
-    document.getElementById('my-rs-recuperarSenhaImportacao').innerHTML = data;
+    document.getElementById('my-recuperarSenha-importacao').innerHTML = data;
 
 
 

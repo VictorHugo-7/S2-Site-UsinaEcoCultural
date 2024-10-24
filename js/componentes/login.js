@@ -2,7 +2,7 @@
 fetch('../../components/login.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('my-l-loginImportacao').innerHTML = data;
+        document.getElementById('my-login-importacao').innerHTML = data;
 
         // Função para o login (mostrar/ocultar senha)
         const toggleLoginPassword = document.querySelector('#toggleLoginPassword');

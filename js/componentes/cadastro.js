@@ -2,7 +2,7 @@
 fetch('../../components/cadastro.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('my-c-cadastroImportacao').innerHTML = data;
+        document.getElementById('my-cadastro-importacao').innerHTML = data;
 
         // Função para o cadastro (mostrar/ocultar senha)
         const toggleRegisterPassword = document.querySelector('#toggleRegisterPassword');
