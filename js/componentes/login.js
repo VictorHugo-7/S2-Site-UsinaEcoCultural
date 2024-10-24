@@ -8,14 +8,17 @@ function checkLogin() {
         var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
         loginModal.hide();
         showAdminButton();  // Mostra o botão de admin
-        showEditButton();   // Mostra o botão de editar
+        showEditButton3();   // Mostra o botão de editar
+        showEditButton4();   // Mostra o botão de editar
+
         alert('Login como admin bem-sucedido!');
     } else {
         localStorage.setItem('isAdmin', 'false');
         var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
         loginModal.hide();
         hideAdminButton();  // Esconde o botão de admin
-        hideEditButton();   // Esconde o botão de editar
+        hideEditButton3();   // Esconde o botão de editar
+        hideEditButton4();   // Esconde o botão de editar
         alert('Login realizado com sucesso, mas você não tem acesso como admin.');
     }
 }
@@ -37,30 +40,51 @@ function hideAdminButton() {
 }
 
 // Função para mostrar o botão de editar
-function showEditButton() {
-    const editButton = document.getElementById('editButton');
-    if (editButton) {
-        editButton.style.display = 'block'; // Mostra o botão de editar
+function showEditButton3() {
+    const editButton3 = document.getElementById('editButton-s3');
+    if (editButton3) {
+        editButton3.style.display = 'block'; // Mostra o botão de editar
     }
 }
 
 // Função para esconder o botão de editar
-function hideEditButton() {
-    const editButton = document.getElementById('editButton');
-    if (editButton) {
-        editButton.style.display = 'none'; // Esconde o botão de editar
+function hideEditButton3() {
+    const editButton3 = document.getElementById('editButton-s3');
+    if (editButton3) {
+        editButton3.style.display = 'none'; // Esconde o botão de editar
     }
 }
+
+// Função para mostrar o botão de editar
+function showEditButton4() {
+    const editButton4 = document.getElementById('editButton-s4');
+    if (editButton4) {
+        editButton4.style.display = 'block'; // Mostra o botão de editar
+    }
+}
+
+// Função para esconder o botão de editar
+function hideEditButton4() {
+    const editButton4 = document.getElementById('editButton-s4');
+    if (editButton4) {
+        editButton4.style.display = 'none'; // Esconde o botão de editar
+    }
+}
+
 
 // Verificar se o usuário já está logado como admin ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
     const isAdmin = localStorage.getItem('isAdmin');
     if (isAdmin === 'true') {
         showAdminButton();
-        showEditButton(); // Mostra o botão de editar se for admin
+        showEditButton3(); // Mostra o botão de editar se for admin
+        showEditButton4(); // Mostra o botão de editar se for admin
+
     } else {
         hideAdminButton();
-        hideEditButton(); // Esconde o botão de editar se não for admin
+        hideEditButton3(); // Esconde o botão de editar se não for admin
+        showEditButton4(); // Mostra o botão de editar se for admin
+
     }
 });
 
