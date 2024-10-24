@@ -1,4 +1,4 @@
-function openEditModal() {
+function openEditModalEvento() {
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
 }

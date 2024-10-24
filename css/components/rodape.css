@@ -24,7 +24,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     color: var(--cor-cinza);
 }
 .my-rodape-cardTextLink{
-    color: var(--cor-cinza);
+    color: #9d9d9d;
     text-decoration: none;
     display: block;
 }
