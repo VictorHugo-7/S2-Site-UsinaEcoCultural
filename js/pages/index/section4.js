@@ -1,5 +1,5 @@
 function openEditModalNoticia() {
-    const editModal4 = new bootstrap.Modal(document.getElementById('editModal4'));
+    const editModal4 = new bootstrap.Modal(document.getElementById('teste')); // Certifique-se de usar o ID correto
     editModal4.show();
 }
 
@@ -36,7 +36,7 @@ fetch('../../../html/pages/index/section4.html')
 
                 // Atualiza o botão de redirecionamento
                 const url = document.getElementById('editUrl').value;
-                selectedCard.querySelector('.my-index-s4-btnVerNoticias').setAttribute('onclick', `window.open('${url}', '_blank')`);
+                selectedCard.querySelector('.my-index-s4-btnVerNoticia').setAttribute('onclick', `window.open('${url}', '_blank')`);
 
                 // Fecha o modal
                 const editModalInstance = bootstrap.Modal.getInstance(document.getElementById('editModal4'));
