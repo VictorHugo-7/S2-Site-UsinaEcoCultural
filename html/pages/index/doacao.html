@@ -87,33 +87,60 @@
                     border-radius: 5px;
                     font-size: 16px;
                 }
+
                 label {
                     font-size: 14px;
                     color: #666;
                 }
+
+                .btnDoacao {
+                    background-color: yellow;
+                    border-radius:10px;
+                    padding: 20px;
+                    width: 100%;
+                }
+
+                .btnValor {
+                    background-color: var(--cor-verdeDestaque);
+                    color: var(--cor-branco);
+                    box-shadow: var(--sombra-preta);
+                    margin: 10px;
+                    padding: 20px;
+                    margin-right: 10px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    width: 100%;
+                }
+
+                .btnValor:hover {
+                    color: var(--cor-branco);
+                    opacity: 90%;
+                }
             </style>
-            <div class="col-md-6">
-                <div class="row align-items-center">
+            <div class="col-md-6 col-sm-12 text-center">
+                <div class="row d-flex justify-content-center">
                     <div class="col-md-3">
-                        <button class="my-ixS1-btnVerMais">R$ 10</button>
+                        <button class="btnValor">R$10</button>
                     </div>
                     <div class="col-md-3">
-                        <button class="my-ixS1-btnVerMais">R$ 25</button>
+                        <button class="btnValor">R$25</button>
                     </div>
                     <div class="col-md-3">
-                        <button class="my-ixS1-btnVerMais">R$ 50</button>
+                        <button class="btnValor">R$50</button>
                     </div>
                     <div class="col-md-3">
-                        <button class="my-ixS1-btnVerMais">R$ 100</button>
+                        <button class="btnValor">R$100</button>
                     </div>
                 </div>
-                <div>
-                    <label for="valor">Digite o valor que deseja doar</label>
-                    <br>
-                    <input type="text" id="valor" placeholder="Valor">
-                </div>
-                <div class="col-md-6">
-                    <button style="background-color: yellow"><strong>DOE AGORA</strong></button>
+                <div class="row d-flex flex-column align-items-center">
+                    <div class="col-md-6 text-center">
+                        <label for="valor">Digite o valor que deseja doar</label>
+                        <br>
+                        <input type="text" id="valor" placeholder="Valor">
+                    </div>
+                    <div class="col-md-6 text-center mt-3">
+                        <button class="btnDoacao"><strong>DOE AGORA</strong></button>
+                    </div>
                 </div>
             </div>
         </div>
