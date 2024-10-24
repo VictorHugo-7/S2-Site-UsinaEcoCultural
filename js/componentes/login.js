@@ -1,4 +1,70 @@
-// Carregar o login
+function checkLogin() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    // Verificar se o email e a senha são os de admin
+    if (email === 'adm' && password === '123') {
+        localStorage.setItem('isAdmin', 'true');
+        var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+        loginModal.hide();
+        showAdminButton();  // Mostra o botão de admin
+        showEditButton();   // Mostra o botão de editar
+        alert('Login como admin bem-sucedido!');
+    } else {
+        localStorage.setItem('isAdmin', 'false');
+        var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+        loginModal.hide();
+        hideAdminButton();  // Esconde o botão de admin
+        hideEditButton();   // Esconde o botão de editar
+        alert('Login realizado com sucesso, mas você não tem acesso como admin.');
+    }
+}
+
+// Função para mostrar o botão de admin no menu
+function showAdminButton() {
+    const adminButton = document.getElementById('adminButton');
+    if (adminButton) {
+        adminButton.style.display = 'inline-block'; // Exibe o botão de admin
+    }
+}
+
+// Função para esconder o botão de admin no menu
+function hideAdminButton() {
+    const adminButton = document.getElementById('adminButton');
+    if (adminButton) {
+        adminButton.style.display = 'none'; // Esconde o botão de admin
+    }
+}
+
+// Função para mostrar o botão de editar
+function showEditButton() {
+    const editButton = document.getElementById('editButton');
+    if (editButton) {
+        editButton.style.display = 'block'; // Mostra o botão de editar
+    }
+}
+
+// Função para esconder o botão de editar
+function hideEditButton() {
+    const editButton = document.getElementById('editButton');
+    if (editButton) {
+        editButton.style.display = 'none'; // Esconde o botão de editar
+    }
+}
+
+// Verificar se o usuário já está logado como admin ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    const isAdmin = localStorage.getItem('isAdmin');
+    if (isAdmin === 'true') {
+        showAdminButton();
+        showEditButton(); // Mostra o botão de editar se for admin
+    } else {
+        hideAdminButton();
+        hideEditButton(); // Esconde o botão de editar se não for admin
+    }
+});
+
+// Função para carregar o componente de login
 fetch('../../components/login.html')
     .then(response => response.text())
     .then(data => {
@@ -16,65 +82,10 @@ fetch('../../components/login.html')
             loginEyeIcon.classList.toggle('fa-eye-slash');
         });
 
-        // Função para verificar o login
-        function checkLogin() {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            // Verificar se o email e a senha são os de admin
-            if (email === 'adm' && password === '123') {
-                // Armazenar no localStorage que o usuário é admin
-                localStorage.setItem('isAdmin', 'true');
-
-                // Fechar o modal de login
-                var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                loginModal.hide();
-
-                // Exibir o botão de admin no menu
-                showAdminButton();
-                alert('Login como admin bem-sucedido!');
-
-            } else {
-                // Para outros tipos de login
-                localStorage.setItem('isAdmin', 'false');
-                var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                loginModal.hide();
-
-                // Esconder o botão de admin
-                hideAdminButton();
-                alert('Login realizado com sucesso, mas você não tem acesso como admin.');
-            }
-        }
-
-        // Função para mostrar o botão de admin no menu
-        function showAdminButton() {
-            const isAdmin = localStorage.getItem('isAdmin');
-
-            if (isAdmin === 'true') {
-                const adminButton = document.getElementById('adminButton');
-                if (adminButton) {
-                    adminButton.style.display = 'block';
-                }
-            }
-        }
-
-        // Função para esconder o botão de admin no menu
-        function hideAdminButton() {
-            const adminButton = document.getElementById('adminButton');
-            if (adminButton) {
-                adminButton.style.display = 'none';
-            }
-        }
-
         // Adicionar evento ao botão de login para chamar checkLogin()
-        const loginButton = document.querySelector('.my-l-btnEntrar');
+        const loginButton = document.querySelector('.my-login-btnEntrar');
         if (loginButton) {
             loginButton.addEventListener('click', checkLogin);
         }
-
-        // Verificar se o usuário já está logado como admin ao carregar a página
-        document.addEventListener('DOMContentLoaded', function () {
-            showAdminButton();
-        });
     })
     .catch(error => console.error('Erro ao carregar a página:', error));

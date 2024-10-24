@@ -15,7 +15,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 .my-index-s2-proposito::after {
     content: "";
     display: block;
-    width: 30px;;
+    width: 30px;
     height: 3px;
     margin: 2px 0px;
     background-color: var(--cor-verdeDestaque);

@@ -3,16 +3,16 @@ function openEditModal() {
     editModal.show();
 }
 
-
+// Certifique-se de que a seção HTML foi carregada antes de adicionar o listener
 fetch('../../../html/pages/index/section3.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('my-index-s3-importacao').innerHTML = data;
 
-        // Aqui continuam os event listeners e lógica para edição dos cards
+        // Adiciona o event listener para o botão de salvar
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
-            const index = document.getElementById('editIndex').value - 1; // Pega o índice (1-based)
-            const cards = document.querySelectorAll('.card');
+            const index = parseInt(document.getElementById('editIndex').value) - 1; // Pega o índice (1-based)
+            const cards = document.querySelectorAll('.my-index-s3-cardAlteracao');
 
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
@@ -36,11 +36,14 @@ fetch('../../../html/pages/index/section3.html')
                 selectedCard.querySelector('.card-text').innerText = document.getElementById('editDescription').value;
 
                 // Atualiza o botão de redirecionamento
-                selectedCard.querySelector('.btn-primary').setAttribute('onclick', `window.open('${document.getElementById('editUrl').value}', '_blank')`);
+                const url = document.getElementById('editUrl').value;
+                selectedCard.querySelector('.my-index-s3-btnVerEventos').setAttribute('onclick', `window.open('${url}', '_blank')`);
 
                 // Fecha o modal
-                const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-                editModal.hide();
+                const editModalInstance = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                if (editModalInstance) {
+                    editModalInstance.hide();
+                }
             } else {
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
