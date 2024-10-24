@@ -68,7 +68,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Btn Ver Eventos */
-.my-index-s3-btnVerEventos{
+.my-index-s3-btnVerEventosProximos{
     width: 45%;
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
@@ -76,7 +76,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     padding: 5px 10px;
     border-radius: 10px;
 }
-.my-index-s3-btnVerEventos{
+.my-index-s3-btnVerEventosProximos:hover{
     opacity: 90%;
 }
 

@@ -44,7 +44,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Btn Salvar Alterações */
-.my-index-s4-btnSalvarAlterações{
+.my-index-s4-btnSalvarAlteracoes{
     width: 100%;
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
@@ -52,7 +52,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     padding: 5px;
     border-radius: 10px;
 }
-.my-index-s4-btnSalvarAlterações:hover{
+.my-index-s4-btnSalvarAlteracoes:hover{
     opacity: 90%;
 }
 
@@ -67,6 +67,21 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 
+/* Btn Ver Notícias */
+.my-index-s4-btnVerNoticiasAtuais{
+    width: 45%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.my-index-s4-btnVerNoticiasAtuais:hover{
+    opacity: 90%;
+}
+
+
+
 /* Index */
 .my-index-s4-index{
     color: var(--cor-cinza);
@@ -75,15 +90,4 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 
-/* Btn Ver Notícias */
-.my-index-s4-btnVerNoticia{
-    width: 45%;
-    background-color: var(--cor-verdeEscuro);
-    color: var(--cor-branco);
-    box-shadow: var(--sombra-preta);
-    padding: 5px 10px;
-    border-radius: 10px;
-}
-.my-index-s4-btnVerNoticia{
-    opacity: 90%;
-}
+

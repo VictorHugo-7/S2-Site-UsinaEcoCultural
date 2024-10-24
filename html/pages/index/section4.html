@@ -1,13 +1,12 @@
 <div class="container my-5">
 
-    <!-- Notícias Atuais -->
+    <!-- Notícias Recentes -->
     <h5 class="my-index-s4-noticiasAtuais mb-2">Notícias Atuais</h5>
 
     <!-- Btn Editar -->
     <div class="mt-3">
-        <button type="button" id="editButton-s4" class="my-index-s4-btnEditar" onclick="openEditModalNotícia()"
+        <button type="button" id="editButtonNoticiasAtuais" class="my-index-s4-btnEditar" onclick="openEditModalNoticiasAtuais()"
             style="display: none;">Editar</button>
-
     </div>
 
     <div class="row mt-3" id="cards-container">
@@ -16,17 +15,17 @@
         <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card my-index-s4-cardAlteracao" style="height: 100%;">
                 <img src="../../../media/img/global/imagem.svg" class="my-index-s4-imagem card-image"
-                    alt="Imagem do Notícia">
+                    alt="Imagem da notícia">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
                             class="card-time">Horário</span></h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <p class="card-text text-muted card-description">Descrição da notícia</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-index-s4-index">1</span>
-                    <button class="my-index-s4-btnVerNoticia"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s4-btnVerNoticiasAtuais"
+                        onclick="window.open('https://www.exemplo4.com', '_blank')">Ver
                         Notícia</button>
                 </div>
             </div>
@@ -36,17 +35,17 @@
         <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card my-index-s4-cardAlteracao" style="height: 100%;">
                 <img src="../../../media/img/global/imagem.svg" class="my-index-s4-imagem card-image"
-                    alt="Imagem do Notícia">
+                    alt="Imagem da notícia">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
                             class="card-time">Horário</span></h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <p class="card-text text-muted card-description">Descrição da notícia</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-index-s4-index">2</span>
-                    <button class="my-index-s4-btnVerNoticia"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s4-btnVerNoticiasAtuais"
+                        onclick="window.open('https://www.exemplo4.com', '_blank')">Ver
                         Notícia</button>
                 </div>
             </div>
@@ -56,39 +55,37 @@
         <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card my-index-s4-cardAlteracao" style="height: 100%;">
                 <img src="../../../media/img/global/imagem.svg" class="my-index-s4-imagem card-image"
-                    alt="Imagem do Notícia">
+                    alt="Imagem da notícia">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
                             class="card-time">Horário</span></h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <p class="card-text text-muted card-description">Descrição da notícia</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-index-s4-index">3</span>
-                    <button class="my-index-s4-btnVerNoticia"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s4-btnVerNoticiasAtuais"
+                        onclick="window.open('https://www.exemplo4.com', '_blank')">Ver
                         Notícia</button>
                 </div>
             </div>
         </div>
 
-
         <!-- Card 4 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card my-index-s4-cardAlteracao" style="height: 100%;">
                 <img src="../../../media/img/global/imagem.svg" class="my-index-s4-imagem card-image"
-                    alt="Imagem do Notícia">
+                    alt="Imagem da notícia">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
                             class="card-time">Horário</span></h6>
-
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <p class="card-text text-muted card-description">Descrição da notícia</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-index-s4-index">4</span>
-                    <button class="my-index-s4-btnVerNoticia"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s4-btnVerNoticiasAtuais"
+                        onclick="window.open('https://www.exemplo4.com', '_blank')">Ver
                         Notícia</button>
                 </div>
             </div>
@@ -97,84 +94,80 @@
 
 
     <!-- Modal para edição -->
-    <div class="modal fade" id="teste" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Editar Notícia</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <form id="editForm">
-                        <!-- Índice -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
-                            <input type="number" class="form-control form-control-sm" id="editIndex"
-                                placeholder="Índice Card">
-                        </div>
-
-                        <!-- Imagem -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fas fa-image"></i></span>
-                            <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
-                        </div>
-
-
-
-                        <!-- Título -->
-                        <div class=" input-group mb-3">
-                            <span class="input-group-text"><i class="fas fa-heading"></i></span>
-                            <input type="text" class="form-control form-control-sm" id="editTitle" placeholder="Título">
-                        </div>
-
-                        <!-- Data e Horário -->
-                        <div class="row mb-3">
-                            <div class="col">
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                                    <input type="date" class="form-control form-control-sm" id="editDate"
-                                        placeholder="Data">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                                    <input type="time" class="form-control form-control-sm" id="editTime"
-                                        placeholder="Horário">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Local -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                            <input type="text" class="form-control form-control-sm" id="editLocation"
-                                placeholder="Local">
-                        </div>
-
-                        <!-- URL -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fas fa-link"></i></span>
-                            <input type="text" class="form-control form-control-sm" id="editUrl"
-                                placeholder="URL da página">
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                    <button type="button" class="my-index-s4-btnSalvarAlterações" id="saveChangesBtn">Salvar
-                        Alterações</button>
-                </div>
-
+    <!-- Modal para edição de notícias -->
+<div class="modal fade" id="editModalNoticiasAtuais" tabindex="-1" aria-labelledby="editModalNoticiasAtuaisLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalNoticiasAtuaisLabel">Editar Notícia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="editFormNoticiasAtuais">
+                    <!-- Índice -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
+                        <input type="number" class="form-control form-control-sm" id="editIndexNoticiasAtuais"
+                            placeholder="Índice Card">
+                    </div>
+
+                    <!-- Imagem -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-image"></i></span>
+                        <input type="file" class="form-control form-control-sm" id="editImageNoticiasAtuais" accept="image/*">
+                    </div>
+
+                    <!-- Título -->
+                    <div class=" input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                        <input type="text" class="form-control form-control-sm" id="editTitleNoticiasAtuais" placeholder="Título">
+                    </div>
+
+                    <!-- Data e Horário -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                <input type="date" class="form-control form-control-sm" id="editDateNoticiasAtuais"
+                                    placeholder="Data">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                <input type="time" class="form-control form-control-sm" id="editTimeNoticiasAtuais"
+                                    placeholder="Horário">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                        <textarea class="form-control form-control-sm" id="editDescriptionNoticiasAtuais"
+                            placeholder="Descrição"></textarea>
+                    </div>
+
+                    <!-- URL -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-link"></i></span>
+                        <input type="text" class="form-control form-control-sm" id="editUrlNoticiasAtuais"
+                            placeholder="URL da página">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="my-index-s4-btnSalvarAlteracoes" id="saveChangesBtnNoticiasAtuais">Salvar
+                    Alterações</button>
+            </div>
+
         </div>
     </div>
-
-
+</div>
 
 </div>
