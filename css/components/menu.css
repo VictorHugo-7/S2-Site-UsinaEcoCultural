@@ -1,6 +1,9 @@
-/* Usar o prefixo: (my-menu-) */
-/* Isso ajuda na padronização */
-/* Isso ajuda na hora de diferenciar das calsses predefinidas do bootstrap */
+/* 
+Padronização
+Usar o prefixo: (my-menu-). 
+Colocar primeiro o prefixo (my-menu-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
 
 
 
@@ -36,7 +39,7 @@
     font-weight: 500;
 }
 .my-menu-links:hover {
-    color: var(--cor-verdeLink);
+    color: var(--cor-verdeClaro);
 }
 @media (max-width: 990px) {
     .my-menu-navbar .nav-item{
@@ -86,7 +89,7 @@
 
 /* Btn Login */
 .my-menu-btnLogin {
-    background-color: var(--cor-verdeBotao);
+    background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
     padding: 10px;

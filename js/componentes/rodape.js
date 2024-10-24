@@ -1,8 +1,7 @@
-// Carregar o rodape
 fetch('../../components/rodape.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('my-r-rodape').innerHTML = data;
+        document.getElementById('my-rodape-importacao').innerHTML = data;
 
 
     })

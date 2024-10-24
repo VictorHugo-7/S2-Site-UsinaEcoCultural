@@ -1,82 +1,113 @@
-/* prefixo: my-r */
+/* 
+Padronização
+Usar o prefixo: (my-rodape-). 
+Colocar primeiro o prefixo (my-rodape-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
 
-.my-r-rodape {
+
+
+/* Rodapé */
+.my-rodape {
     background-color: var(--cor-pretoSecundario);
     padding: 20px 0 5px 0; 
     margin-top: 50px;
 }
 
-.my-r-cardTitulo {
-    color: var(--cor-verdeLink);
+
+
+/* Card Título e Texto*/
+.my-rodape-cardTitulo {
+    color: var(--cor-verdeClaro);
 }
-
-
-
-
-.my-r-cardText {
+.my-rodape-cardText {
     color: var(--cor-cinza);
 }
-.my-r-cardTextLink {
+.my-rodape-cardTextLink{
     color: var(--cor-cinza);
     text-decoration: none;
     display: block;
 }
-.my-r-cardTextLink:hover {
+.my-rodape-cardTextLink:hover {
     color: var(--cor-cinza);
     text-decoration: underline;
 }
-
-
-
-
-.my-r-cardTextContato{
-    color: var(--cor-cinza);
-    font-size: 14px;
+@media (max-width: 990px) {
+    .my-rodape-cardTextLink, .my-rodape-cardTitulo{
+        font-size: 18px;
+    }
 }
 
 
 
-
-.my-r-cardIconMidiaSocial {
+/* Card Ícone Mídia Social */
+.my-rodape-cardIconeMidiaSocial {
     color: var(--cor-cinza);
     font-size: 20px;
     margin-right: 10px;
 }
-.my-r-cardIconMidiaSocial:hover{
+.my-rodape-cardIconeMidiaSocial:hover{
     transform: scale(1.2);
 }
 
 
 
-
-.my-r-btnNewsletter{
+/* Newsletter */
+.my-rodape-btnNewsletter{
     width: 100%;
-    background-color: var(--cor-verdeBotao);
+    background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
-    box-shadow: var(--sombra-preta);
     padding: 5px;
     border-radius: 10px;
 }
-.my-r-btnNewsletter:hover{
+.my-rodape-btnNewsletter:hover{
     opacity: 90%;
 }
 
 
 
-
-.my-r-hr{
+/* Linha horizontal */
+.my-rodape-hr{
     color: var(--cor-cinza);
 }
 
 
-
-
-.my-r-iconeSeta{
-    color: var(--cor-verdeDestaque);
+/* Parte 3 Texto */
+.my-rodape-Text, .my-rodape-TextLink{
+    color: var(--cor-cinza); 
+    display: inline;
 }
-.my-r-iconeSeta:hover{
-    color: var(--cor-verdeDestaque);
+.my-rodape-TextLink{
+    text-decoration: none;
+    margin-left: 10px;
+}
+.my-rodape-TextLink:hover {
+    color: var(--cor-cinza);
+    text-decoration: underline;
+}
+@media (max-width: 990px) {
+    .my-rodape-Text, .my-rodape-TextLink{
+        font-size: 18px;
+        display: block;
+        margin-top: 3px;
+        margin-left: 0px;
+    }
+}
+
+
+
+/* Ícone Seta */
+.my-rodape-iconeSeta{
+    color: var(--cor-verdeClaro);
+}
+.my-rodape-iconeSeta:hover{
+    color: var(--cor-verdeClaro);
     transform: scale(1.2);
+}
+@media (max-width: 990px) {
+    .my-rodape-iconeSeta{
+        font-size: 26px;
+    }
 }
 
 
