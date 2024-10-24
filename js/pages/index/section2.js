@@ -1,7 +1,7 @@
 fetch('../../../html/pages/index/section2.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('my-ix-section2').innerHTML = data;
+        document.getElementById('my-index-s2-importacao').innerHTML = data;
 
 
     })

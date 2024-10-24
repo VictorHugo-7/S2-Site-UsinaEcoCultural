@@ -1,19 +1,20 @@
 <div class="container my-5">
 
     <!-- Evemtos Próximos -->
-    <h5 class="my-index-s3 mb-4">Eventos Próximos</h5>
+    <h5 class="my-index-s3-eventosProximos mb-2">Eventos Próximos</h5>
 
     <!-- Btn Editar -->
     <div class="mt-3">
-        <button type="button" class="btn btn-secondary" onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="my-index-s3-btnEditar" onclick="openEditModal()">Editar</button>
     </div>
 
-    <div class="row mt-3" id="cards-container">
+    <div class="row mt-3" id="my-index-s3-car cards-container">
 
         <!-- Card 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <img src="./imagem.svg" class="card-image" alt="Imagem do evento">
+            <div class="card" style="height: 100%;">
+                <img src="../../../media/img/global/imagem.svg" class="my-index-s3-imagem card-image"
+                    alt="Imagem do evento">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
@@ -23,17 +24,18 @@
                     <p class="card-text text-muted card-description">Descrição</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                    <button class="btn btn-primary" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s3-btnVerEventos" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
                         Evento</button>
-                    <span class="index-badge">1</span>
+                    <span class="my-index-s3-index">1</span>
                 </div>
             </div>
         </div>
 
         <!-- Card 2 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <img src="./imagem.svg" class="card-image" alt="Imagem do evento">
+            <div class="card" style="height: 100%;">
+                <img src="../../../media/img/global/imagem.svg" class="my-index-s3-imagem card-image"
+                    alt="Imagem do evento">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
@@ -43,17 +45,18 @@
                     <p class="card-text text-muted card-description">Descrição</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                    <button class="btn btn-primary" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s3-btnVerEventos" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
                         Evento</button>
-                    <span class="index-badge">2</span>
+                    <span class="my-index-s3-index">2</span>
                 </div>
             </div>
         </div>
 
         <!-- Card 3 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <img src="./imagem.svg" class="card-image" alt="Imagem do evento">
+            <div class="card" style="height: 100%;">
+                <img src="../../../media/img/global/imagem.svg" class="my-index-s3-imagem card-image"
+                    alt="Imagem do evento">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
@@ -63,9 +66,9 @@
                     <p class="card-text text-muted card-description">Descrição</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                    <button class="btn btn-primary" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s3-btnVerEventos" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
                         Evento</button>
-                    <span class="index-badge">3</span>
+                    <span class="my-index-s3-index">3</span>
                 </div>
             </div>
         </div>
@@ -73,8 +76,9 @@
 
         <!-- Card 4 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <img src="./imagem.svg" class="card-image" alt="Imagem do evento">
+            <div class="card" style="height: 100%;">
+                <img src="../../../media/img/global/imagem.svg" class="my-index-s3-imagem card-image"
+                    alt="Imagem do evento">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
@@ -84,9 +88,9 @@
                     <p class="card-text text-muted card-description">Descrição</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                    <button class="btn btn-primary" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    <button class="my-index-s3-btnVerEventos" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
                         Evento</button>
-                    <span class="index-badge">4</span>
+                    <span class="my-index-s3-index">4</span>
                 </div>
             </div>
         </div>
@@ -97,94 +101,88 @@
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <!-- Modal Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="editModalLabel">Editar Evento</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
+                <!-- Modal Body -->
                 <div class="modal-body">
                     <form id="editForm">
-                        <div class="mb-3" style="display: flex; gap: 10px;">
-                            <div>
-                                <input type="number" class="form-control" id="editIndex" placeholder="Índice Card">
+                        <!-- Índice -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
+                            <input type="number" class="form-control form-control-sm" id="editIndex"
+                                placeholder="Índice Card">
+                        </div>
+
+                        <!-- Imagem -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-image"></i></span>
+                            <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
+                        </div>
+
+
+
+                        <!-- Título -->
+                        <div class=" input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                            <input type="text" class="form-control form-control-sm" id="editTitle" placeholder="Título">
+                        </div>
+
+                        <!-- Data e Horário -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                    <input type="date" class="form-control form-control-sm" id="editDate"
+                                        placeholder="Data">
+                                </div>
                             </div>
-                            <div>
-                                <input type="file" class="form-control" id="editImage" accept="image/*"
-                                    style="color: transparent;">
+                            <div class="col">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                    <input type="time" class="form-control form-control-sm" id="editTime"
+                                        placeholder="Horário">
+                                </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editTitle" placeholder="Título">
+
+                        <!-- Local -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                            <input type="text" class="form-control form-control-sm" id="editLocation"
+                                placeholder="Local">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editDate" placeholder="Data">
+
+                        <!-- Preço -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                            <input type="number" class="form-control form-control-sm" id="editPrice" placeholder="Preço">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editTime" placeholder="Horário">
+
+                        <!-- Descrição -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                            <textarea class="form-control form-control-sm" id="editDescription"
+                                placeholder="Descrição"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editLocation" placeholder="Local">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editPrice" placeholder="Preço">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" id="editDescription" placeholder="Descrição"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editUrl" placeholder="URL da página">
+
+                        <!-- URL -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-link"></i></span>
+                            <input type="text" class="form-control form-control-sm" id="editUrl"
+                                placeholder="URL da página">
                         </div>
                     </form>
                 </div>
+
+                <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="saveChangesBtn">Salvar alterações</button>
+                    <button type="button" class="my-index-s3-btnSalvarAlterações" id="saveChangesBtn">Salvar Alterações</button> 
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    let currentCardIndex;
-
-    function openEditModal() {
-        const editModal = new bootstrap.Modal(document.getElementById('editModal'));
-        editModal.show();
-    }
-
-    document.getElementById('saveChangesBtn').addEventListener('click', function () {
-        const index = document.getElementById('editIndex').value - 1; // Pega o índice (1-based)
-        const cards = document.querySelectorAll('.card');
-
-        if (index >= 0 && index < cards.length) {
-            const selectedCard = cards[index];
-
-            // Verifica se foi selecionado um arquivo de imagem
-            const imageInput = document.getElementById('editImage');
-            if (imageInput.files && imageInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    selectedCard.querySelector('.card-image').src = e.target.result; // Atualiza a imagem do card
-                };
-                reader.readAsDataURL(imageInput.files[0]);
-            }
-
-            // Atualiza os outros valores do card com os dados do modal
-            selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-            selectedCard.querySelector('.card-date').innerText = document.getElementById('editDate').value;
-            selectedCard.querySelector('.card-time').innerText = document.getElementById('editTime').value;
-            selectedCard.querySelector('.card-location').innerText = document.getElementById('editLocation').value;
-            selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
-            selectedCard.querySelector('.card-text').innerText = document.getElementById('editDescription').value;
-
-            // Atualiza o botão de redirecionamento
-            selectedCard.querySelector('.btn-primary').setAttribute('onclick', `window.open('${document.getElementById('editUrl').value}', '_blank')`);
-
-            // Fecha o modal
-            const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-            editModal.hide();
-        } else {
-            alert('Índice inválido. Por favor, escolha um índice de card válido.');
-        }
-    });
-</script>

@@ -22,6 +22,14 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 }
 
 
+
+/* Linha Horizontal */
+.my-recuperarSenha-hr{
+    color: var(--cor-cinza);
+}
+
+
+
 /* Clique Aqui */
 .my-recuperarSenha-cliqueAqui{
     color: var(--cor-verdeClaro);

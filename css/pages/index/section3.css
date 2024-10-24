@@ -8,11 +8,11 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Eventos Próximos */
-.my-index-s3 {
+.my-index-s3-eventosProximos {
     display: inline-block;
     position: relative;
 }
-.my-index-s3::after {
+.my-index-s3-eventosProximos::after {
     content: "";
     display: block;
     width: 30px;
@@ -23,4 +23,69 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     left: 0;
     border-radius: 20px;
 }
+
+
+
+/* Btn Editar  */
+.my-index-s3-btnEditar {
+    color: var(--cor-preto);
+    background-color: var(--cor-azul);
+    box-shadow: var(--sombra-preta);
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 10px;
+}
+.my-index-s3-btnEditar:hover {
+    color: var(--cor-preto);
+    font-weight: 500;
+    opacity: 90%;
+}
+
+
+
+/* Btn Salvar Alterações */
+.my-index-s3-btnSalvarAlterações{
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-index-s3-btnSalvarAlterações:hover{
+    opacity: 90%;
+}
+
+
+
+/* Imagem */
+.my-index-s3-imagem {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+
+/* Btn Ver Eventos */
+.my-index-s3-btnVerEventos{
+    width: 45%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.my-index-s3-btnVerEventos{
+    opacity: 90%;
+}
+
+
+
+/* Index */
+.my-index-s3-index{
+    color: var(--cor-cinza);
+    font-weight: 500;
+}
+
 

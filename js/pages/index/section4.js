@@ -1,7 +1,7 @@
 fetch('../../../html/pages/index/section4.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('my-ix-section4').innerHTML = data;
+        document.getElementById('my-index-s4-importacao').innerHTML = data;
 
 
         document.getElementById('my-ixS4-addCard').addEventListener('click', function () {

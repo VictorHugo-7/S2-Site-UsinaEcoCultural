@@ -36,7 +36,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 /* Linha Horizontal */
 .my-login-hr{
-    color: var(cinza);
+    color: var(--cor-cinza);
 }
 
 

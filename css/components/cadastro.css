@@ -22,6 +22,13 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 
+/* Linha Horizontal */
+.my-cadastro-hr{
+    color: var(--cor-cinza);
+}
+
+
+
 /* Clique Aqui */
 .my-cadastro-cliqueAqui{
     color: var(--cor-verdeClaro);
