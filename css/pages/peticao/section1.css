@@ -1,0 +1,45 @@
+/* 
+Padronização
+Usar o prefixo: (my-peticao-s1-). 
+Colocar primeiro o prefixo (my-peticao-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Faixa Verde */
+.my-peticao-s1-faixa{
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/* Título */
+.my-peticao-s1-titulo{
+    color: var(--cor-verdeEscuro);
+}
+
+
+
+/* Texto */
+.my-peticao-s1-texto{
+    color: var(--cor-cinza);
+}
+
+
+
+/* Btn Assine Agora */
+.my-peticao-s1-btnAssineAgora{
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 7px;
+    border-radius: 10px;
+}
+.my-peticao-s1-btnAssineAgora:hover{
+    opacity: 90%;
+}
