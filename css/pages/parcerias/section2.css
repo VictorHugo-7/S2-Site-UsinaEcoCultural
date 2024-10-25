@@ -1,0 +1,41 @@
+/* 
+Padronização
+Usar o prefixo: (my-parcerias-s2-). 
+Colocar primeiro o prefixo (my-parcerias-s2-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+/* Parceiros Estrategicos */
+.my-parcerias-s2-parceirosEstrategicos {
+    display: inline-block;
+    position: relative;
+}
+.my-parcerias-s2-parceirosEstrategicos::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Texto */
+.my-parcerias-s2-texto {
+    color: var(--cor-cinza);
+}
+
+
+
+/* Card */
+.my-parcerias-s2-card {
+    border: 1px solid var(--cor-preto);
+    height: 150px;
+}
+
+

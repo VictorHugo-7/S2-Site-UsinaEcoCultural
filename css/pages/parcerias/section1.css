@@ -1,0 +1,41 @@
+/* 
+Padronização
+Usar o prefixo: (my-parcerias-s1-). 
+Colocar primeiro o prefixo (my-parcerias-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+/* Conexões */
+.my-parcerias-s1-conexoes {
+    display: inline-block;
+    position: relative;
+}
+.my-parcerias-s1-conexoes::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Texto */
+.my-parcerias-s1-texto {
+    color: var(--cor-cinza);
+}
+
+
+
+/* Card */
+.my-parcerias-s1-card {
+    border: 1px solid var(--cor-preto);
+    height: 150px;
+}
+
+
