@@ -11,7 +11,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 .my-peticao-s1-faixa{
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -20,6 +20,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 /* Título */
 .my-peticao-s1-titulo{
     color: var(--cor-verdeEscuro);
+    font-weight: 700;
 }
 
 

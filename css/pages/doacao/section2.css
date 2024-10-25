@@ -1,0 +1,62 @@
+/* 
+Padronização
+Usar o prefixo: (my-doacao-s2-). 
+Colocar primeiro o prefixo (my-doacao-s2-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Aplicação */
+.my-doacao-s2-aplicacao {
+    display: inline-block;
+    position: relative;
+}
+.my-doacao-s2-aplicacao::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Card */
+.my-doacao-s2-card, .card-body{
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    height: 250px
+}
+.my-doacao-s2-card:hover {
+    transition: transform 0.6s ease;
+    transform: scale(1.01);
+}
+
+
+
+/* Ícone */
+.my-doacao-s2-icone{
+    font-size: 60px;
+}
+
+
+
+/* Título */
+.my-doacao-s2-titulo{
+    color: var(--cor-preto);
+}
+
+
+
+/* Escrita */
+.my-doacao-s2-escrita{
+    color: var(--cor-cinza);
+}
+
+
+
+

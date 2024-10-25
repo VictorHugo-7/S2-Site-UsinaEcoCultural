@@ -26,11 +26,12 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Foto Pessoa */
-.my-parcerias-s3-fotoPessoa {
+.my-parcerias-s3-fotoPessoa img{
     border: 1px solid var(--cor-preto);
     border-radius: 100%;
+    object-fit: cover;
+    max-width: 100px;
     height: 100px;
-    width: 100px;
 }
 
 
@@ -47,4 +48,5 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     color: var(--cor-cinza);
     font-weight: 500;
 }
+
 

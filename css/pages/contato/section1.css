@@ -68,10 +68,10 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 /* Iframe */
 .my-contato-s1-iframe{
-    height: 180px;
+    height: 100%;
 }
 .my-contato-s1-iframe:hover{
-    transform: scale(1.01);
+    transform: scale(1.03);
 }
 
 
