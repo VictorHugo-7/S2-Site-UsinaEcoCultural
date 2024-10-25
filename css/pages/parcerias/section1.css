@@ -33,9 +33,11 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Card */
-.my-parcerias-s1-card {
+.my-parcerias-s1-card img {
     border: 1px solid var(--cor-preto);
-    height: 150px;
+    object-fit: cover;
+    max-width: 100%;
+    height: 100px;
 }
 
 
