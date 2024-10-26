@@ -25,7 +25,8 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 /* Card */
 .my-doacao-s1-card{
     box-shadow: var(--sombra-preta);
-    padding: 20px
+    padding: 20px;
+    margin-top: 100px;
 }
 
 

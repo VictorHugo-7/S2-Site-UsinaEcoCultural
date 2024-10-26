@@ -1,0 +1,56 @@
+/* 
+Padronização
+Usar o prefixo: (my-historia-s2-). 
+Colocar primeiro o prefixo (my-historia-s2-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Incinerador Vergueiro */
+.my-historia-s2-incineradorVergueiro {
+    display: inline-block;
+    position: relative;
+}
+.my-historia-s2-incineradorVergueiro::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Texto */
+.my-historia-s2-texto {
+    color: var(--cor-cinza);
+    font-size: 14px;
+}
+
+
+
+/* Imagem */
+.my-historia-s2-imagem {
+    width: 100%;
+    height: auto;
+    max-height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease;
+}
+.my-historia-s2-imagem:hover {
+    transform: scale(1.02);
+}
+@media (max-width: 768px) {
+    .my-historia-s2-imagem {
+        margin-top: 30px;
+    }
+}
+
+
