@@ -47,16 +47,28 @@
                         </button>
                     </div>
 
+                    <!-- Checkbox Termos e Política -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="termsCheckbox">
+                        <label class="form-check-label" for="termsCheckbox">
+                            Eu li e aceito os 
+                            <a class="my-cadastro-termosPolitica" href="#" target="_blank">Termos de Uso</a> e a 
+                            <a class="my-cadastro-termosPolitica" href="#" target="_blank">Política de Privacidade</a>
+                        </label>
+                    </div>
+
                     <!-- Btn Cadastrar -->
-                    <button type="button" class="my-cadastro-btnCadastrar">CADASTRAR</button> 
-                    
+                    <button type="button" class="my-cadastro-btnCadastrar" id="registerButton" disabled>CADASTRAR</button>
+
                     <!-- Linha Horizontal -->
                     <hr class="my-cadastro-hr">
 
                     <!-- Já é membro -->
                     <div class="text-center">
-                        <p class="mb-1">Ainda não tem conta? 
-                            <a class="my-cadastro-cliqueAqui" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal"> Clique aqui</a></p>
+                        <p class="mb-1">Já tem conta?
+                            <a class="my-cadastro-temConta" href="#" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" data-bs-dismiss="modal"> Clique aqui</a>
+                        </p>
                     </div>
                 </form>
             </div>

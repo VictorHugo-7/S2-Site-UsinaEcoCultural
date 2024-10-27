@@ -27,6 +27,24 @@ fetch('../../components/cadastro.html')
             registerConfirmEyeIcon.classList.toggle('fa-eye');
             registerConfirmEyeIcon.classList.toggle('fa-eye-slash');
         });
+
+        // Função para ativar/desativar o botão "CADASTRAR" com base no checkbox de termos
+        const termsCheckbox = document.querySelector('#termsCheckbox');
+        const registerButton = document.querySelector('#registerButton');
+
+        // Define o estado inicial do botão como desabilitado
+        registerButton.classList.add('disabled');
+
+        termsCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                registerButton.disabled = false;
+                registerButton.classList.remove('disabled'); // Remove a classe disabled
+                registerButton.classList.add('enabled'); // Adiciona a classe enabled
+            } else {
+                registerButton.disabled = true;
+                registerButton.classList.add('disabled'); // Adiciona a classe disabled
+                registerButton.classList.remove('enabled'); // Remove a classe enabled
+            }
+        });
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
-

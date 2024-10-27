@@ -8,17 +8,24 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Btn Cadastrar */
-.my-cadastro-btnCadastrar{
+.my-cadastro-btnCadastrar {
     width: 100%;
-    background-color: var(--cor-verdeEscuro);
+    background-color: var(--cor-cinzaSecundario); 
     color: var(--cor-branco);
-    box-shadow: var(--sombra-preta);
+    box-shadow: none; 
     padding: 5px;
     border-radius: 10px;
+    cursor: default; 
 }
-.my-cadastro-btnCadastrar:hover{
-    opacity: 90%;
+.my-cadastro-btnCadastrar.enabled {
+    background-color: var(--cor-verdeEscuro); 
+    box-shadow: var(--sombra-preta); 
+    cursor: pointer; 
 }
+.my-cadastro-btnCadastrar.enabled:hover {
+    opacity: 90%; 
+}
+
 
 
 
@@ -29,13 +36,23 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 
-/* Clique Aqui */
-.my-cadastro-cliqueAqui{
+/* Termos e Política | Clique Aqui */
+.my-cadastro-jaEmembro, .my-cadastro-termosPolitica{
     color: var(--cor-verdeClaro);
     text-decoration: none;
 }
-.my-cadastro-cliqueAqui:hover{
+.my-cadastro-jaEmembro, .my-cadastro-termosPolitica:hover{
     color: var(--cor-verdeClaro);
     text-decoration: underline;
 }
 
+
+.my-cadastro-temConta{
+    color: var(--cor-verdeClaro);
+    text-decoration: none;
+}
+
+.my-cadastro-temConta:hover{
+    color: var(--cor-verdeClaro);
+    text-decoration: underline;
+}

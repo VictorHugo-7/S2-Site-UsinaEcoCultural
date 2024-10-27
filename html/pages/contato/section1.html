@@ -3,36 +3,40 @@
 
         <!-- Mensagem -->
         <div class="my-contato-s1-responsividade col-xl-6 col-12"">
-            <h5 class="my-contato-s1-mensagemInformacao mb-4">Mensagem</h5>
+            <h5 class=" my-contato-s1-mensagemInformacao mb-4">Mensagem</h5>
             <div class="card" style="height: 420px;">
                 <div class="card-body">
                     <form id="contactForm">
                         <p class="my-contato-s1-texto1">Você pode entrar em contato conosco a qualquer momento via
                             <strong>usina@gmail.com</strong>
                         </p>
-                        
+
                         <!-- Nome -->
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            <input class="form-control form-control-sm" type="text" name="Nome" placeholder="Nome" required/>
+                            <input class="form-control form-control-sm" type="text" name="Nome" placeholder="Nome"
+                                required />
                         </div>
 
                         <!-- Email -->
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input class="form-control form-control-sm" type="email" name="Email" placeholder="Email" required/>
+                            <input class="form-control form-control-sm" type="email" name="Email" placeholder="Email"
+                                required />
                         </div>
 
                         <!-- Onde nos Encontrou ? -->
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fas fa-newspaper"></i></span>
-                            <input class="form-control form-control-sm" type="text" name="Onde nos Encontrou ?" placeholder="Onde nos Encontrou ?" required/>
+                            <input class="form-control form-control-sm" type="text" name="Onde nos Encontrou ?"
+                                placeholder="Onde nos Encontrou ?" required />
                         </div>
 
                         <!-- Mensagem -->
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
-                            <textarea class="form-control form-control-sm" name="Mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                            <textarea class="form-control form-control-sm" name="Mensagem" placeholder="Mensagem"
+                                rows="5" required></textarea>
                         </div>
 
                         <!-- Btn -->
@@ -40,13 +44,15 @@
 
                         <!-- Configurações -->
                         <input type="hidden" name="_subject" value="Novo Contato!"> <!-- Título do Email -->
-                        <input type="text" name="_honey" style="display:none">      <!-- Evitar que os emails enviados vão como span -->
-                        <input type="hidden" name="_captcha" value="false">         <!-- Desabilitar o captcha depois de enviar o formulário-->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Evitar que os emails enviados vão como span -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Desabilitar o captcha depois de enviar o formulário-->
                     </form>
                 </div>
             </div>
         </div>
-        
+
         <!-- Informações -->
         <div class="col-xl-6 col-12">
             <h5 class="my-contato-s1-mensagemInformacao mb-4">Informações</h5>
@@ -77,4 +83,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Overlay de carregamento -->
+    <div class="my-contato-s1-loading-overlay" id="my-contato-s1-loadingOverlay">
+        <div class="my-contato-s1-spinner"></div>
+    </div>
+
 </div>
