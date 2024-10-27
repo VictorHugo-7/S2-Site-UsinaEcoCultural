@@ -54,3 +54,10 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 }
 
 
+/* Inversão das partes para ficar texto e imagem */
+@media (max-width: 768px) {
+    .my-historia-s4-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
