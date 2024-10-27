@@ -61,9 +61,17 @@
             <!-- Newsletter -->
             <div class="col-6 col-md-4 col-lg-2">
                 <h6 class="my-rodape-cardTitulo">Newsletter</h6>
-                <form>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                <form id="newsletterForm">
+                    <!-- Email -->
+                    <input class="form-control" type="email" name="email" placeholder="Email" required>
+                    
+                    <!-- Btn -->
                     <button type="submit" class="my-rodape-btnNewsletter mt-3">INSCREVER - SE</button>
+                    
+                    <!-- Configurações -->
+                    <input type="hidden" name="_subject" value="Quero receber a Newsletter da Usina Eco-Cultural"> <!-- Título do Email -->
+                    <input type="text" name="_honey" style="display:none">                                         <!-- Evitar que os emails enviados vão como span -->
+                    <input type="hidden" name="_captcha" value="false">                                            <!-- Desabilitar o captcha depois de enviar o formulário-->
                 </form>
             </div>
         </div>

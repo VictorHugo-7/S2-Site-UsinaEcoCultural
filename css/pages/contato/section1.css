@@ -45,7 +45,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
-    padding: 5px;
+    padding: 1px;
     border-radius: 10px;
 }
 .my-contato-s1-btnEnviar:hover {

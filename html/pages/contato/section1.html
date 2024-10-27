@@ -2,61 +2,62 @@
     <div class="row">
 
         <!-- Mensagem -->
-        <div class="my-contato-s1-responsividade col-xl-6 col-12">
-
+        <div class="my-contato-s1-responsividade col-xl-6 col-12"">
             <h5 class="my-contato-s1-mensagemInformacao mb-4">Mensagem</h5>
-
-            <div class="card">
+            <div class="card" style="height: 420px;">
                 <div class="card-body">
-                    <p class="my-contato-s1-texto1">Você pode entrar em contato conosco a qualquer momento via
-                        <strong>usina@gmail.com</strong>
-                    </p>
+                    <form id="contactForm">
+                        <p class="my-contato-s1-texto1">Você pode entrar em contato conosco a qualquer momento via
+                            <strong>usina@gmail.com</strong>
+                        </p>
+                        
+                        <!-- Nome -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input class="form-control form-control-sm" type="text" name="Nome" placeholder="Nome" required/>
+                        </div>
 
-                    <!-- Nome  -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        <input type="text" id="registerName" class="form-control form-control-sm" placeholder="Nome" />
-                    </div>
+                        <!-- Email -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input class="form-control form-control-sm" type="email" name="Email" placeholder="Email" required/>
+                        </div>
 
-                    <!-- Email -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        <input type="email" id="registerEmail" class="form-control form-control-sm"
-                            placeholder="Email" />
-                    </div>
+                        <!-- Onde nos Encontrou ? -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-newspaper"></i></span>
+                            <input class="form-control form-control-sm" type="text" name="Onde nos Encontrou ?" placeholder="Onde nos Encontrou ?" required/>
+                        </div>
 
-                    <!-- Onde nos Encontrou ? -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fas fa-newspaper"></i></span>
-                        <input type="text" id="registerOndeNosEncontrou" class="form-control form-control-sm"
-                            placeholder="Onde nos Encontrou ?" />
-                    </div>
+                        <!-- Mensagem -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                            <textarea class="form-control form-control-sm" name="Mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                        </div>
 
-                    <!-- Mensagem -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
-                        <textarea id="registerSubject" class="form-control form-control-sm" placeholder="Mensagem"
-                            rows="5"></textarea>
-                    </div>
-                    <button class="my-contato-s1-btnEnviar">ENVIAR</button>
+                        <!-- Btn -->
+                        <button class="my-contato-s1-btnEnviar" type="submit">ENVIAR</button>
+
+                        <!-- Configurações -->
+                        <input type="hidden" name="_subject" value="Novo Contato!"> <!-- Título do Email -->
+                        <input type="text" name="_honey" style="display:none">      <!-- Evitar que os emails enviados vão como span -->
+                        <input type="hidden" name="_captcha" value="false">         <!-- Desabilitar o captcha depois de enviar o formulário-->
+                    </form>
                 </div>
             </div>
         </div>
-
-
-
+        
         <!-- Informações -->
         <div class="col-xl-6 col-12">
-
             <h5 class="my-contato-s1-mensagemInformacao mb-4">Informações</h5>
-
-            <div class="card">
+            <div class="card" style="height: 420px;">
                 <div class="card-body">
                     <div class="my-contato-s1-texto1 mb-4"><i class="my-contato-s1-texto2 fas fa-phone"></i>
-                        <strong>Telefone: </strong> (11) 1234-5678 </div>
+                        <strong>Telefone: </strong> (11) 1234-5678
+                    </div>
                     <div class="my-contato-s1-texto1 mb-4"><i class="my-contato-s1-texto2 fas fa-clock"></i>
-                        <strong>Horários: </strong> Seg a Sex: 9h - 17h | Sab: 9h - 15h | Dom: fechado </div>
-
+                        <strong>Horários: </strong> Seg a Sex: 9h - 17h | Sab: 9h - 15h | Dom: fechado
+                    </div>
                     <div class="mb-4">
                         <i class="fas fa-share-alt"></i><strong> Mídias Sociais: </strong>
                         <a href="#"><i class="my-contato-s1-iconesMidias fab fa-facebook" title="facebook"></i></a>
@@ -64,16 +65,12 @@
                         <a href="#"><i class="my-contato-s1-iconesMidias fab fa-youtube" title="youtube"></i></a>
                         <a href="#"><i class="my-contato-s1-iconesMidias fab fa-spotify" title="spotify"></i></a>
                     </div>
-
-
-
                     <div>
                         <i class="fas fa-map-marker-alt mb-5"></i> <strong>Localização: </strong><span
                             class="my-contato-s1-texto1">São Paulo, SP</span><br>
-
                         <iframe class="my-contato-s1-iframe"
                             src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d468865.69186711835!2d-47.171053419975976!3d-23.35153568500002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e0!4m3!3m2!1d-23.147315199999998!2d-47.048294399999996!4m5!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!3m2!1d-23.555771399999998!2d-46.6395571!5e0!3m2!1spt-BR!2sbr!4v1729388305892!5m2!1spt-BR!2sbr"
-                            height="200" width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            height="230" width="100%" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
