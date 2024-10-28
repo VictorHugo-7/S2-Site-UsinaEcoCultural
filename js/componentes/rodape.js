@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     loadingOverlay.classList.remove('active');
                 });
             });
+
+            // Funcionalidade de rolagem suave à seta de rolagem para o topo
+            const scrollToTopButton = document.querySelector('.my-rodape-iconeSeta');
+            if (scrollToTopButton) {
+                scrollToTopButton.addEventListener('click', function(event) {
+                    event.preventDefault(); // Evita o salto imediato
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
         })
         .catch(error => console.error('Erro ao carregar a seção de rodapé:', error));
 });
