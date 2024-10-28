@@ -14,7 +14,7 @@ O site da Usina Eco-Cultural foi criado com o intuito de promover uma plataforma
 | Nome                                         | RA          |
 |----------------------------------------------|-------------|
 | Eduardo Aguiar Leite da Silva                | 24.00380-8  |
-![image](https://github.com/user-attachments/assets/68f35d78-5275-4ae5-9f5f-6a04998ce42d) | Luan Camara Lopes                            | 24.00376-0  |https://github.com/lopeslc
+| Luan Camara Lopes                            | 24.00376-0  |https://github.com/lopeslc
 | Lucas De Mattia Peres                        | 24.00020-5  |
-![image](https://github.com/user-attachments/assets/5934dcb9-8e52-4b48-8114-886d5d6b2841) | Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  |https://github.com/VictorHugo-7
+| Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  |https://github.com/VictorHugo-7
 
