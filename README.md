@@ -2,7 +2,8 @@
 Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é desenvolvido como parte do Projeto Integrador para a disciplina de Front-End no curso de Ciência da Computação do Instituto Mauá de Tecnologia.
 
 ## Projeto
-| O site da Usina Eco-Cultural foi criado com o intuito de promover uma plataforma digital que amplie o alcance e a visibilidade das atividades culturais e ecológicas oferecidas pela instituição. A Usina Eco-Cultural é um espaço voltado para o desenvolvimento sustentável e para a valorização da cultura local, promovendo eventos, oficinas, exposições e iniciativas educacionais com foco em sustentabilidade.                | ![fotoUsina](https://github.com/user-attachments/assets/6027eb8e-3478-406a-89e3-107630e06978)
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| O site da Usina Eco-Cultural foi criado com o intuito de promover uma plataforma digital que amplie o alcance e a visibilidade das atividades culturais e ecológicas oferecidas pela instituição. A Usina Eco-Cultural é um espaço voltado para o desenvolvimento sustentável e para a valorização da cultura local, promovendo eventos, oficinas, exposições e iniciativas educacionais com foco em sustentabilidade. | <img src="https://github.com/user-attachments/assets/6027eb8e-3478-406a-89e3-107630e06978" width="200"/> |
 
 
 
