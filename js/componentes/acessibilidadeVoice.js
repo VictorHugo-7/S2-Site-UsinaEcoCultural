@@ -5,3 +5,11 @@ fetch('../../components/acessibilidadeVoice.html')
 
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
+
+function cancelarLeitura() {
+    if (responsiveVoice.isPlaying()) {
+        responsiveVoice.cancel();
+    } else {
+        responsiveVoice.resume();
+    }
+}

@@ -60,6 +60,7 @@
     <script src="../../../js/componentes/recuperarSenha.js"></script>
     <script src="../../../js/componentes/rodape.js"></script>
     <script src="../../../js/componentes/acessibilidadeLibras.js"></script>
+    <script src="../../../js/componentes/acessibilidadeVoice.js"></script>
 
 
     <script src="../../../js/pages/index/section1.js"></script>
@@ -79,50 +80,6 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script> new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=MmfPhaM2"></script>
-    <style>
-        #btn-leitura {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            right: 0px;
-            top: 60%;
-            transform: translateY(-50%);
-            /* Ajusta para centralização precisa */
-            width: 50px;
-            height: 50px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 10%;
-            /* Forma circular */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #btn-leitura:hover {
-            background-color: #0056b3;
-            /* Cor ao passar o mouse */
-        }
-
-        #btn-leitura i {
-            font-size: 24px;
-        }
-    </style>
-    <!-- Cancelar Leitura -->
-    <script>
-        function cancelarLeitura(){
-            if (responsiveVoice.isPlaying()){
-                responsiveVoice.cancel();
-            } else {
-                responsiveVoice.resume();
-            }
-        }
-    </script>
-    <button id="btn-leitura" onclick="cancelarLeitura();">
-        <i class="fa-solid fa-ear-deaf"></i>
-    </button>
 </body>
 
 </html>

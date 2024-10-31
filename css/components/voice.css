@@ -1,0 +1,29 @@
+#btn-leitura {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 0px;
+    top: 60%;
+    transform: translateY(-50%);
+    /* Ajusta para centralização precisa */
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    /* Forma circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-leitura:hover {
+    background-color: #0056b3;
+    /* Cor ao passar o mouse */
+}
+
+#btn-leitura i {
+    font-size: 24px;
+}
