@@ -17,15 +17,9 @@ fetch('../../../html/pages/index/section3.html')
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
 
-                // Verifica se foi selecionado um arquivo de imagem
-                const imageInput = document.getElementById('editImageEventosProximos');
-                if (imageInput.files && imageInput.files[0]) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        selectedCard.querySelector('.my-index-s3-imagem').src = e.target.result; 
-                    };
-                    reader.readAsDataURL(imageInput.files[0]);
-                }
+                // Pega a URL da imagem e define no card
+                const imageUrl = document.getElementById('editImageUrlEventosProximos').value;
+                selectedCard.querySelector('.my-index-s3-imagem').src = imageUrl;
 
                 // Atualiza os outros valores do card com os dados do modal
                 selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitleEventosProximos').value;

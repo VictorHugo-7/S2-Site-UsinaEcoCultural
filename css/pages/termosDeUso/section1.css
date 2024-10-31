@@ -23,3 +23,12 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     left: 0;
     border-radius: 20px;
 }
+
+
+
+/* Texto */
+.my-termosDeUso-s1-texto{
+    color: var(--cor-cinza);
+}
+
+

@@ -1,0 +1,109 @@
+<div class="container mb-5">
+    <h5 class="my-divulgacaoEventos-s1">Eventos</h5>
+    <div><br></div>
+
+    
+    <!-- Botões de ação -->
+    <div>
+        <button type="button" class="btn btn-success" onclick="addCard()">Adicionar Card</button>
+        <button type="button" class="btn btn-secondary" onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger" onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-info" onclick="sortCards()">Organizar por Dia/Horário</button>
+    </div>
+
+
+    <!-- Formulário -->
+    <div class="row mt-3" id="cards-container">
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card">
+                <img src="../../../media/img/global/imagem.svg" class="card-image" alt="Imagem do evento">
+                <div class="card-body">
+                    <h5 class="card-title">Título</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
+                            class="card-time">Horário</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-location">Local</h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
+                    <p class="card-text text-muted card-description">Descrição</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="index-badge">1</span>
+                    <button class="my-divulgacaoEventos-s3-btnVerEvento" onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                        Evento</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal para exclusão -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Excluir Card</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="deleteIndex" class="form-control"
+                        placeholder="Índice do Card para excluir">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteCard()">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal para edição -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Editar Evento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="mb-3" style="display: flex; gap: 10px;">
+                            <div>
+                                <input type="number" class="form-control" id="editIndex" placeholder="Índice Card">
+                            </div>
+                            <div>
+                                <input type="file" class="form-control" id="editImage" accept="image/*"
+                                    style="color: transparent;">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="editTitle" placeholder="Título">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="editDate" placeholder="Data">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="editTime" placeholder="Horário">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="editLocation" placeholder="Local">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="editPrice" placeholder="Preço">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="editDescription" placeholder="Descrição"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="editUrl" placeholder="URL da página">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="my-divulgacaoEventos-s3-btnSalvarAlteracoes" id="saveChangesBtn">Salvar alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

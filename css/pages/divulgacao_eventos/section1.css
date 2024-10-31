@@ -1,0 +1,72 @@
+/* 
+Padronização
+Usar o prefixo: (my-divulgacaoEventos-s1-). 
+Colocar primeiro o prefixo (my-divulgacaoEventos-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Divulgação Eventos */
+.my-divulgacaoEventos-s1 {
+    display: inline-block;
+    position: relative;
+}
+.my-divulgacaoEventos-s1::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Btn Salvar Alterações */
+.my-divulgacaoEventos-s3-btnSalvarAlteracoes{
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-divulgacaoEventos-s3-btnSalvarAlteracoes:hover{
+    opacity: 90%;
+}
+
+
+
+/* Imagem */
+.my-divulgacaoEventos-s3-imagem {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+
+/* Btn Ver Eventos */
+.my-divulgacaoEventos-s3-btnVerEvento{
+    width: 45%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.my-divulgacaoEventos-s3-btnVerEvento:hover{
+    opacity: 90%;
+}
+
+
+
+/* divulgacaoEventos */
+.my-divulgacaoEventos-s3-divulgacaoEventos{
+    color: var(--cor-cinza);
+    font-weight: 500;
+}
