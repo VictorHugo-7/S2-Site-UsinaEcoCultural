@@ -26,3 +26,4 @@ Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é dese
 | Lucas De Mattia Peres                        | 24.00020-5  |
 | Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  |
 
+## Como utilizar 
