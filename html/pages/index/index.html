@@ -110,34 +110,17 @@
             font-size: 24px;
         }
     </style>
+    <!-- Cancelar Leitura -->
     <script>
-        let isSpeaking = false;
-        function lerSiteCompleto() {
-            const texto = document.body.innerText;
-
-            if (isSpeaking) {
-                // Se já estiver falando, para a leitura
-                window.speechSynthesis.cancel(); // Para a leitura
-                isSpeaking = false; // Atualiza o estado
+        function cancelarLeitura(){
+            if (responsiveVoice.isPlaying()){
+                responsiveVoice.cancel();
             } else {
-                // Se não estiver falando, inicia a leitura
-                const utterance = new SpeechSynthesisUtterance(texto);
-                utterance.lang = 'pt-BR'; // Define o idioma como português
-                utterance.volume = 1; // Volume (0 a 1)
-                utterance.rate = 1; // Taxa de fala (0.1 a 10)
-                utterance.pitch = 1; // Tonalidade (0 a 2)
-
-                // A cada vez que a leitura parar, atualiza o estado
-                utterance.onend = () => {
-                    isSpeaking = false; // Atualiza o estado
-                };
-
-                window.speechSynthesis.speak(utterance); // Inicia a leitura
-                isSpeaking = true; // Atualiza o estado
+                responsiveVoice.resume();
             }
         }
     </script>
-    <button id="btn-leitura" onclick="lerSiteCompleto();">
+    <button id="btn-leitura" onclick="cancelarLeitura();">
         <i class="fa-solid fa-ear-deaf"></i>
     </button>
 </body>
