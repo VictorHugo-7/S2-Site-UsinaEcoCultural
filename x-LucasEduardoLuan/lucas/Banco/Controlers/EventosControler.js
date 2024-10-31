@@ -35,6 +35,18 @@ exports.create = async (req, res) => {
     }
 };
 
+exports.findAll = async (req, res) =>{
+    try {
+        const eventos = await Evento.find();
+
+        res.json(eventos)
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "erro ao encontr imagem" });
+    }
+};
+
 exports.remove = async(req, res) =>{
     try {
 

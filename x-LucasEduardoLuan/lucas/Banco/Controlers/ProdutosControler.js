@@ -32,6 +32,18 @@ exports.create = async (req, res) => {
     }
 };
 
+exports.findAll = async (req, res) =>{
+    try {
+        const produtos = await Produto.find();
+
+        res.json(produtos)
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "erro ao encontr imagem" });
+    }
+};
+
 exports.remove = async(req, res) =>{
     try {
 
