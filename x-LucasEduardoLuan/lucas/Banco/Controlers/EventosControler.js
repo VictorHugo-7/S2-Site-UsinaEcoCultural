@@ -5,19 +5,16 @@ const fs = require("fs");
 exports.create = async (req, res) => {
     try {
 
-        const { nameIMEV, srcEV, tituloEV, diaEV, horaEV, localEV, precoEV, descricaoEV } = req.body;
-
-        /*const file = req.fiçe*/
+        const {urlEV, tituloEV, diaEV, horaEV, localEV, precoEV, descricaoEV } = req.body;
 
         console.log(req.body);
 
-        if (!nameIMEV || !srcEV || !tituloEV || !diaEV || !horaEV || !localEV || !precoEV || !descricaoEV) {
+        if (!urlEV || !tituloEV || !diaEV || !horaEV || !localEV || !precoEV || !descricaoEV) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios" });
         }
 
         const evento = new Evento({
-            nameIMEV,
-            srcEV/*: file.path*/,
+            urlEV,
             tituloEV,
             diaEV,
             horaEV,

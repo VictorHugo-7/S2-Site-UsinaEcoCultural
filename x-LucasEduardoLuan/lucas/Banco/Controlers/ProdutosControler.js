@@ -3,19 +3,16 @@ const Produto = require("../models/Produtos");
 exports.create = async (req, res) => {
     try {
 
-        const { nameIMPR, PRsrc, tituloPR, diaPR, horaPR, precoPR, descricaoPR } = req.body;
-
-        /*const file = req.file*/
+        const { PRurl, tituloPR, diaPR, horaPR, precoPR, descricaoPR } = req.body;
 
         console.log(req.body);
 
-        if (!nameIMPR || !PRsrc || !tituloPR || !diaPR || !horaPR || !precoPR || !descricaoPR) {
+        if (!PRurl || !tituloPR || !diaPR || !horaPR || !precoPR || !descricaoPR) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios" });
         }
 
         const produto = new Produto({
-            nameIMPR,
-            PRsrc/*: file.path*/,
+            PRurl,
             tituloPR,
             diaPR,
             horaPR,

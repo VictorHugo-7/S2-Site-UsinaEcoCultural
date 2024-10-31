@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 const EventosSchema = mongoose.Schema({
-    nameIMEV: {type: String, require: true},
-    srcEV: {type: String, required: true},
+    urlEV: {type: String, required: true},
     tituloEV: {type: String, required: true},
     diaEV: {type: String, required: true},
     horaEV: {type: String, required: true},

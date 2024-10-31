@@ -3,19 +3,16 @@ const Trabalho = require("../models/Trabalhos");
 exports.create = async (req, res) => {
     try {
 
-        const { nameIMTR, TRsrc, tituloTR, diaTR, horaTR, descricaoTR } = req.body;
-
-        /*const file = req.file*/
+        const { TRurl, tituloTR, diaTR, horaTR, descricaoTR } = req.body;
 
         console.log(req.body);
 
-        if (!nameIMTR || !TRsrc || !tituloTR || !diaTR || !horaTR || !descricaoTR) {
+        if (!TRurl || !tituloTR || !diaTR || !horaTR || !descricaoTR) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios" });
         }
 
         const trabalho = new Trabalho({
-            nameIMTR,
-            TRsrc/*: file.path*/,
+            TRurl,
             tituloTR,
             diaTR,
             horaTR,

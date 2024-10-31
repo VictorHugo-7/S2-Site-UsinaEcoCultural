@@ -4,19 +4,16 @@ const bcrypt = require("bcrypt")
 exports.create = async (req, res) => {
     try {
 
-        const { nameIMNT, NTsrc, tituloNT, diaNT, horaNT, descricaoNT } = req.body;
-
-        /*const file = req.file*/
+        const { NTurl, tituloNT, diaNT, horaNT, descricaoNT } = req.body;
 
         console.log(req.body);
 
-        if (!nameIMNT || !NTsrc || !tituloNT || !diaNT || !horaNT || !descricaoNT) {
+        if (!NTurl || !tituloNT || !diaNT || !horaNT || !descricaoNT) {
             return res.status(400).json({ message: "Todos os campos são obrigatórios" });
         }
 
         const noticia = new Noticia({
-            nameIMNT,
-            NTsrc/*: file.path*/,
+            NTurl,
             tituloNT,
             diaNT,
             horaNT,
