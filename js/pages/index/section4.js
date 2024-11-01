@@ -1,5 +1,5 @@
 function openEditModalNoticiasAtuais() {
-    const editModalNoticiasAtuais = new bootstrap.Modal(document.getElementById('editModalNoticiasAtuais')); 
+    const editModalNoticiasAtuais = new bootstrap.Modal(document.getElementById('editModalNoticiasAtuais'));
     editModalNoticiasAtuais.show();
 }
 
@@ -11,21 +11,15 @@ fetch('../../../html/pages/index/section4.html')
 
         // Adiciona o event listener para o botão de salvar no modal de notícia
         document.getElementById('saveChangesBtnNoticiasAtuais').addEventListener('click', function () {
-            const index = parseInt(document.getElementById('editIndexNoticiasAtuais').value) - 1; 
-            const cards = document.querySelectorAll('.my-index-s4-cardAlteracao'); 
+            const index = parseInt(document.getElementById('editIndexNoticiasAtuais').value) - 1;
+            const cards = document.querySelectorAll('.my-index-s4-cardAlteracao');
 
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
 
-                // Verifica se foi selecionado um arquivo de imagem
-                const imageInput = document.getElementById('editImageNoticiasAtuais');
-                if (imageInput.files && imageInput.files[0]) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        selectedCard.querySelector('.my-index-s4-imagem').src = e.target.result; // Atualiza a imagem do card
-                    };
-                    reader.readAsDataURL(imageInput.files[0]);
-                }
+                // Pega a URL da imagem e define no card
+                const imageUrl = document.getElementById('editImageNoticiasAtuais').value;
+                selectedCard.querySelector('.my-index-s4-imagem').src = imageUrl;
 
                 // Atualiza os outros valores do card com os dados do modal
                 selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitleNoticiasAtuais').value;
