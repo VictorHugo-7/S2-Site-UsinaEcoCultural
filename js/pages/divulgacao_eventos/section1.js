@@ -8,7 +8,7 @@ function addCard() {
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
     newCard.innerHTML = `
-        <div class="card">
+        <div class="card" style="height: 100%;">
             <img src="../../../media/img/global/imagem.svg" class="card-image" alt="Imagem do evento">
             <div class="card-body">
                 <h5 class="card-title">Título</h5>
@@ -70,13 +70,10 @@ function saveChanges() {
     if (index >= 0 && index < cards.length) {
         const selectedCard = cards[index];
 
-        const imageInput = document.getElementById('editImage');
-        if (imageInput.files && imageInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                selectedCard.querySelector('.card-image').src = e.target.result;
-            };
-            reader.readAsDataURL(imageInput.files[0]);
+        // Obtém a URL da imagem
+        const imageUrl = document.getElementById('editImageUrl').value;
+        if (imageUrl) {
+            selectedCard.querySelector('.card-image').src = imageUrl;
         }
 
         selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
@@ -94,6 +91,7 @@ function saveChanges() {
         alert('Índice inválido. Por favor, escolha um índice de card válido.');
     }
 }
+
 
 // Função para organizar os cards por dia e horário
 function sortCards() {

@@ -15,7 +15,7 @@
     <!-- Formulário -->
     <div class="row mt-3" id="cards-container">
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
-            <div class="card">
+            <div class="card" style="height: 100%;">
                 <img src="../../../media/img/global/imagem.svg" class="card-image" alt="Imagem do evento">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
@@ -49,7 +49,6 @@
                         placeholder="Índice do Card para excluir">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-danger" onclick="deleteCard()">Excluir</button>
                 </div>
             </div>
@@ -61,49 +60,79 @@
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <!-- Modal Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="editModalLabel">Editar Evento</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+    
+                <!-- Modal Body -->
                 <div class="modal-body">
                     <form id="editForm">
-                        <div class="mb-3" style="display: flex; gap: 10px;">
-                            <div>
-                                <input type="number" class="form-control" id="editIndex" placeholder="Índice Card">
-                            </div>
-                            <div>
-                                <input type="file" class="form-control" id="editImage" accept="image/*"
-                                    style="color: transparent;">
-                            </div>
+                        <!-- Índice -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
+                            <input type="number" class="form-control" id="editIndex" placeholder="Índice Card">
                         </div>
-                        <div class="mb-3">
+    
+                        <!-- Imagem URL -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-image"></i></span>
+                            <input type="url" class="form-control" id="editImageUrl" placeholder="URL da Imagem">
+                        </div>
+    
+                        <!-- Título -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-heading"></i></span>
                             <input type="text" class="form-control" id="editTitle" placeholder="Título">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editDate" placeholder="Data">
+    
+                        <!-- Data -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                            <input type="date" class="form-control" id="editDate" placeholder="Data">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editTime" placeholder="Horário">
+    
+                        <!-- Horário -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                            <input type="time" class="form-control" id="editTime" placeholder="Horário">
                         </div>
-                        <div class="mb-3">
+    
+                        <!-- Local -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                             <input type="text" class="form-control" id="editLocation" placeholder="Local">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="editPrice" placeholder="Preço">
+    
+                        <!-- Preço -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                            <input type="number" class="form-control" id="editPrice" placeholder="Preço">
                         </div>
-                        <div class="mb-3">
+    
+                        <!-- Descrição -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-align-left"></i></span>
                             <textarea class="form-control" id="editDescription" placeholder="Descrição"></textarea>
                         </div>
-                        <div class="mb-3">
+    
+                        <!-- URL -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-link"></i></span>
                             <input type="text" class="form-control" id="editUrl" placeholder="URL da página">
                         </div>
                     </form>
                 </div>
+    
+                <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="my-divulgacaoEventos-s3-btnSalvarAlteracoes" id="saveChangesBtn">Salvar alterações</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    
 
 </div>
