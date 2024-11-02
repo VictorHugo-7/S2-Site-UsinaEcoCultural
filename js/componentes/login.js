@@ -11,6 +11,7 @@ function checkLogin() {
         showEditButtonEventosProximos();   // Mostra o botão de editar
         showEditButtonNoticiasAtuais();    // Mostra o botão de editar
         showAcoesEventos();                // Mostra os botões de ação
+        showAcoesNoticias();               // Mostra os botões de ação para notícias
         alert('Login como admin bem-sucedido!');
     } else {
         localStorage.setItem('isAdmin', 'false');
@@ -20,10 +21,10 @@ function checkLogin() {
         hideEditButtonEventosProximos();     // Esconde o botão de editar
         hideEditButtonNoticiasAtuais();      // Esconde o botão de editar
         hideAcoesEventos();                  // Esconde os botões de ação
+        hideAcoesNoticias();                 // Esconde os botões de ação para notícias
         alert('Erro: credenciais inválidas! Tente novamente.');
     }
 }
-
 
 
 /* Mostrar Coisas ADM */
@@ -51,7 +52,12 @@ function showAcoesEventos() {
         button.style.display = 'inline-block'; // Exibe todos os botões de ação
     });
 }
-
+function showAcoesNoticias() {
+    const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info'); // Selecione todos os botões de ação
+    buttonsNoticias.forEach(button => {
+        button.style.display = 'inline-block'; // Exibe todos os botões de ação
+    });
+}
 
 
 /* Ocultar Coisas ADM */
@@ -79,22 +85,29 @@ function hideAcoesEventos() {
         button.style.display = 'none'; // Esconde todos os botões de ação
     });
 }
-
+function hideAcoesNoticias() {
+    const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info'); // Selecione todos os botões de ação
+    buttonsNoticias.forEach(button => {
+        button.style.display = 'none'; // Esconde todos os botões de ação
+    });
+}
 
 
 // Verificar se o usuário já está logado como admin ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
     const isAdmin = localStorage.getItem('isAdmin');
     if (isAdmin === 'true') {
-        showAdmIcone();                  // Mostra o icone de adm se for adm
+        showAdmIcone();                  // Mostra o ícone de adm se for adm
         showEditButtonEventosProximos(); // Mostra o botão de editar se for adm
         showEditButtonNoticiasAtuais();  // Mostra o botão de editar se for adm
         showAcoesEventos();              // Mostra os botões de ação se for adm
+        showAcoesNoticias();             // Mostra os botões de ação para notícias se for adm
     } else {
-        hideAdmIcone();                  // Esconde o icone de adm se não for adm
+        hideAdmIcone();                  // Esconde o ícone de adm se não for adm
         hideEditButtonEventosProximos(); // Esconde o botão de editar se não for adm
         hideEditButtonNoticiasAtuais();  // Esconde o botão de editar se não for adm
         hideAcoesEventos();              // Esconde os botões de ação se não for adm
+        hideAcoesNoticias();             // Esconde os botões de ação para notícias se não for adm
     }
 });
 

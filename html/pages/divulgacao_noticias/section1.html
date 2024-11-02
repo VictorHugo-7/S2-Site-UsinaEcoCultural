@@ -1,0 +1,133 @@
+<div class="container my-5">
+
+    <!-- Divulgação - Notícias -->
+    <h5 class="my-divulgacao_noticias-s1-noticias mb-4">Notícias</h5>
+
+    <!-- Botões -->
+    <div>
+        <button type="button" class="btn btn-success" style="display: none;" onclick="addCard()"> Adicionar Card</button>
+        <button type="button" class="btn btn-secondary" style="display: none;" onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-info" style="display: none;" onclick="sortCardsByDate()">Ordenar por Data</button>
+    </div>
+
+
+    <!-- Card -->
+    <div class="row mt-3" id="cards-container">
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="https://cdn.pixabay.com/photo/2024/06/01/14/00/ai-8802304_1280.jpg"
+                    class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
+                <div class="card-body">
+                    <h5 class="card-title">Título</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
+                            class="card-time">Horário</span></h6>
+                    <p class="card-text text-muted card-description">Descrição</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_noticias-s1-index">1</span>
+                    <button class="my-divulgacao_noticias-s1-btnVernoticias"
+                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                        Notícia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal para exclusão -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Excluir Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="number" id="deleteIndex" class="form-control" placeholder="Índice do Card para excluir">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteCard()">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal para edição -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Editar Notícia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="editForm">
+                    <!-- Índice -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
+                        <input type="number" class="form-control form-control-sm" id="editIndex"
+                            placeholder="Índice Card">
+                    </div>
+
+                    <!-- URL da Imagem -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-image"></i></span>
+                        <input type="text" class="form-control form-control-sm" id="editImage"
+                            placeholder="URL da Imagem">
+                    </div>
+
+                    <!-- Título -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                        <input type="text" class="form-control form-control-sm" id="editTitle" placeholder="Título">
+                    </div>
+
+                    <!-- Data e Horário -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                <input type="date" class="form-control form-control-sm" id="editDate"
+                                    placeholder="Data">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                <input type="time" class="form-control form-control-sm" id="editTime"
+                                    placeholder="Horário">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                        <textarea class="form-control form-control-sm" id="editDescription"
+                            placeholder="Descrição"></textarea>
+                    </div>
+
+                    <!-- URL -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-link"></i></span>
+                        <input type="text" class="form-control form-control-sm" id="editUrl"
+                            placeholder="URL da página">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="my-divulgacao_noticias-s1-btnSalvarAlterações" id="saveChangesBtn">Salvar
+                    alterações</button>
+            </div>
+        </div>
+    </div>
+</div>
+

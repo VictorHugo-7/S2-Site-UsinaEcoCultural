@@ -10,24 +10,22 @@ function addCard() {
 
     // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
-            <div class="card" style="height: 100%;">
-                <img src="https://cdn.pixabay.com/photo/2024/06/01/14/00/ai-8802304_1280.jpg"
-                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento">
-                <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
-                            class="card-time">Horário</span></h6>
-                    <h6 class="card-subtitle mb-2 text-muted card-location">Local</h6>
-                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between align-items-center">
-                    <span class="my-divulgacao_eventos-s1-index">${cardCount}</span> <!-- Índice atualizado -->
-                    <button class="my-divulgacao_eventos-s1-btnVerEventos"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
-                        Evento</button>
-                </div>
+        <div class="card" style="height: 100%;">
+            <img src="https://cdn.pixabay.com/photo/2024/06/01/14/00/ai-8802304_1280.jpg"
+                class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
+            <div class="card-body">
+                <h5 class="card-title">Título</h5>
+                <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
+                        class="card-time">Horário</span></h6>
+                <p class="card-text text-muted card-description">Descrição</p>
             </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+                <span class="my-divulgacao_noticias-s1-index">1</span>
+                <button class="my-divulgacao_noticias-s1-btnVernoticias"
+                    onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                    Notícia</button>
+            </div>
+        </div>
         `;
     cardContainer.appendChild(newCard);
     cardCount++; // Incrementa o contador de cards
@@ -40,7 +38,7 @@ function addCard() {
 function updateCardIndices() {
     const cards = document.querySelectorAll('.card-wrapper'); // Seleciona todos os cards
     cards.forEach((card, index) => {
-        card.querySelector('.my-divulgacao_eventos-s1-index').textContent = index + 1;
+        card.querySelector('.my-divulgacao_noticias-s1-index').textContent = index + 1;
     });
 }
 
@@ -100,14 +98,20 @@ function sortCardsByDate() {
     const cardsContainer = document.getElementById('cards-container');
     const cards = Array.from(cardsContainer.getElementsByClassName('card-wrapper'));
 
-    // Ordena os cards com base na data (formato dd/mm/yyyy)
     cards.sort((a, b) => {
-        const dateA = new Date(a.querySelector('.card-date').textContent.split('/').reverse().join('-'));
-        const dateB = new Date(b.querySelector('.card-date').textContent.split('/').reverse().join('-'));
+        const dateAElement = a.querySelector('.card-date');
+        const dateBElement = b.querySelector('.card-date');
+        
+        // Verifica se os elementos de data estão presentes
+        if (!dateAElement || !dateBElement) return 0;
+        
+        const dateA = new Date(dateAElement.textContent.split('/').reverse().join('-'));
+        const dateB = new Date(dateBElement.textContent.split('/').reverse().join('-'));
+
         return dateA - dateB;
     });
 
-    // Remove todos os cards e os adiciona na nova ordem
+    // Limpa e reinsere os cards ordenados no container
     cardsContainer.innerHTML = '';
     cards.forEach(card => cardsContainer.appendChild(card));
 
@@ -117,29 +121,27 @@ function sortCardsByDate() {
 
 
 
-// Carrega o conteúdo HTML e inicializa o código ao carregar a página
-fetch('../../../html/pages/divulgacao_eventos/section1.html')
+
+fetch('../../../html/pages/divulgacao_noticias/section1.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('my-divulgacao_eventos-s1-importacao').innerHTML = data;
+        document.getElementById('my-divulgacao_noticias-s1-importacao').innerHTML = data;
 
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
             const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
             const cards = document.querySelectorAll('.card');
-    
+
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
-    
+
                 // Atualiza a imagem, título, local, preço e descrição do card
                 const imageUrl = document.getElementById('editImage').value;
                 if (imageUrl) {
                     selectedCard.querySelector('.card-image').src = imageUrl;
                 }
                 selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-                selectedCard.querySelector('.card-location').innerText = document.getElementById('editLocation').value;
-                selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
                 selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
-    
+
                 // Formata e exibe a data e hora
                 const dateInput = document.getElementById('editDate').value;
                 const timeInput = document.getElementById('editTime').value;
@@ -148,12 +150,12 @@ fetch('../../../html/pages/divulgacao_eventos/section1.html')
                     selectedCard.querySelector('.card-date').innerText = formattedDate;
                     selectedCard.querySelector('.card-time').innerText = timeInput;
                 }
-    
-                // Atualiza o link do botão "Ver Evento"
-                selectedCard.querySelector('.my-divulgacao_eventos-s1-btnVerEventos').setAttribute(
+
+                // Atualiza o link do botão "Ver noticia"
+                selectedCard.querySelector('.my-divulgacao_noticias-s1-btnVernoticias').setAttribute(
                     'onclick', `window.open('${document.getElementById('editUrl').value}', '_blank')`
                 );
-    
+
                 // Fecha o modal
                 const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
                 editModal.hide();
@@ -163,4 +165,3 @@ fetch('../../../html/pages/divulgacao_eventos/section1.html')
         });
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
-
