@@ -10,6 +10,7 @@ function checkLogin() {
         showAdmIcone();                    // Mostra o ícone de adm
         showEditButtonEventosProximos();   // Mostra o botão de editar
         showEditButtonNoticiasAtuais();    // Mostra o botão de editar
+        showAcoesEventos();                // Mostra os botões de ação
         alert('Login como admin bem-sucedido!');
     } else {
         localStorage.setItem('isAdmin', 'false');
@@ -18,9 +19,11 @@ function checkLogin() {
         hideAdmIcone();                      // Esconde o ícone de adm
         hideEditButtonEventosProximos();     // Esconde o botão de editar
         hideEditButtonNoticiasAtuais();      // Esconde o botão de editar
+        hideAcoesEventos();                  // Esconde os botões de ação
         alert('Erro: credenciais inválidas! Tente novamente.');
     }
 }
+
 
 
 /* Mostrar Coisas ADM */
@@ -42,6 +45,13 @@ function showEditButtonNoticiasAtuais() {
         editButtonNoticiasAtuais.style.display = 'block'; // Mostra o botão de editar
     }
 }
+function showAcoesEventos() {
+    const buttons = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
+    buttons.forEach(button => {
+        button.style.display = 'inline-block'; // Exibe todos os botões de ação
+    });
+}
+
 
 
 /* Ocultar Coisas ADM */
@@ -63,6 +73,13 @@ function hideEditButtonNoticiasAtuais() {
         editButtonNoticiasAtuais.style.display = 'none'; // Esconde o botão de editar
     }
 }
+function hideAcoesEventos() {
+    const buttons = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
+    buttons.forEach(button => {
+        button.style.display = 'none'; // Esconde todos os botões de ação
+    });
+}
+
 
 
 // Verificar se o usuário já está logado como admin ao carregar a página
@@ -72,14 +89,17 @@ document.addEventListener('DOMContentLoaded', function () {
         showAdmIcone();                  // Mostra o icone de adm se for adm
         showEditButtonEventosProximos(); // Mostra o botão de editar se for adm
         showEditButtonNoticiasAtuais();  // Mostra o botão de editar se for adm
-
+        showAcoesEventos();              // Mostra os botões de ação se for adm
     } else {
-        hideAdmIcone();                  // Esconde o icone de adm se for adm
+        hideAdmIcone();                  // Esconde o icone de adm se não for adm
         hideEditButtonEventosProximos(); // Esconde o botão de editar se não for adm
-        hideEditButtonNoticiasAtuais();  // Mostra o botão de editar se for adm
-
+        hideEditButtonNoticiasAtuais();  // Esconde o botão de editar se não for adm
+        hideAcoesEventos();              // Esconde os botões de ação se não for adm
     }
 });
+
+
+/* ----------------------------------------------------------------------------------------------- */
 
 
 fetch('../../components/login.html')
