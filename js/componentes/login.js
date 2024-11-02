@@ -14,6 +14,7 @@ function checkLogin() {
         showAcoesNoticias();               // Mostra os botões de ação para notícias
         showAcoesTrabalhos();              // Mostra os botões de ação para trabalhos
         showAcoesGaleriaFotos();           // Mostra os botões de ação para galeria de fotos
+        showAcoesGaleriaVideos();          // Mostra os botões de ação para galeria de vídeos
         alert('Login como admin bem-sucedido!');
     } else {
         localStorage.setItem('isAdmin', 'false');
@@ -26,6 +27,7 @@ function checkLogin() {
         hideAcoesNoticias();                 // Esconde os botões de ação para notícias
         hideAcoesTrabalhos();                // Esconde os botões de ação para trabalhos
         hideAcoesGaleriaFotos();             // Esconde os botões de ação para galeria de fotos
+        hideAcoesGaleriaVideos();            // Esconde os botões de ação para galeria de vídeos
         alert('Erro: credenciais inválidas! Tente novamente.');
     }
 }
@@ -78,7 +80,15 @@ function showAcoesTrabalhos() {
 function showAcoesGaleriaFotos() {
     const buttonsGaleriaFotos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
     buttonsGaleriaFotos.forEach(button => {
-        button.style.display = 'inline-block'; // Exibe todos os botões de ação para galeria de fotos
+        button.style.display = 'inline-block';
+    });
+}
+
+// Função para exibir os botões da galeria de vídeos
+function showAcoesGaleriaVideos() {
+    const buttonsGaleriaVideos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
+    buttonsGaleriaVideos.forEach(button => {
+        button.style.display = 'inline-block';
     });
 }
 
@@ -130,7 +140,15 @@ function hideAcoesTrabalhos() {
 function hideAcoesGaleriaFotos() {
     const buttonsGaleriaFotos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
     buttonsGaleriaFotos.forEach(button => {
-        button.style.display = 'none'; // Esconde todos os botões de ação para galeria de fotos
+        button.style.display = 'none';
+    });
+}
+
+// Função para esconder os botões da galeria de vídeos
+function hideAcoesGaleriaVideos() {
+    const buttonsGaleriaVideos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
+    buttonsGaleriaVideos.forEach(button => {
+        button.style.display = 'none';
     });
 }
 
@@ -146,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
         showAcoesNoticias();
         showAcoesTrabalhos();
         showAcoesGaleriaFotos();  // Mostra os botões da galeria de fotos se for adm
+        showAcoesGaleriaVideos(); // Mostra os botões da galeria de vídeos se for adm
     } else {
         hideAdmIcone();
         hideEditButtonEventosProximos();
@@ -154,8 +173,10 @@ document.addEventListener('DOMContentLoaded', function () {
         hideAcoesNoticias();
         hideAcoesTrabalhos();
         hideAcoesGaleriaFotos();  // Esconde os botões da galeria de fotos se não for adm
+        hideAcoesGaleriaVideos(); // Esconde os botões da galeria de vídeos se não for adm
     }
 });
+
 
 
 
