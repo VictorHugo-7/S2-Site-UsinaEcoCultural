@@ -12,6 +12,7 @@ function checkLogin() {
         showEditButtonNoticiasAtuais();    // Mostra o botão de editar
         showAcoesEventos();                // Mostra os botões de ação
         showAcoesNoticias();               // Mostra os botões de ação para notícias
+        showAcoesTrabalhos();              // Mostra os botões de ação para trabalhos
         alert('Login como admin bem-sucedido!');
     } else {
         localStorage.setItem('isAdmin', 'false');
@@ -22,6 +23,7 @@ function checkLogin() {
         hideEditButtonNoticiasAtuais();      // Esconde o botão de editar
         hideAcoesEventos();                  // Esconde os botões de ação
         hideAcoesNoticias();                 // Esconde os botões de ação para notícias
+        hideAcoesTrabalhos();                // Esconde os botões de ação para trabalhos
         alert('Erro: credenciais inválidas! Tente novamente.');
     }
 }
@@ -34,28 +36,39 @@ function showAdmIcone() {
         admIcone.style.display = 'inline-block'; // Exibe o botão de admin
     }
 }
+
 function showEditButtonEventosProximos() {
     const editButtonEventosProximos = document.getElementById('editButtonEventosProximos');
     if (editButtonEventosProximos) {
         editButtonEventosProximos.style.display = 'block'; // Mostra o botão de editar
     }
 }
+
 function showEditButtonNoticiasAtuais() {
     const editButtonNoticiasAtuais = document.getElementById('editButtonNoticiasAtuais');
     if (editButtonNoticiasAtuais) {
         editButtonNoticiasAtuais.style.display = 'block'; // Mostra o botão de editar
     }
 }
+
 function showAcoesEventos() {
     const buttons = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttons.forEach(button => {
         button.style.display = 'inline-block'; // Exibe todos os botões de ação
     });
 }
+
 function showAcoesNoticias() {
-    const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info'); // Selecione todos os botões de ação
+    const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttonsNoticias.forEach(button => {
         button.style.display = 'inline-block'; // Exibe todos os botões de ação
+    });
+}
+
+function showAcoesTrabalhos() {
+    const buttonsTrabalhos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger'); // Botões para trabalhos
+    buttonsTrabalhos.forEach(button => {
+        button.style.display = 'inline-block'; // Exibe todos os botões de ação para trabalhos
     });
 }
 
@@ -67,28 +80,39 @@ function hideAdmIcone() {
         admIcone.style.display = 'none'; // Esconde o botão de admin
     }
 }
+
 function hideEditButtonEventosProximos() {
     const editButtonEventosProximos = document.getElementById('editButtonEventosProximos');
     if (editButtonEventosProximos) {
         editButtonEventosProximos.style.display = 'none'; // Esconde o botão de editar
     }
 }
+
 function hideEditButtonNoticiasAtuais() {
     const editButtonNoticiasAtuais = document.getElementById('editButtonNoticiasAtuais');
     if (editButtonNoticiasAtuais) {
         editButtonNoticiasAtuais.style.display = 'none'; // Esconde o botão de editar
     }
 }
+
 function hideAcoesEventos() {
     const buttons = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttons.forEach(button => {
         button.style.display = 'none'; // Esconde todos os botões de ação
     });
 }
+
 function hideAcoesNoticias() {
-    const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info'); // Selecione todos os botões de ação
+    const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttonsNoticias.forEach(button => {
         button.style.display = 'none'; // Esconde todos os botões de ação
+    });
+}
+
+function hideAcoesTrabalhos() {
+    const buttonsTrabalhos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger'); // Botões para trabalhos
+    buttonsTrabalhos.forEach(button => {
+        button.style.display = 'none'; // Esconde todos os botões de ação para trabalhos
     });
 }
 
@@ -102,14 +126,17 @@ document.addEventListener('DOMContentLoaded', function () {
         showEditButtonNoticiasAtuais();  // Mostra o botão de editar se for adm
         showAcoesEventos();              // Mostra os botões de ação se for adm
         showAcoesNoticias();             // Mostra os botões de ação para notícias se for adm
+        showAcoesTrabalhos();            // Mostra os botões de ação para trabalhos se for adm
     } else {
         hideAdmIcone();                  // Esconde o ícone de adm se não for adm
         hideEditButtonEventosProximos(); // Esconde o botão de editar se não for adm
         hideEditButtonNoticiasAtuais();  // Esconde o botão de editar se não for adm
         hideAcoesEventos();              // Esconde os botões de ação se não for adm
         hideAcoesNoticias();             // Esconde os botões de ação para notícias se não for adm
+        hideAcoesTrabalhos();            // Esconde os botões de ação para trabalhos se não for adm
     }
 });
+
 
 
 /* ----------------------------------------------------------------------------------------------- */
