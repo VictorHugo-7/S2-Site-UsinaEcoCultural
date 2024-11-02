@@ -1,46 +1,75 @@
-// Variáveis globais
-let cardCount = 1;
+let cardCount = 1; // Variável para contar o número total de cards
 
-// Função para adicionar um novo card
+
+
+// CARD - adicionar
 function addCard() {
-    cardCount++;
     const cardContainer = document.getElementById('cards-container');
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
+
+    // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
-        <div class="card" style="height: 100%;">
-            <img src="../../../media/img/global/imagem.svg" class="card-image" alt="Imagem do evento">
-            <div class="card-body">
-                <h5 class="card-title">Título</h5>
-                <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span class="card-time">Horário</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted card-location">Local</h6>
-                <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
-                <p class="card-text text-muted card-description">Descrição</p>
+            <div class="card" style="height: 100%;">
+                <img src="https://cdn.pixabay.com/photo/2024/06/01/14/00/ai-8802304_1280.jpg"
+                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento">
+                <div class="card-body">
+                    <h5 class="card-title">Título</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
+                            class="card-time">Horário</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-location">Local</h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
+                    <p class="card-text text-muted card-description">Descrição</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_eventos-s1-index">${cardCount}</span> <!-- Índice atualizado -->
+                    <button class="my-divulgacao_eventos-s1-btnVerEventos"
+                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                        Evento</button>
+                </div>
             </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
-                <span class="index-badge">${cardCount}</span>
-                <button class="my-divulgacaoEventos-s3-btnVerEvento">Ver Evento</button>
-            </div>
-        </div>
-    `;
+        `;
     cardContainer.appendChild(newCard);
+    cardCount++; // Incrementa o contador de cards
+    updateCardIndices(); // Atualiza todos os índices após a adição
 }
 
-// Função para abrir o modal de exclusão
+
+
+// CARD - atualizar índices
+function updateCardIndices() {
+    const cards = document.querySelectorAll('.card-wrapper'); // Seleciona todos os cards
+    cards.forEach((card, index) => {
+        card.querySelector('.my-divulgacao_eventos-s1-index').textContent = index + 1;
+    });
+}
+
+
+
+// M0DAL - Excluir
 function openDeleteModal() {
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     deleteModal.show();
 }
 
-// Função para excluir um card específico pelo índice
+
+
+// CARD - Excluir
 function deleteCard() {
-    const indexToDelete = document.getElementById('deleteIndex').value - 1;
+    const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1; // Converte o índice 1-based para 0-based
     const cards = document.querySelectorAll('.card-wrapper');
 
     if (indexToDelete >= 0 && indexToDelete < cards.length) {
+        // Remove o card selecionado
         cards[indexToDelete].remove();
-        updateCardIndices();
+
+        // Decrementa o contador de cards para manter a contagem correta
         cardCount--;
+
+        // Atualiza os índices visíveis dos cards
+        updateCardIndices();
+
+        // Fecha o modal de exclusão
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
         deleteModal.hide();
     } else {
@@ -48,75 +77,43 @@ function deleteCard() {
     }
 }
 
-// Atualiza os índices visíveis nos cards após uma exclusão
-function updateCardIndices() {
-    const cards = document.querySelectorAll('.index-badge');
-    cards.forEach((badge, index) => {
-        badge.textContent = index + 1;
-    });
-}
 
-// Função para abrir o modal de edição
+
+// MODAL - Edição
 function openEditModal() {
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
 }
 
-// Salva as alterações feitas no modal de edição
-function saveChanges() {
-    const index = document.getElementById('editIndex').value - 1;
-    const cards = document.querySelectorAll('.card');
 
-    if (index >= 0 && index < cards.length) {
-        const selectedCard = cards[index];
 
-        // Obtém a URL da imagem
-        const imageUrl = document.getElementById('editImageUrl').value;
-        if (imageUrl) {
-            selectedCard.querySelector('.card-image').src = imageUrl;
-        }
-
-        selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-        selectedCard.querySelector('.card-date').innerText = document.getElementById('editDate').value;
-        selectedCard.querySelector('.card-time').innerText = document.getElementById('editTime').value;
-        selectedCard.querySelector('.card-location').innerText = document.getElementById('editLocation').value;
-        selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
-        selectedCard.querySelector('.card-text').innerText = document.getElementById('editDescription').value;
-
-        selectedCard.querySelector('.btn-primary').setAttribute('onclick', `window.open('${document.getElementById('editUrl').value}', '_blank')`);
-
-        const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-        editModal.hide();
-    } else {
-        alert('Índice inválido. Por favor, escolha um índice de card válido.');
-    }
+// Formatar a data para "dd/mm/yyyy"
+function formatDate(dateStr) {
+    const [year, month, day] = dateStr.split('-');
+    return `${day}/${month}/${year}`;
 }
 
 
-// Função para organizar os cards por dia e horário
-function sortCards() {
+// CARD - Ordenar por data
+function sortCardsByDate() {
     const cardsContainer = document.getElementById('cards-container');
-    const cardsArray = Array.from(cardsContainer.children);
+    const cards = Array.from(cardsContainer.getElementsByClassName('card-wrapper'));
 
-    cardsArray.sort((a, b) => {
-        const dateA = parseDateTime(a.querySelector('.card-date').innerText, a.querySelector('.card-time').innerText);
-        const dateB = parseDateTime(b.querySelector('.card-date').innerText, b.querySelector('.card-time').innerText);
+    // Ordena os cards com base na data (formato dd/mm/yyyy)
+    cards.sort((a, b) => {
+        const dateA = new Date(a.querySelector('.card-date').textContent.split('/').reverse().join('-'));
+        const dateB = new Date(b.querySelector('.card-date').textContent.split('/').reverse().join('-'));
         return dateA - dateB;
     });
 
+    // Remove todos os cards e os adiciona na nova ordem
     cardsContainer.innerHTML = '';
-    cardsArray.forEach((card, index) => {
-        card.querySelector('.index-badge').textContent = index + 1;
-        cardsContainer.appendChild(card);
-    });
+    cards.forEach(card => cardsContainer.appendChild(card));
+
+    // Atualiza os índices dos cards após a ordenação
+    updateCardIndices();
 }
 
-// Função para converter DD/MM/AAAA e HH:MM em objeto Date
-function parseDateTime(dateStr, timeStr) {
-    const [day, month, year] = dateStr.split('/').map(Number);
-    const [hours, minutes] = timeStr.split(':').map(Number);
-    return new Date(year, month - 1, day, hours, minutes);
-}
 
 
 // Carrega o conteúdo HTML e inicializa o código ao carregar a página
@@ -125,6 +122,44 @@ fetch('../../../html/pages/divulgacao_eventos/section1.html')
     .then(data => {
         document.getElementById('my-divulgacao_eventos-s1-importacao').innerHTML = data;
 
-        document.getElementById('saveChangesBtn').addEventListener('click', saveChanges);
+        document.getElementById('saveChangesBtn').addEventListener('click', function () {
+            const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
+            const cards = document.querySelectorAll('.card');
+    
+            if (index >= 0 && index < cards.length) {
+                const selectedCard = cards[index];
+    
+                // Atualiza a imagem, título, local, preço e descrição do card
+                const imageUrl = document.getElementById('editImage').value;
+                if (imageUrl) {
+                    selectedCard.querySelector('.card-image').src = imageUrl;
+                }
+                selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
+                selectedCard.querySelector('.card-location').innerText = document.getElementById('editLocation').value;
+                selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
+                selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
+    
+                // Formata e exibe a data e hora
+                const dateInput = document.getElementById('editDate').value;
+                const timeInput = document.getElementById('editTime').value;
+                if (dateInput && timeInput) {
+                    const formattedDate = formatDate(dateInput); // Formatação da data
+                    selectedCard.querySelector('.card-date').innerText = formattedDate;
+                    selectedCard.querySelector('.card-time').innerText = timeInput;
+                }
+    
+                // Atualiza o link do botão "Ver Evento"
+                selectedCard.querySelector('.my-divulgacao_eventos-s1-btnVerEventos').setAttribute(
+                    'onclick', `window.open('${document.getElementById('editUrl').value}', '_blank')`
+                );
+    
+                // Fecha o modal
+                const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                editModal.hide();
+            } else {
+                alert('Índice inválido. Por favor, escolha um índice de card válido.');
+            }
+        });
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
+

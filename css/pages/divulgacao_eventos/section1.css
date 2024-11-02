@@ -1,23 +1,24 @@
 /* 
 Padronização
-Usar o prefixo: (my-divulgacaoEventos-s1-). 
-Colocar primeiro o prefixo (my-divulgacaoEventos-s1-), depois as classes do bootstrap 
+Usar o prefixo: (my-divulgacao_eventos-s1-). 
+Colocar primeiro o prefixo (my-divulgacao_eventos-s1-), depois as classes do bootstrap 
 Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
 */
 
 
 
-/* Divulgação Eventos */
-.my-divulgacaoEventos-s1 {
+/* Divulgação - Eventos */
+.my-divulgacao_eventos-s1-eventos {
     display: inline-block;
     position: relative;
 }
-.my-divulgacaoEventos-s1::after {
+
+.my-divulgacao_eventos-s1-eventos::after {
     content: "";
     display: block;
     width: 30px;
     height: 3px;
-    margin: 4px 0px;
+    margin: 2px 0px;
     background-color: var(--cor-verdeDestaque);
     position: absolute;
     left: 0;
@@ -27,7 +28,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Btn Salvar Alterações */
-.my-divulgacaoEventos-s3-btnSalvarAlteracoes{
+.my-divulgacao_eventos-s1-btnSalvarAlterações {
     width: 100%;
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
@@ -35,14 +36,15 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     padding: 5px;
     border-radius: 10px;
 }
-.my-divulgacaoEventos-s3-btnSalvarAlteracoes:hover{
+
+.my-divulgacao_eventos-s1-btnSalvarAlterações:hover {
     opacity: 90%;
 }
 
 
 
 /* Imagem */
-.my-divulgacaoEventos-s3-imagem {
+.my-divulgacao_eventos-s1-imagem {
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -51,7 +53,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Btn Ver Eventos */
-.my-divulgacaoEventos-s3-btnVerEvento{
+.my-divulgacao_eventos-s1-btnVerEventos {
     width: 45%;
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
@@ -59,14 +61,15 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     padding: 5px 10px;
     border-radius: 10px;
 }
-.my-divulgacaoEventos-s3-btnVerEvento:hover{
+
+.my-divulgacao_eventos-s1-btnVerEventos:hover {
     opacity: 90%;
 }
 
 
 
-/* divulgacaoEventos */
-.my-divulgacaoEventos-s3-divulgacaoEventos{
+/* Index */
+.my-divulgacao_eventos-s1-index {
     color: var(--cor-cinza);
     font-weight: 500;
 }
