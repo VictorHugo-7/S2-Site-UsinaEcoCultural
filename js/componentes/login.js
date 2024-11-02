@@ -1,11 +1,18 @@
-// Função para verificar o status de administrador e exibir o ícone
+// Função para verificar o status de administrador e exibir o ícone e os botões restritos
 function checkAdminStatus() {
     const isAdmin = localStorage.getItem('isAdmin');
     const admIcone = document.getElementById('admIcone');
 
+    // Exibe ou oculta o ícone de administrador
     if (admIcone) {
         admIcone.style.display = isAdmin === 'true' ? 'inline-block' : 'none';
     }
+
+    // Exibe ou oculta botões com a classe `admin-only` para administradores
+    const adminButtons = document.querySelectorAll('.admin-only');
+    adminButtons.forEach(button => {
+        button.style.display = isAdmin === 'true' ? 'inline-block' : 'none';
+    });
 }
 
 // Função para o login
@@ -25,13 +32,13 @@ function checkLogin() {
         alert('Erro: credenciais inválidas! Tente novamente.');
     }
 
-    // Atualiza a visibilidade do ícone após o login
+    // Atualiza a visibilidade dos elementos de admin após o login
     checkAdminStatus();
 }
 
 // Verificar o status de admin ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
-    // Tenta exibir ou esconder o ícone de administrador após o DOM estar completamente carregado
+    // Tenta exibir ou esconder o ícone de administrador e os botões restritos após o DOM estar completamente carregado
     checkAdminStatus();
 
     // Observa o carregamento do HTML de login para chamar `checkAdminStatus`
