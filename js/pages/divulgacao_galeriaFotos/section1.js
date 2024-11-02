@@ -11,7 +11,7 @@ function addCard() {
     // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
         <div class="card" style="height: 100%;">
-            <img src="https://cdn.pixabay.com/photo/2024/06/01/14/00/ai-8802304_1280.jpg"
+            <img src="../../../midias/img/global/imagem.svg"
                 class="my-divulgacao_galeriaFotos-s1-imagem card-image" alt="Imagem do trabalho">
             <div class="card-body">
                 <h5 class="card-title">Título</h5>
