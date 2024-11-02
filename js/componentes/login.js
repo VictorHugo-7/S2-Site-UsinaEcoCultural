@@ -13,6 +13,7 @@ function checkLogin() {
         showAcoesEventos();                // Mostra os botões de ação
         showAcoesNoticias();               // Mostra os botões de ação para notícias
         showAcoesTrabalhos();              // Mostra os botões de ação para trabalhos
+        showAcoesGaleriaFotos();           // Mostra os botões de ação para galeria de fotos
         alert('Login como admin bem-sucedido!');
     } else {
         localStorage.setItem('isAdmin', 'false');
@@ -24,6 +25,7 @@ function checkLogin() {
         hideAcoesEventos();                  // Esconde os botões de ação
         hideAcoesNoticias();                 // Esconde os botões de ação para notícias
         hideAcoesTrabalhos();                // Esconde os botões de ação para trabalhos
+        hideAcoesGaleriaFotos();             // Esconde os botões de ação para galeria de fotos
         alert('Erro: credenciais inválidas! Tente novamente.');
     }
 }
@@ -33,42 +35,50 @@ function checkLogin() {
 function showAdmIcone() {
     const admIcone = document.getElementById('admIcone');
     if (admIcone) {
-        admIcone.style.display = 'inline-block'; // Exibe o botão de admin
+        admIcone.style.display = 'inline-block';
     }
 }
 
 function showEditButtonEventosProximos() {
     const editButtonEventosProximos = document.getElementById('editButtonEventosProximos');
     if (editButtonEventosProximos) {
-        editButtonEventosProximos.style.display = 'block'; // Mostra o botão de editar
+        editButtonEventosProximos.style.display = 'block';
     }
 }
 
 function showEditButtonNoticiasAtuais() {
     const editButtonNoticiasAtuais = document.getElementById('editButtonNoticiasAtuais');
     if (editButtonNoticiasAtuais) {
-        editButtonNoticiasAtuais.style.display = 'block'; // Mostra o botão de editar
+        editButtonNoticiasAtuais.style.display = 'block';
     }
 }
 
 function showAcoesEventos() {
     const buttons = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttons.forEach(button => {
-        button.style.display = 'inline-block'; // Exibe todos os botões de ação
+        button.style.display = 'inline-block';
     });
 }
 
 function showAcoesNoticias() {
     const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttonsNoticias.forEach(button => {
-        button.style.display = 'inline-block'; // Exibe todos os botões de ação
+        button.style.display = 'inline-block';
     });
 }
 
 function showAcoesTrabalhos() {
-    const buttonsTrabalhos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger'); // Botões para trabalhos
+    const buttonsTrabalhos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
     buttonsTrabalhos.forEach(button => {
-        button.style.display = 'inline-block'; // Exibe todos os botões de ação para trabalhos
+        button.style.display = 'inline-block';
+    });
+}
+
+// Função para exibir os botões da galeria de fotos
+function showAcoesGaleriaFotos() {
+    const buttonsGaleriaFotos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
+    buttonsGaleriaFotos.forEach(button => {
+        button.style.display = 'inline-block'; // Exibe todos os botões de ação para galeria de fotos
     });
 }
 
@@ -77,42 +87,50 @@ function showAcoesTrabalhos() {
 function hideAdmIcone() {
     const admIcone = document.getElementById('admIcone');
     if (admIcone) {
-        admIcone.style.display = 'none'; // Esconde o botão de admin
+        admIcone.style.display = 'none';
     }
 }
 
 function hideEditButtonEventosProximos() {
     const editButtonEventosProximos = document.getElementById('editButtonEventosProximos');
     if (editButtonEventosProximos) {
-        editButtonEventosProximos.style.display = 'none'; // Esconde o botão de editar
+        editButtonEventosProximos.style.display = 'none';
     }
 }
 
 function hideEditButtonNoticiasAtuais() {
     const editButtonNoticiasAtuais = document.getElementById('editButtonNoticiasAtuais');
     if (editButtonNoticiasAtuais) {
-        editButtonNoticiasAtuais.style.display = 'none'; // Esconde o botão de editar
+        editButtonNoticiasAtuais.style.display = 'none';
     }
 }
 
 function hideAcoesEventos() {
     const buttons = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttons.forEach(button => {
-        button.style.display = 'none'; // Esconde todos os botões de ação
+        button.style.display = 'none';
     });
 }
 
 function hideAcoesNoticias() {
     const buttonsNoticias = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger, .btn-info');
     buttonsNoticias.forEach(button => {
-        button.style.display = 'none'; // Esconde todos os botões de ação
+        button.style.display = 'none';
     });
 }
 
 function hideAcoesTrabalhos() {
-    const buttonsTrabalhos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger'); // Botões para trabalhos
+    const buttonsTrabalhos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
     buttonsTrabalhos.forEach(button => {
-        button.style.display = 'none'; // Esconde todos os botões de ação para trabalhos
+        button.style.display = 'none';
+    });
+}
+
+// Função para esconder os botões da galeria de fotos
+function hideAcoesGaleriaFotos() {
+    const buttonsGaleriaFotos = document.querySelectorAll('.btn-success, .btn-secondary, .btn-danger');
+    buttonsGaleriaFotos.forEach(button => {
+        button.style.display = 'none'; // Esconde todos os botões de ação para galeria de fotos
     });
 }
 
@@ -121,21 +139,24 @@ function hideAcoesTrabalhos() {
 document.addEventListener('DOMContentLoaded', function () {
     const isAdmin = localStorage.getItem('isAdmin');
     if (isAdmin === 'true') {
-        showAdmIcone();                  // Mostra o ícone de adm se for adm
-        showEditButtonEventosProximos(); // Mostra o botão de editar se for adm
-        showEditButtonNoticiasAtuais();  // Mostra o botão de editar se for adm
-        showAcoesEventos();              // Mostra os botões de ação se for adm
-        showAcoesNoticias();             // Mostra os botões de ação para notícias se for adm
-        showAcoesTrabalhos();            // Mostra os botões de ação para trabalhos se for adm
+        showAdmIcone();
+        showEditButtonEventosProximos();
+        showEditButtonNoticiasAtuais();
+        showAcoesEventos();
+        showAcoesNoticias();
+        showAcoesTrabalhos();
+        showAcoesGaleriaFotos();  // Mostra os botões da galeria de fotos se for adm
     } else {
-        hideAdmIcone();                  // Esconde o ícone de adm se não for adm
-        hideEditButtonEventosProximos(); // Esconde o botão de editar se não for adm
-        hideEditButtonNoticiasAtuais();  // Esconde o botão de editar se não for adm
-        hideAcoesEventos();              // Esconde os botões de ação se não for adm
-        hideAcoesNoticias();             // Esconde os botões de ação para notícias se não for adm
-        hideAcoesTrabalhos();            // Esconde os botões de ação para trabalhos se não for adm
+        hideAdmIcone();
+        hideEditButtonEventosProximos();
+        hideEditButtonNoticiasAtuais();
+        hideAcoesEventos();
+        hideAcoesNoticias();
+        hideAcoesTrabalhos();
+        hideAcoesGaleriaFotos();  // Esconde os botões da galeria de fotos se não for adm
     }
 });
+
 
 
 
