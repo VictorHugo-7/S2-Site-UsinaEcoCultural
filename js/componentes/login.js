@@ -2,6 +2,7 @@
 function checkAdminStatus() {
     const isAdmin = localStorage.getItem('isAdmin');
     const admIcone = document.getElementById('admIcone');
+    const logoutButton = document.getElementById('logoutButton');
 
     // Exibe ou oculta o ícone de administrador
     if (admIcone) {
@@ -13,6 +14,11 @@ function checkAdminStatus() {
     adminButtons.forEach(button => {
         button.style.display = isAdmin === 'true' ? 'inline-block' : 'none';
     });
+
+    // Mostra o botão de logout apenas para administradores
+    if (logoutButton) {
+        logoutButton.style.display = isAdmin === 'true' ? 'inline-block' : 'none';
+    }
 }
 
 // Função para o login
@@ -36,9 +42,15 @@ function checkLogin() {
     checkAdminStatus();
 }
 
+// Função para deslogar o administrador
+function logout() {
+    localStorage.setItem('isAdmin', 'false');
+    alert('Você foi deslogado com sucesso!');
+    checkAdminStatus(); // Atualiza a interface para esconder elementos restritos
+}
+
 // Verificar o status de admin ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
-    // Tenta exibir ou esconder o ícone de administrador e os botões restritos após o DOM estar completamente carregado
     checkAdminStatus();
 
     // Observa o carregamento do HTML de login para chamar `checkAdminStatus`
@@ -65,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const loginButton = document.querySelector('.my-login-btnEntrar');
             if (loginButton) {
                 loginButton.addEventListener('click', checkLogin);
+            }
+
+            // Adiciona evento ao botão de logout
+            const logoutButton = document.getElementById('logoutButton');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', logout);
             }
 
             // Verifica o status de admin após carregar o HTML do login
