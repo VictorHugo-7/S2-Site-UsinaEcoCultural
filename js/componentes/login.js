@@ -1,4 +1,3 @@
-
 /* Checar se é adm  */
 function checkLogin() {
     const email = document.getElementById('loginEmail').value;
@@ -19,7 +18,7 @@ function checkLogin() {
         hideAdmIcone();                      // Esconde o ícone de adm
         hideEditButtonEventosProximos();     // Esconde o botão de editar
         hideEditButtonNoticiasAtuais();      // Esconde o botão de editar
-        alert('Login como usuário bem-sucedido!');
+        alert('Erro: credenciais inválidas! Tente novamente.');
     }
 }
 
