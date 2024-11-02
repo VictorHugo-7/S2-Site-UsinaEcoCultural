@@ -89,19 +89,30 @@
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" id="termsCheckboxLoja">
                         <label class="form-check-label" for="termsCheckboxLoja"> Eu li e aceito os
-                            <a href="../../../html/pages/termosDeUso/termosDeUso.html" target="_blank">Termos de Uso</a> e a
-                            <a href="../../../html/pages/politicaDePrivacidade/politicaDePrivacidade.html" target="_blank">Política de Privacidade</a>
+                            <a href="../../../html/pages/termosDeUso/termosDeUso.html" target="_blank">Termos de Uso</a>
+                            e a
+                            <a href="../../../html/pages/politicaDePrivacidade/politicaDePrivacidade.html"
+                                target="_blank">Política de Privacidade</a>
                         </label>
                     </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="my-loja-s1-btnEnviarComprovante">Enviar Comprovante</button>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="Nova compra feita!">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" form="pixForm" class="my-loja-s1-btnEnviarComprovante" disabled>Enviar
-                    Comprovante</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Overlay de carregamento -->
+<div class="my-contato-s1-loading-overlay" id="my-contato-s1-loadingOverlay">
+    <div class="my-contato-s1-spinner"></div>
+</div>
+
 
 
 <!-- Modal para exclusão -->

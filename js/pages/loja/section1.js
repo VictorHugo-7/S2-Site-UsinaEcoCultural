@@ -129,5 +129,8 @@ fetch('../../../html/pages/loja/section1.html')
                 enviarComprovanteButton.classList.remove('enabled'); // Remove a classe enabled
             }
         });
+
+
+        
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
