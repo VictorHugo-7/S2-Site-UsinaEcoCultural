@@ -2,13 +2,15 @@ let cardCount = 1; // Variável para contar o número total de cards
 
 
 
-// Função para abrir o modal do PIX
+// MODAL - Pix
 function openPixModal() {
     const pixModal = new bootstrap.Modal(document.getElementById('pixModal'));
     pixModal.show();
 }
 
-// Função para adicionar um novo card
+
+
+// CARD - adicionar
 function addCard() {
     const cardContainer = document.getElementById('cards-container');
     const newCard = document.createElement('div');
@@ -36,7 +38,8 @@ function addCard() {
 }
 
 
-// Função para atualizar os índices visíveis nos cards
+
+// CARD - atualizar índices
 function updateCardIndices() {
     const cards = document.querySelectorAll('.card-wrapper'); // Seleciona todos os cards
     cards.forEach((card, index) => {
@@ -45,14 +48,16 @@ function updateCardIndices() {
 }
 
 
-// Função para abrir o modal de exclusão
+
+// M0DAL - Excluir
 function openDeleteModal() {
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     deleteModal.show();
 }
 
 
-// Função para excluir um card específico pelo índice
+
+// CARD - Excluir
 function deleteCard() {
     const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1; // Converte o índice 1-based para 0-based
     const cards = document.querySelectorAll('.card-wrapper');
@@ -76,7 +81,8 @@ function deleteCard() {
 }
 
 
-// Função para abrir o modal de edição
+
+// MODAL - Edição
 function openEditModal() {
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
@@ -84,27 +90,28 @@ function openEditModal() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Carregar a seção da loja
-    fetch('../../../html/pages/loja/section1.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('my-loja-s1-importacao').innerHTML = data;
 
-            // Adicionar o manipulador de envio do formulário para o formulário pixForm
-            document.getElementById('pixForm').addEventListener('submit', function(event) {
-                event.preventDefault(); // Impede o comportamento padrão do formulário
 
-                // Mostrar o overlay de carregamento
-                const loadingOverlay = document.getElementById('my-loja-s1-loadingOverlay');
-                loadingOverlay.classList.add('active');
+fetch('../../../html/pages/loja/section1.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('my-loja-s1-importacao').innerHTML = data;
 
-                const formData = new FormData(this);
 
-                fetch('https://formsubmit.co/cururu995@gmail.com', {
-                    method: 'POST',
-                    body: formData,
-                })
+        // Adicionar o manipulador de envio do formulário para o formulário pixForm
+        document.getElementById('pixForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o comportamento padrão do formulário
+
+            // Mostrar o overlay de carregamento
+            const loadingOverlay = document.getElementById('my-loja-s1-loadingOverlay');
+            loadingOverlay.classList.add('active');
+
+            const formData = new FormData(this);
+
+            fetch('https://formsubmit.co/cururu995@gmail.com', {
+                method: 'POST',
+                body: formData,
+            })
                 .then(response => {
                     // Ocultar o overlay de carregamento ao receber a resposta
                     loadingOverlay.classList.remove('active');
@@ -112,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (response.ok) {
                         alert('Comprovante enviado com sucesso!');
                         this.reset(); // Limpa o formulário
-                        
+
                         // Fecha o modal após envio bem-sucedido
                         const pixModal = bootstrap.Modal.getInstance(document.getElementById('pixModal'));
                         pixModal.hide();
@@ -128,45 +135,49 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Sempre ocultar o overlay ao final do processamento
                     loadingOverlay.classList.remove('active');
                 });
-            });
+        });
 
-            document.getElementById('saveChangesBtn').addEventListener('click', function () {
-                const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
-                const cards = document.querySelectorAll('.card');
-    
-                if (index >= 0 && index < cards.length) {
-                    const selectedCard = cards[index];
-    
-                    // Atualiza a imagem, título, preço e descrição do card
-                    const imageUrl = document.getElementById('editImage').value;
-                    if (imageUrl) {
-                        selectedCard.querySelector('.card-image').src = imageUrl;
-                    }
-                    selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-                    selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
-                    selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
-    
-                    // Fecha o modal
-                    const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-                    editModal.hide();
-                } else {
-                    alert('Índice inválido. Por favor, escolha um índice de card válido.');
+
+        document.getElementById('saveChangesBtn').addEventListener('click', function () {
+            const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
+            const cards = document.querySelectorAll('.card');
+
+            if (index >= 0 && index < cards.length) {
+                const selectedCard = cards[index];
+
+                // Atualiza a imagem, título, preço e descrição do card
+                const imageUrl = document.getElementById('editImage').value;
+                if (imageUrl) {
+                    selectedCard.querySelector('.card-image').src = imageUrl;
                 }
-            });
-            
-            // Controle do botão de envio conforme aceite dos Termos e Política
-            const termsCheckboxLoja = document.querySelector('#termsCheckboxLoja');
-            const enviarComprovanteButton = document.querySelector('.my-loja-s1-btnEnviarComprovante');
-            
-            // Inicializa o botão como desabilitado
-            enviarComprovanteButton.disabled = true;
+                selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
+                selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
+                selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
 
-            termsCheckboxLoja.addEventListener('change', function () {
-                enviarComprovanteButton.disabled = !this.checked;
-                enviarComprovanteButton.classList.toggle('enabled', this.checked);
-                enviarComprovanteButton.classList.toggle('disabled', !this.checked);
-            });
+                // Fecha o modal
+                const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                editModal.hide();
+            } else {
+                alert('Índice inválido. Por favor, escolha um índice de card válido.');
+            }
+        });
 
-        })
-        .catch(error => console.error('Erro ao carregar a página:', error));
-});
+
+        // Controle do botão de envio conforme aceite dos Termos e Política
+        const termsCheckboxLoja = document.querySelector('#termsCheckboxLoja');
+        const enviarComprovanteButton = document.querySelector('.my-loja-s1-btnEnviarComprovante');
+
+        // Inicializa o botão como desabilitado
+        enviarComprovanteButton.disabled = true;
+
+        termsCheckboxLoja.addEventListener('change', function () {
+            enviarComprovanteButton.disabled = !this.checked;
+            enviarComprovanteButton.classList.toggle('enabled', this.checked);
+            enviarComprovanteButton.classList.toggle('disabled', !this.checked);
+        });
+
+
+
+
+    })
+    .catch(error => console.error('Erro ao carregar a página:', error));
