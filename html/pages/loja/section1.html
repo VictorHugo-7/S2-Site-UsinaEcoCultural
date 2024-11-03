@@ -5,11 +5,9 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" onclick="addCard()"> Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" onclick="openDeleteModal()">Excluir Card</button>
-
-
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
     </div>
 
 
@@ -17,8 +15,8 @@
     <div class="row mt-3" id="cards-container">
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
-                    class="my-loja-s1-imagem card-image" alt="Imagem da loja">
+                <img src="../../../midias/img/global/imagem.svg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
                 <div class="card-body">
                     <h5 class="card-title">Título</h5>
                     <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
@@ -77,6 +75,13 @@
                         <input type="text" class="form-control form-control-sm" id="localizacao" name="localizacao"
                             placeholder="Localização" required>
                     </div>
+                    
+                    <!-- Descrição -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                        <textarea class="form-control form-control-sm" id="descricao" name="descricao"
+                            placeholder="Descrição" rows="3" required></textarea>
+                    </div>
 
                     <!-- Anexar Comprovante -->
                     <div class="input-group mb-3">
@@ -109,8 +114,8 @@
 </div>
 
 <!-- Overlay de carregamento -->
-<div class="my-contato-s1-loading-overlay" id="my-contato-s1-loadingOverlay">
-    <div class="my-contato-s1-spinner"></div>
+<div class="my-loja-s1-loading-overlay" id="my-loja-s1-loadingOverlay">
+    <div class="my-loja-s1-spinner"></div>
 </div>
 
 
