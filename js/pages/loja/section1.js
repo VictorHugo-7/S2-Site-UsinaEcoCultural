@@ -1,5 +1,7 @@
 let cardCount = 1; // Variável para contar o número total de cards
 
+
+
 // Função para abrir o modal do PIX
 function openPixModal() {
     const pixModal = new bootstrap.Modal(document.getElementById('pixModal'));
