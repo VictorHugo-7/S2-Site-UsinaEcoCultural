@@ -21,6 +21,7 @@ fetch('../../../html/pages/index/section3.html')
                 const selectedCard = cards[index];
 
                 const eventoData = {
+                    imageUrl: document.getElementById('editImageUrlEventosProximos').value,
                     titulo: document.getElementById('editTitleEventosProximos').value,
                     data: new Date(document.getElementById('editDateEventosProximos').value), // Certifique-se de que está no formato correto
                     horario: document.getElementById('editTimeEventosProximos').value,
@@ -47,6 +48,7 @@ fetch('../../../html/pages/index/section3.html')
                         console.log('Evento salvo com sucesso:', resultado);
 
                         // Atualiza a interface com os novos dados, como antes
+                        selectedCard.querySelector('.my-index-s3-imagem').innerText = eventoData.imageUrl;
                         selectedCard.querySelector('.card-title').innerText = eventoData.titulo;
                         selectedCard.querySelector('.card-date').innerText = eventoData.data.toLocaleDateString();
                         selectedCard.querySelector('.card-time').innerText = eventoData.horario;
@@ -97,16 +99,28 @@ async function carregarEventos() {
 
 // Função para exibir eventos na interface
 function exibirEventos(eventos) {
-
-    eventos.sort((a, b) => new Date(b.data) - new Date(a.data));
+    // Ordena os eventos pela data, do mais recente ao mais antigo
+    eventos.sort((a, b) => new Date(b.data) - new Date(a.data)); // Ordena com base na data (b - a para ordem decrescente)
 
     const cards = document.querySelectorAll('.my-index-s3-cardAlteracao'); // Seleciona todos os cards
+    // Limpa os dados anteriores, se houver algum card já preenchido
+    cards.forEach(card => {
+        card.querySelector('.my-index-s3-imagem').innerText = '';  // Limpa a imagem
+        card.querySelector('.card-title').innerText = '';
+        card.querySelector('.card-date').innerText = '';
+        card.querySelector('.card-time').innerText = '';
+        card.querySelector('.card-location').innerText = '';
+        card.querySelector('.card-price').innerText = '';
+        card.querySelector('.card-text').innerText = '';
+
+    });
+
     eventos.forEach((evento, index) => {
         if (index < cards.length) { // Garante que não exceda o número de cards disponíveis
             const card = cards[index];
 
             // Preenche o card com os dados do evento
-            card.querySelector('.my-index-s3-imagem').src = evento.imagemUrl || ''; // Se houver uma URL da imagem
+            card.querySelector('.my-index-s3-imagem').innerText = evento.imagemUrl || ''; // Se houver uma URL da imagem
             card.querySelector('.card-title').innerText = evento.titulo;
             card.querySelector('.card-date').innerText = new Date(evento.data).toLocaleDateString();
             card.querySelector('.card-time').innerText = evento.horario;

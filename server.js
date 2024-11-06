@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Definindo o modelo de Evento
 const eventoSchema = new mongoose.Schema({
+    imageUrl: String,
     titulo: String,
     data: Date,
     horario: String,
