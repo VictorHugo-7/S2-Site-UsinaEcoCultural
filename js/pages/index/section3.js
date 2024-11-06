@@ -97,6 +97,9 @@ async function carregarEventos() {
 
 // Função para exibir eventos na interface
 function exibirEventos(eventos) {
+
+    eventos.sort((a, b) => new Date(b.data) - new Date(a.data));
+
     const cards = document.querySelectorAll('.my-index-s3-cardAlteracao'); // Seleciona todos os cards
     eventos.forEach((evento, index) => {
         if (index < cards.length) { // Garante que não exceda o número de cards disponíveis
