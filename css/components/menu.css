@@ -1,36 +1,95 @@
-/* prefixo: my-m */
+/* 
+Padronização
+Usar o prefixo: (my-menu-). 
+Colocar primeiro o prefixo (my-menu-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
 
-.my-m-navbar {
+
+
+/* Menu: Alinhamento e Efeito */
+.my-menu-navbar {
     text-align: center;
 }
 
-.my-m-efeito {
+.my-menu-efeito {
     text-align: center;
     box-shadow: var(--sombra-preta);
     background-color: var(--cor-branco);
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    z-index: 10; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-.my-m-logo {
+
+
+/* Logo */
+.my-menu-logo {
     height: 70px;
 }
 
-.my-m-links {
+
+
+/* Links com dropdown */
+.my-menu-links {
     color: var(--cor-preto);
     margin: 0 10px;
     text-decoration: none;
     font-weight: 500;
 }
-
-.my-m-links:hover {
-    color: var(--cor-verdeLink);
+.my-menu-links:hover {
+    color: var(--cor-verdeClaro);
+}
+@media (max-width: 990px) {
+    .my-menu-navbar .nav-item{
+        font-size: 20px;
+        margin: 10px 0px;
+    }
 }
 
-.my-m-btnLogin, .my-m-btnAdm {
-    background-color: var(--cor-verdeBotao);
+
+
+/* Links com dropdown */
+@media (max-width: 990px) {
+    .dropdown-menu .my-menu-links{
+        font-size: 20px;
+    }
+}
+
+
+
+/* Divisão */
+.my-menu-divisao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+@media (max-width: 990px) {
+    .my-menu-divisao {
+        margin: 20px 0px;
+        display: inline-flex;
+    }
+}
+
+
+
+/* Ícone ADM */
+.my-menu-iconeAdm {
+    font-size: 20px;
+    margin-left: 10px;
+}
+@media (max-width: 990px) {
+    .my-menu-iconeAdm {
+        font-size: 30px;
+    }
+}
+
+
+
+/* Btn Login */
+.my-menu-btnLogin {
+    background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
     padding: 10px;
@@ -38,9 +97,13 @@
     margin-left: 10px;
     text-decoration: none;
 }
-
-.my-m-btnLogin:hover, .my-m-btnAdm:hover {
+.my-menu-btnLogin:hover {
     color: var(--cor-branco);
     opacity: 90%;
+}
+@media (max-width: 990px) {
+    .my-menu-btnLogin {
+        font-size: 20px;
+    }
 }
 

@@ -1,0 +1,63 @@
+/* 
+Padronização
+Usar o prefixo: (my-historia-s5-). 
+Colocar primeiro o prefixo (my-historia-s5-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Linha do Tempo */
+.my-historia-s5-linhaDoTempo {
+    display: inline-block;
+    position: relative;
+}
+.my-historia-s5-linhaDoTempo::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Card */
+.my-historia-s5-card {
+    border: 0.1px solid rgba(0, 0, 0, 0.100);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+
+
+/* Texto */
+.my-historia-s5-texto1{
+    color: var(--cor-preto);
+    font-weight: 500;
+}
+.my-historia-s5-texto2 {
+    color: var(--cor-cinza);
+    font-size: 14px;
+}
+
+
+
+/* Lista Formatação */
+.my-historia-s5-lista {
+    margin: 0;
+    padding: 0;
+}
+.my-historia-s5-lista li::marker {
+    color: var(--cor-verdeEscuro);
+    font-size: 0.8em;
+}
+
+
+
+

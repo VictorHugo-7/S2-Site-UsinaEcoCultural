@@ -1,0 +1,115 @@
+/* 
+Padronização
+Usar o prefixo: (my-contato-s1-). 
+Colocar primeiro o prefixo (my-contato-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+/* Mensagem e Informações */
+.my-contato-s1-mensagemInformacao {
+    display: inline-block;
+    position: relative;
+}
+.my-contato-s1-mensagemInformacao::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Texto 1*/
+.my-contato-s1-texto1 {
+    color: var(--cor-cinza);
+}
+
+
+
+/* Texto 2*/
+.my-contato-s1-texto2, strong{
+    color: var(--cor-preto);
+}
+
+
+
+/* Btn Enviar */
+.my-contato-s1-btnEnviar {
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 1px;
+    border-radius: 10px;
+}
+.my-contato-s1-btnEnviar:hover {
+    opacity: 90%;
+}
+
+
+
+/* Ícone Mídia Social */
+.my-contato-s1-iconesMidias {
+    color: var(--cor-cinza);
+    font-size: 20px;
+    margin-right: 10px;
+}
+.my-contato-s1-iconesMidias:hover{
+    transform: scale(1.2);
+}
+
+
+
+/* Iframe */
+.my-contato-s1-iframe{
+    height: 100%;
+}
+.my-contato-s1-iframe:hover{
+    transform: scale(1.03);
+}
+
+
+
+/* Ajuste Responsividade */
+@media (max-width: 1200px) {
+    .my-contato-s1-responsividade {
+        margin-bottom: 50px;
+    }
+}
+
+
+
+/* Animação Loading */
+.my-contato-s1-loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.my-contato-s1-loading-overlay.active {
+    display: flex;
+}
+.my-contato-s1-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spinContato 1s linear infinite;
+}
+@keyframes spinContato {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

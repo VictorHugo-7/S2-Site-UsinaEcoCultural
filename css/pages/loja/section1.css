@@ -1,0 +1,129 @@
+/* 
+Padronização
+Usar o prefixo: (my-loja-s1-). 
+Colocar primeiro o prefixo (my-loja-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+
+/* Loja */
+.my-loja-s1-loja {
+    display: inline-block;
+    position: relative;
+}
+
+.my-loja-s1-loja::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Btn Enviar Comprovante */
+.my-loja-s1-btnEnviarComprovante {
+    width: 100%;
+    background-color: var(--cor-cinzaSecundario);
+    color: var(--cor-branco);
+    box-shadow: none;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: default;
+}
+
+.my-loja-s1-btnEnviarComprovante.enabled {
+    background-color: var(--cor-verdeEscuro);
+    box-shadow: var(--sombra-preta);
+    cursor: pointer;
+}
+
+.my-loja-s1-btnEnviarComprovante.enabled:hover {
+    opacity: 90%;
+}
+
+
+
+/* Btn Salvar Alterações */
+.my-loja-s1-btnSalvarAlterações {
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.my-loja-s1-btnSalvarAlterações:hover {
+    opacity: 90%;
+}
+
+
+
+/* Imagem */
+.my-loja-s1-imagem {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+
+/* Btn Comprar */
+.my-loja-s1-btnComprar {
+    width: 45%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.my-loja-s1-btnComprar:hover {
+    opacity: 90%;
+}
+
+
+
+/* Index */
+.my-loja-s1-index {
+    color: var(--cor-cinza);
+    font-weight: 500;
+}
+
+
+/* Animação Loading */
+.my-loja-s1-loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.my-loja-s1-loading-overlay.active {
+    display: flex;
+}
+.my-loja-s1-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spinloja 1s linear infinite;
+}
+@keyframes spinloja {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

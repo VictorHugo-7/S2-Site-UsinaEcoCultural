@@ -1,13 +1,21 @@
-/* my-ixS3 */
-.my-ixS3-evento {
+/* 
+Padronização
+Usar o prefixo: (my-index-s3-). 
+Colocar primeiro o prefixo (my-index-s3-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Eventos Próximos */
+.my-index-s3-eventosProximos {
     display: inline-block;
     position: relative;
 }
-
-.my-ixS3-evento::after {
+.my-index-s3-eventosProximos::after {
     content: "";
     display: block;
-    width: 30%;
+    width: 30px;
     height: 3px;
     margin: 2px 0px;
     background-color: var(--cor-verdeDestaque);
@@ -15,3 +23,69 @@
     left: 0;
     border-radius: 20px;
 }
+
+
+
+/* Btn Editar  */
+.my-index-s3-btnEditar {
+    color: var(--cor-preto);
+    background-color: var(--cor-azul);
+    box-shadow: var(--sombra-preta);
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 10px;
+}
+.my-index-s3-btnEditar:hover {
+    color: var(--cor-preto);
+    font-weight: 500;
+    opacity: 90%;
+}
+
+
+
+/* Btn Salvar Alterações */
+.my-index-s3-btnSalvarAlterações{
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-index-s3-btnSalvarAlterações:hover{
+    opacity: 90%;
+}
+
+
+
+/* Imagem */
+.my-index-s3-imagem {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+
+/* Btn Ver Eventos */
+.my-index-s3-btnVerEventosProximos{
+    width: 45%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.my-index-s3-btnVerEventosProximos:hover{
+    opacity: 90%;
+}
+
+
+
+/* Index */
+.my-index-s3-index{
+    color: var(--cor-cinza);
+    font-weight: 500;
+}
+
+

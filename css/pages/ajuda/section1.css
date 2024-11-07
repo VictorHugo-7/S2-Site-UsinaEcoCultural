@@ -1,0 +1,25 @@
+/* 
+Padronização
+Usar o prefixo: (my-ajuda-s1-). 
+Colocar primeiro o prefixo (my-ajuda-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Ajuda */
+.my-ajuda-s1 {
+    display: inline-block;
+    position: relative;
+}
+.my-ajuda-s1::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}

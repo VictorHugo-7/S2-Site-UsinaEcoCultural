@@ -1,19 +1,21 @@
+/* Variáveis */
 :root{
-    --cor-preto: #000000;              /* preto */
-    --cor-pretoSecundario: #111111;    /* Usado no rodapé */
+    --cor-preto: #000000;              
+    --cor-pretoSecundario: #111111;   
 
-    --cor-branco: #FFFFFF;             /* branco */
-    --cor-brancoSecundario: #F7F7F7;   /* Usado nos cards */
+    --cor-branco: #FFFFFF;             
+    --cor-brancoSecundario: #F7F7F7;   
 
-    --cor-cinza: #6C757D;              /* Usado nas escritas do site */
+    --cor-cinza: #6C757D;
+    --cor-cinzaSecundario: #ccc;             
 
-    --cor-verdeDestaque: #69A625;      /* Verde para destaques */
-    --cor-verdeBotao: #648A53;         /* Verde para botões */
-    --cor-verdeLink: #66BB6A;          /* Verde para links */
+    --cor-verdeDestaque: #69A625;     
+    --cor-verdeEscuro: #648A53;         
+    --cor-verdeClaro: #66BB6A;         
 
-    --cor-vermelho: #FF1E1E;           /* Erro, Cancelar */
-    --cor-amarelo: #FFFF35;            /* Antenção */
-    --cor-azul: #3A90C3;               /* Outros links */
+    --cor-vermelho: #FF1E1E;          
+    --cor-amarelo: #FFFF35;          
+    --cor-azul: #3A90C3;              
 
-    --sombra-preta: 0 4px 8px rgba(0, 0, 0, 0.2);   /* Sombra dos elementos */
+    --sombra-preta: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
