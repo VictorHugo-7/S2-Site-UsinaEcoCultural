@@ -47,15 +47,6 @@ fetch('../../../html/pages/index/section3.html')
                         const resultado = await response.json();
                         console.log('Evento salvo com sucesso:', resultado);
 
-                        // Atualiza a interface com os novos dados, como antes
-                        selectedCard.querySelector('.my-index-s3-imagem').innerText = eventoData.imageUrl;
-                        selectedCard.querySelector('.card-title').innerText = eventoData.titulo;
-                        selectedCard.querySelector('.card-date').innerText = eventoData.data.toLocaleDateString();
-                        selectedCard.querySelector('.card-time').innerText = eventoData.horario;
-                        selectedCard.querySelector('.card-location').innerText = eventoData.local;
-                        selectedCard.querySelector('.card-price').innerText = "R$ " + eventoData.preco.toFixed(2);
-                        selectedCard.querySelector('.card-text').innerText = eventoData.descricao;
-
                         // Atualiza o botão de redirecionamento
                         selectedCard.querySelector('.my-index-s3-btnVerEventosProximos').onclick = function () {
                             window.open(eventoData.url, '_blank');
