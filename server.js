@@ -17,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // Definindo o modelo de Evento
 const eventoSchema = new mongoose.Schema({
-    imageUrl: String,
     titulo: String,
     data: Date,
     horario: String,
@@ -52,6 +51,38 @@ app.get('/api/eventos', async (req, res) => {
     }
 });
 
+const noticiaSchema = new mongoose.Schema({
+    titulo: String,
+    data: Date,
+    horario: String,
+    descricao: String,
+    url: String
+});
+
+const Noticia = mongoose.model('Noticia', noticiaSchema);
+
+// Rota para salvar um novo evento
+app.post('/api/noticias', async (req, res) => {
+    console.log('Recebendo dados da noticia:', req.body); // Log para verificar os dados recebidos
+    try {
+        const novoNoticia = new Noticia(req.body);
+        const resultado = await novoNoticia.save();
+        res.status(201).send(resultado);
+    } catch (error) {
+        console.error('Erro ao salvar noticia:', error);
+        res.status(500).send('Erro ao salvar noticia');
+    }
+});
+
+app.get('/api/noticias', async (req, res) => {
+    try {
+        const noticias = await Noticia.find(); // Busca todos os eventos no banco de dados
+        res.status(200).send(noticias);
+    } catch (error) {
+        console.error('Erro ao buscar noticia:', error);
+        res.status(500).send('Erro ao buscar noticia');
+    }
+});
 // Iniciando o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);

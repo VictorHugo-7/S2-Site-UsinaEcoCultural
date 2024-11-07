@@ -12,16 +12,28 @@ fetch('../../../html/pages/index/section3.html')
         // Carregar eventos do servidor
         carregarEventos();
 
+        // Restaura a URL da imagem salva ao carregar a página
+        const cards = document.querySelectorAll('.my-index-s3-cardAlteracao');
+        cards.forEach((card, index) => {
+            const savedImageUrl = localStorage.getItem(`imagemEvento_${index}`);
+            if (savedImageUrl) {
+                card.querySelector('.my-index-s3-imagem').src = savedImageUrl;
+            }
+        });
+
         // Adiciona o event listener para o botão de salvar
         document.getElementById('saveChangesBtnEventosProximos').addEventListener('click', async function () {
             const index = parseInt(document.getElementById('editIndexEventosProximos').value) - 1;
             const cards = document.querySelectorAll('.my-index-s3-cardAlteracao');
+            const imageUrl = document.getElementById('editImageUrlEventosProximos').value; // Certifique-se de que o campo de URL da imagem esteja correto
+
+            // Salva a URL da imagem no localStorage
+            localStorage.setItem(`imagemEvento_${index}`, imageUrl);
 
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
 
                 const eventoData = {
-                    imageUrl: document.getElementById('editImageUrlEventosProximos').value,
                     titulo: document.getElementById('editTitleEventosProximos').value,
                     data: new Date(document.getElementById('editDateEventosProximos').value), // Certifique-se de que está no formato correto
                     horario: document.getElementById('editTimeEventosProximos').value,
@@ -70,6 +82,8 @@ fetch('../../../html/pages/index/section3.html')
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
+
+        
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
 
@@ -86,6 +100,7 @@ async function carregarEventos() {
     } catch (error) {
         console.error('Erro ao buscar eventos:', error);
     }
+
 }
 
 // Função para exibir eventos na interface
@@ -96,7 +111,6 @@ function exibirEventos(eventos) {
     const cards = document.querySelectorAll('.my-index-s3-cardAlteracao'); // Seleciona todos os cards
     // Limpa os dados anteriores, se houver algum card já preenchido
     cards.forEach(card => {
-        card.querySelector('.my-index-s3-imagem').innerText = '';  // Limpa a imagem
         card.querySelector('.card-title').innerText = '';
         card.querySelector('.card-date').innerText = '';
         card.querySelector('.card-time').innerText = '';
@@ -111,7 +125,6 @@ function exibirEventos(eventos) {
             const card = cards[index];
 
             // Preenche o card com os dados do evento
-            card.querySelector('.my-index-s3-imagem').innerText = evento.imagemUrl || ''; // Se houver uma URL da imagem
             card.querySelector('.card-title').innerText = evento.titulo;
             card.querySelector('.card-date').innerText = new Date(evento.data).toLocaleDateString();
             card.querySelector('.card-time').innerText = evento.horario;
@@ -125,5 +138,5 @@ function exibirEventos(eventos) {
                 window.open(evento.url, '_blank');
             };
         }
-    });
+    });    
 }
