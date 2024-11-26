@@ -19,12 +19,12 @@ Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é dese
 | HTML                                                                                                       | CSS                                                                                                        | JavaScript                                                                                                   | Bootstrap                                                                                                    | Node JS                                                                                                     | MongoDB                                                                                                      | Figma                                                                                                     |
 
 ## Participantes
-| Nome                                         | RA          | Contribuição                                   |
-|----------------------------------------------|-------------|------------------------------------------------|
-| Eduardo Aguiar Leite da Silva                | 24.00380-8  | Desenvolvimento do Front-End                   |
-| Luan Camara Lopes                            | 24.00376-0  | Documentação                                   |
-| Lucas De Mattia Peres                        | 24.00020-5  | Desenvolvimento do Back-End                    |
-| Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  | Desenvolvimento do Front-End, Back-End, Design |
+| Nome                                         | RA          | Contribuição                       |
+|----------------------------------------------|-------------|------------------------------------|
+| Eduardo Aguiar Leite da Silva                | 24.00380-8  | Front-End                          |
+| Luan Camara Lopes                            | 24.00376-0  | Documentação                       |
+| Lucas De Mattia Peres                        | 24.00020-5  | Back-End                           |
+| Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  | Front-End, Back-End, Design(figma) |
 
 
 ## Contribuição com a Usina Eco-Cultural
