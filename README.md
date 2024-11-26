@@ -38,6 +38,7 @@ Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é dese
 
 Para mais informações, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-![](https://visitor-badge.laobi.icu/badge?page_id=VictorHugo-7.Site-Usina&style=flat)
+![Visitantes](https://img.shields.io/badge/dynamic/json?color=blue&label=Visitantes&query=value&url=https://api.countapi.xyz/hit/VictorHugo-7.Site-Usina)
+
 
 
