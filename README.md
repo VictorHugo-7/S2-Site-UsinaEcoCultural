@@ -42,8 +42,9 @@ Para mais informações, consulte a documentação do GitHub em [como criar uma 
 ![](https://visitor-badge.laobi.icu/badge?page_id=VictorHugo-7.Site-Usina)
 ![Tamanho do Repositório](https://img.shields.io/github/repo-size/VictorHugo-7/Site-Usina)
 ![Linguagens](https://img.shields.io/github/languages/top/VictorHugo-7/Site-Usina)
-![Último Commit](https://img.shields.io/github/last-commit/VictorHugo-7/Site-Usina)
-![Commits por Mês](https://img.shields.io/github/commit-activity/m/VictorHugo-7/Site-Usina)
+![GitHub Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=VictorHugo-7&repo=Site-Usina&layout=compact)
+
+
 
 
 
