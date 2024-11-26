@@ -37,3 +37,5 @@ Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é dese
 #### 5. Crie a solicitação de pull.
 
 Para mais informações, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+![](https://visitor-badge.laobi.icu/badge?page_id=VictorHugo-7)  
