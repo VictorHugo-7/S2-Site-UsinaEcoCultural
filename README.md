@@ -19,12 +19,13 @@ Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é dese
 | HTML                                                                                                       | CSS                                                                                                        | JavaScript                                                                                                   | Bootstrap                                                                                                    | Node JS                                                                                                     | MongoDB                                                                                                      | Figma                                                                                                     |
 
 ## Participantes
-| Nome                                         | RA          |
-|----------------------------------------------|-------------|
-| Eduardo Aguiar Leite da Silva                | 24.00380-8  |
-| Luan Camara Lopes                            | 24.00376-0  |
-| Lucas De Mattia Peres                        | 24.00020-5  |
-| Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  |
+| Nome                                         | RA          | Contribuição                       |
+|----------------------------------------------|-------------|------------------------------------|
+| Eduardo Aguiar Leite da Silva                | 24.00380-8  | Front-End                          |
+| Luan Camara Lopes                            | 24.00376-0  | Documentação                       |
+| Lucas De Mattia Peres                        | 24.00020-5  | Back-End                           |
+| Victor Hugo Gaetano Oliveira Tavares de Pinho| 24.00947-4  | Front-End, Back-End, Design(figma) |
+
 
 ## Contribuição com a Usina Eco-Cultural
 
@@ -37,3 +38,19 @@ Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é dese
 #### 5. Crie a solicitação de pull.
 
 Para mais informações, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## Estatísticas 
+![](https://visitor-badge.laobi.icu/badge?page_id=VictorHugo-7.Site-Usina)
+![Tamanho do Repositório](https://img.shields.io/github/repo-size/VictorHugo-7/Site-Usina)
+![Linguagens](https://img.shields.io/github/languages/top/VictorHugo-7/Site-Usina)
+
+
+
+
+
+
+
+
+
+
+
