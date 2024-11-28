@@ -5,35 +5,27 @@ Colocar primeiro o prefixo (my-peticao-s1-), depois as classes do bootstrap
 Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
 */
 
-
-
 /* Faixa Verde */
-.my-peticao-s1-faixa{
+.my-peticao-s1-faixa {
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     padding: 10px;
     text-align: center;
 }
 
-
-
 /* Título */
-.my-peticao-s1-titulo{
+.my-peticao-s1-titulo {
     color: var(--cor-verdeEscuro);
     font-weight: 700;
 }
 
-
-
 /* Texto */
-.my-peticao-s1-texto{
+.my-peticao-s1-texto {
     color: var(--cor-cinza);
 }
 
-
-
 /* Btn Assine Agora */
-.my-peticao-s1-btnAssineAgora{
+.my-peticao-s1-btnAssineAgora {
     width: 100%;
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
@@ -41,6 +33,56 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     padding: 7px;
     border-radius: 10px;
 }
-.my-peticao-s1-btnAssineAgora:hover{
+
+.my-peticao-s1-btnAssineAgora:hover {
     opacity: 90%;
+}
+
+/* Layout Responsivo */
+@media (max-width: 770px) {
+    /* Quando a tela for menor que 770px, reorganiza as colunas na ordem 1, 2, 3 */
+    .my-peticao-s1-col-1 {
+        order: 1; /* Primeiro */
+    }
+    .my-peticao-s1-col-2 {
+        order: 2; /* Segundo */
+    }
+    .my-peticao-s1-col-3 {
+        order: 3; /* Terceiro */
+    }
+    .my-peticao-s1-col-4 {
+        order: 4; /* Quarto */
+    }
+
+    /* Ajusta a largura das colunas para 100% */
+    .my-peticao-s1-col-1,
+    .my-peticao-s1-col-2,
+    .my-peticao-s1-col-3,
+    .my-peticao-s1-col-4 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 770px) {
+    /* Quando a tela for maior que 770px, as colunas aparecem nas posições padrão: 1 e 3 na linha 1, 2 e 4 na linha 2 */
+    .my-peticao-s1-col-1 {
+        order: 1; /* Primeiro */
+    }
+    .my-peticao-s1-col-3 {
+        order: 2; /* Terceiro */
+    }
+    .my-peticao-s1-col-2 {
+        order: 3; /* Segundo */
+    }
+    .my-peticao-s1-col-4 {
+        order: 4; /* Quarto */
+    }
+
+    /* As colunas ficam em duas colunas de 50% para telas maiores que 770px */
+    .my-peticao-s1-col-1,
+    .my-peticao-s1-col-2,
+    .my-peticao-s1-col-3,
+    .my-peticao-s1-col-4 {
+        width: 50%;
+    }
 }
