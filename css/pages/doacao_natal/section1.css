@@ -1,0 +1,66 @@
+/* 
+Padronização 
+Usar o prefixo: (my-doacao_natal-s1-). 
+Colocar primeiro o prefixo (my-doacao_natal-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+/* Texto Doe */
+.my-doacao_natal-s1-textoDoe {
+    color: var(--cor-vermelho);
+    font-weight: 700;
+}
+
+/* Texto */
+.my-doacao_natal-s1-texto p {
+    color: var(--cor-cinza);
+}
+
+/* Card */
+.my-doacao_natal-s1-card {
+    box-shadow: var(--sombra-preta);
+    padding: 20px;
+    margin-top: 100px;
+}
+
+/* Btn Valores */
+.my-doacao_natal-s1-btnValores {
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    height: 40px;
+    border-radius: 10px;
+}
+.my-doacao_natal-s1-btnValores:hover {
+    opacity: 90%;
+}
+
+/* Botão DOE AGORA */
+.my-doacao_natal-s1-btnDoeAgora-container {
+    position: relative;
+    width: 100%; /* O contêiner também ocupa todo o espaço disponível */
+}
+.my-doacao_natal-s1-btnDoeAgora {
+    width: 96%; /* Garante que o botão ocupe todo o contêiner */
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    font-weight: 600;
+    border-radius: 10px;
+    height: 60px;
+    position: relative;
+    z-index: 1;
+}
+.my-doacao_natal-s1-btnDoeAgora:hover {
+    opacity: 80%;
+}
+
+/* Gorro de Papai Noel */
+.my-doacao_natal-s1-btnDoeAgora-gorro {
+    position: absolute;
+    top: -22px; 
+    right: -0.5%;
+    width: 60px; 
+    z-index: 2;
+}
