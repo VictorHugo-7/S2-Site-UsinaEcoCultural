@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros e Conexões</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .partner-grid { 
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .partner-card {
+            cursor: pointer;
+            transition: transform 0.3s;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .partner-card:hover {
+            transform: scale(1.05);
+        }
+        .partner-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .modal-body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Parceiros</h1>
+        <div id="partnersGrid" class="partner-grid"></div>
+
+        <h1 class="text-center my-4">Conexões</h1>
+        <div id="connectionsGrid" class="partner-grid"></div>
+    </div>
+
+    <!-- Partner Modal -->
+    <div class="modal fade" id="partnerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalDescription"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const partners = [
+            { 
+                name: 'Etec Getúlio Vargas', 
+                description: 'Escola Técnica Estadual de São Paulo de ensino técnico e profissionalizante.',
+                image: '/api/placeholder/300/200?text=Etec+Getúlio+Vargas'
+            },
+            { 
+                name: 'Centro Universitário São Camilo', 
+                description: 'Instituição de ensino superior com destaque em áreas da saúde',
+                image: '/api/placeholder/300/200?text=São+Camilo'
+            },
+            { 
+                name: 'Instituto Mauá de Tecnologia', 
+                description: 'Centro de referência em tecnologia, engenharia, design e administração',
+                image: '/api/placeholder/300/200?text=Instituto+Mauá'
+            },
+            { 
+                name: 'FAUUSP', 
+                description: 'Renomada escola de arquitetura e urbanismo',
+                image: '/api/placeholder/300/200?text=FAUUSP'
+            },
+            { 
+                name: 'USCS', 
+                description: 'Instituição pública de ensino superior que oferece cursos em diversas áreas',
+                image: '/api/placeholder/300/200?text=USCS'
+            },
+            { 
+                name: 'Escola Nacional Paulo Freire', 
+                description: 'Escola de formação baseada na pedagogia crítica de Paulo Freire',
+                image: '/api/placeholder/300/200?text=Escola+Paulo+Freire'
+            },
+            { 
+                name: 'Escola Da Cidade', 
+                description: 'Faculdade de arquitetura e urbanismo',
+                image: '/api/placeholder/300/200?text=Escola+Da+Cidade'
+            },
+            { 
+                name: 'Escoteiros do Brasil', 
+                description: 'Movimento educacional que promove valores de cidadania, liderança e sustentabilidade',
+                image: '/api/placeholder/300/200?text=Escoteiros'
+            }
+        ];
+
+        const connections = [
+            { 
+                name: 'Cades Ipiranga', 
+                description: 'Conselho Regional de Meio Ambiente, Desenvolvimento Sustentável e Cultura de Paz',
+                image: '/api/placeholder/300/200?text=Cades+Ipiranga'
+            },
+            { 
+                name: 'Cades Vila Mariana', 
+                description: 'Voltado para ações ambientais e sociais na região da Vila Mariana',
+                image: '/api/placeholder/300/200?text=Cades+Vila+Mariana'
+            },
+            { 
+                name: 'Casa Amarela', 
+                description: 'Espaço cultural e comunitário que promove atividades de arte, cultura e sustentabilidade',
+                image: '/api/placeholder/300/200?text=Casa+Amarela'
+            },
+            { 
+                name: 'Casa Das Caldeiras', 
+                description: 'Centro cultural e histórico em São Paulo',
+                image: '/api/placeholder/300/200?text=Casa+Caldeiras'
+            },
+            { 
+                name: 'Missão Ambiental', 
+                description: 'Organização que atua em educação e conscientização ambiental',
+                image: '/api/placeholder/300/200?text=Missão+Ambiental'
+            },
+            { 
+                name: 'Muda Ipiranga', 
+                description: 'Coletivo comunitário que realiza ações de plantio e educação ambiental',
+                image: '/api/placeholder/300/200?text=Muda+Ipiranga'
+            },
+            { 
+                name: 'Muda Mooca', 
+                description: 'Sustentabilidade e envolvimento local',
+                image: '/api/placeholder/300/200?text=Muda+Mooca'
+            },
+            { 
+                name: 'Museu do Ipiranga', 
+                description: 'Instituição histórica e cultural dedicada à preservação e divulgação da história do Brasil',
+                image: '/api/placeholder/300/200?text=Museu+Ipiranga'
+            }
+        ];
+
+        function createGrid(container, data) {
+            const grid = document.getElementById(container);
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'partner-card';
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                `;
+                card.addEventListener('click', () => {
+                    const modal = new bootstrap.Modal(document.getElementById('partnerModal'));
+                    document.getElementById('modalTitle').textContent = item.name;
+                    document.getElementById('modalDescription').textContent = item.description;
+                    modal.show();
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        createGrid('partnersGrid', partners);
+        createGrid('connectionsGrid', connections);
+    </script>
+</body>
+</html>
