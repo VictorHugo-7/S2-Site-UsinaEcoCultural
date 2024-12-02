@@ -1,24 +1,31 @@
+<style>
+    
+</style>
+
 <div class="container">
     <div class="mb-5">
 
         <!-- Conexões -->
         <div>
             <h5 class="my-parcerias-s1-conexoes">Conexões</h5>
-            <p class="my-parcerias-s1-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="my-parcerias-s1-texto">Representam iniciativas, coletivos e espaços que compartilham valores e objetivos comuns, promovendo ações culturais, sociais e ambientais.</p>
+            
         </div>
 
         <!-- Imagens -->
-        <div class="d-flex row justify-content-evenly mb-4 border"> 
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro6.png" alt="" class=""> </div>
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro5.png" alt="" class=""> </div>
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro4.png" alt="" class=""> </div>
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro3.png" alt="" class=""> </div>
-        </div>
-        <div class="d-flex row justify-content-evenly mb-4 border"> 
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro6.png" alt="" class=""> </div>
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro5.png" alt="" class=""> </div>
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro4.png" alt="" class=""> </div>
-            <div class="my-parcerias-s2-card col-4 col-lg-2 my-2"> <img src="../../../midias/img/pages/parceiro3.png" alt="" class=""> </div>
+        <div id="connectionsGrid" class="my-parcerias-s1-partner-grid"></div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="partnerModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="modalDescription"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

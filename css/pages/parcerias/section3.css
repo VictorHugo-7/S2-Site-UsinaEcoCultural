@@ -50,3 +50,24 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 }
 
 
+
+/* Cor das estrelas */
+.my-parcerias-s3-stars .fa-star {
+    color: #d3d3d3; /* Cor cinza para estrelas vazias */
+}
+
+.my-parcerias-s3-stars .fa-star.checked {
+    color: var(--cor-amarelo); /* Cor amarela para estrelas preenchidas */
+}
+
+
+
+/* Efeito de aumento e desfoque */
+.my-parcerias-s3-depoimento-card {
+    transition: transform 0.3s;
+}
+
+.my-parcerias-s3-depoimento-card:hover {
+    transform: scale(1.03); 
+}
+

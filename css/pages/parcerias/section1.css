@@ -33,11 +33,59 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 
 
 /* Card */
-.my-parcerias-s1-card img {
-    border: 1px solid var(--cor-preto);
-    object-fit: cover;
-    max-width: 100%;
-    height: 100px;
+.my-parcerias-s1-partner-grid { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.my-parcerias-s1-partner-card {
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--sombra-preta);
+    text-align: center;
+}
+.my-parcerias-s1-partner-card:hover {
+    transform: scale(1.05);
+}
+.my-parcerias-s1-partner-card img {
+    height: 70px;
 }
 
 
+/* Responsividade */
+@media (max-width: 1200px) {
+    .my-parcerias-s1-partner-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .my-parcerias-s1-partner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .my-parcerias-s1-partner-grid {
+        grid-template-columns: 1fr;
+    }
+    .my-parcerias-s1-conexoes {
+        font-size: 1.5rem;
+    }
+    .my-parcerias-s1-texto {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .my-parcerias-s1-partner-grid {
+        gap: 10px;
+        padding: 10px;
+    }
+    .my-parcerias-s1-partner-card img {
+        height: 150px;
+    }
+}
