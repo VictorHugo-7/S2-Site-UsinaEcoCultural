@@ -23,3 +23,32 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     left: 0;
     border-radius: 20px;
 }
+
+
+
+/* Configurações */
+.my-estatisticas-s1-stats-card {
+    border-radius: 10px;
+    padding: 30px;
+}
+.my-estatisticas-s1-stat-icon {
+    font-size: 1.5rem;
+    color: var(--cor-verdeEscuro);
+    margin-right: 20px;
+}
+.my-estatisticas-s1-stat-titulo {
+    color: var(--cor-preto);
+}
+.my-estatisticas-s1-stat-valor {
+    color: var(--cor-cinza);
+}
+.my-estatisticas-s1-stats-card .my-estatisticas-s1-stat-container {
+    padding: 0px 10px;
+    background-color: var(--cor-brancoSecundario);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+.my-estatisticas-s1-stats-card .my-estatisticas-s1-stat-container:hover {
+    background-color: var(--cor-brancoSecundario2);
+}

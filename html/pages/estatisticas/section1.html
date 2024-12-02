@@ -2,11 +2,81 @@
     <h5 class="my-estatisticas-s1">Estatísticas</h5>
     <div><br></div>
 
-    <p id="counter-text">Você é o visitante número: <span id="counter">0</span></p>
-    <p id="user-counter-text">Você já visitou este site: <span id="user-counter">0</span> vezes.</p>
-    <p id="last-visit">Carregando a data da última visita...</p>
-    <p id="referer"></p>
-    <p id="browser-info"></p>
-    <p id="inactivity-time">Tempo de inatividade: 0 segundos</p>
-    <p id="location-info">Carregando localização...</p>
+    <div class="card my-estatisticas-s1-stats-card">
+
+        <!-- Primeira linha com 3 colunas -->
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-user-circle my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Visitante número</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0" id="counter">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-sync my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Visitas neste site</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0" id="user-counter">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-clock my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Última visita</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0" id="last-visit">Carregando...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda linha com 2 colunas -->
+        <div class="row row-cols-1 row-cols-md-2 my-3">
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-hourglass-half my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Tempo de inatividade</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0" id="inactivity-time">0 segundos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-map-marker-alt my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Localização</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0" id="location-info">Carregando...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceira linha com 2 colunas -->
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-globe my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Navegador</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0" id="browser-info">Carregando...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="my-estatisticas-s1-stat-container d-flex align-items-center">
+                    <i class="fa fa-link my-estatisticas-s1-stat-icon"></i>
+                    <div>
+                        <p class="my-estatisticas-s1-stat-titulo mb-0">Site de origem</p>
+                        <p class="my-estatisticas-s1-stat-valor mb-0 text-break" id="referer">Carregando...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
