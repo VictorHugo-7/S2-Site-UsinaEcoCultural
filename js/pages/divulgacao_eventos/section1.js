@@ -1,40 +1,85 @@
-let cardCount = 1; // Variável para contar o número total de cards
+let cardCount = localStorage.getItem('eventsCardCount') ? parseInt(localStorage.getItem('eventsCardCount')) : 1;
 
+// Function to save events cards to local storage
+function saveEventsToLocalStorage() {
+    const cards = document.querySelectorAll('.card-wrapper');
+    const eventsData = Array.from(cards).map(card => {
+        return {
+            imageUrl: card.querySelector('.card-image').src,
+            title: card.querySelector('.card-title').textContent,
+            date: card.querySelector('.card-date').textContent,
+            time: card.querySelector('.card-time').textContent,
+            location: card.querySelector('.card-location').textContent,
+            price: card.querySelector('.card-price').textContent,
+            description: card.querySelector('.card-description').textContent,
+            url: card.querySelector('.my-divulgacao_eventos-s1-btnVerEventos').getAttribute('onclick')
+                .replace("window.open('", '')
+                .replace("', '_blank')", '')
+        };
+    });
+    localStorage.setItem('eventsCards', JSON.stringify(eventsData));
+    localStorage.setItem('eventsCardCount', cardCount);
+}
 
+// Function to load events cards from local storage
+function loadEventsFromLocalStorage() {
+    const savedEvents = localStorage.getItem('eventsCards');
+    if (savedEvents) {
+        const cardContainer = document.getElementById('cards-container');
+        cardContainer.innerHTML = ''; // Clear existing cards
+
+        const eventsData = JSON.parse(savedEvents);
+        eventsData.forEach(event => {
+            addCard(event);
+        });
+    }
+}
+
+// Formatar a data para "dd/mm/yyyy"
+function formatDate(dateStr) {
+    const [year, month, day] = dateStr.split('-');
+    return `${day}/${month}/${year}`;
+}
 
 // CARD - adicionar
-function addCard() {
+function addCard(eventInfo = null) {
     const cardContainer = document.getElementById('cards-container');
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
 
     // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
-            <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
-                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento">
-                <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
-                            class="card-time">Horário</span></h6>
-                    <h6 class="card-subtitle mb-2 text-muted card-location">Local</h6>
-                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between align-items-center">
-                    <span class="my-divulgacao_eventos-s1-index">${cardCount}</span> <!-- Índice atualizado -->
-                    <button class="my-divulgacao_eventos-s1-btnVerEventos"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
-                        Evento</button>
-                </div>
+        <div class="card" style="height: 100%;">
+            <img src="${eventInfo ? eventInfo.imageUrl : '../../../midias/img/global/imagem.svg'}"
+                class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento">
+            <div class="card-body">
+                <h5 class="card-title">${eventInfo ? eventInfo.title : 'Título'}</h5>
+                <h6 class="card-subtitle mb-2">
+                    <span class="card-date">${eventInfo ? eventInfo.date : 'Dia'}</span> | 
+                    <span class="card-time">${eventInfo ? eventInfo.time : 'Horário'}</span>
+                </h6>
+                <h6 class="card-subtitle mb-2 text-muted card-location">
+                    ${eventInfo ? eventInfo.location : 'Local'}
+                </h6>
+                <h6 class="card-subtitle mb-2 text-muted card-price">
+                    ${eventInfo ? eventInfo.price : 'Preço'}
+                </h6>
+                <p class="card-text text-muted card-description">
+                    ${eventInfo ? eventInfo.description : 'Descrição'}
+                </p>
             </div>
-        `;
+            <div class="card-footer d-flex justify-content-between align-items-center">
+                <span class="my-divulgacao_eventos-s1-index admin-only">${cardCount}</span>
+                <button class="my-divulgacao_eventos-s1-btnVerEventos"
+                    onclick="window.open('${eventInfo ? eventInfo.url : 'https://www.exemplo3.com'}', '_blank')">Ver Evento</button>
+            </div>
+        </div>
+    `;
     cardContainer.appendChild(newCard);
     cardCount++; // Incrementa o contador de cards
     updateCardIndices(); // Atualiza todos os índices após a adição
+    saveEventsToLocalStorage(); // Salva os cards no local storage
 }
-
-
 
 // CARD - atualizar índices
 function updateCardIndices() {
@@ -44,19 +89,15 @@ function updateCardIndices() {
     });
 }
 
-
-
 // M0DAL - Excluir
 function openDeleteModal() {
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     deleteModal.show();
 }
 
-
-
 // CARD - Excluir
 function deleteCard() {
-    const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1; // Converte o índice 1-based para 0-based
+    const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1;
     const cards = document.querySelectorAll('.card-wrapper');
 
     if (indexToDelete >= 0 && indexToDelete < cards.length) {
@@ -69,6 +110,9 @@ function deleteCard() {
         // Atualiza os índices visíveis dos cards
         updateCardIndices();
 
+        // Salva as alterações no local storage
+        saveEventsToLocalStorage();
+
         // Fecha o modal de exclusão
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
         deleteModal.hide();
@@ -77,23 +121,11 @@ function deleteCard() {
     }
 }
 
-
-
 // MODAL - Edição
 function openEditModal() {
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
 }
-
-
-
-// Formatar a data para "dd/mm/yyyy"
-function formatDate(dateStr) {
-    const [year, month, day] = dateStr.split('-');
-    return `${day}/${month}/${year}`;
-}
-
-
 
 // CARD - Ordenar por data
 function sortCardsByDate() {
@@ -115,17 +147,14 @@ function sortCardsByDate() {
     updateCardIndices();
 }
 
-
-
-// Carrega o conteúdo HTML e inicializa o código ao carregar a página
 fetch('../../../html/pages/divulgacao_eventos/section1.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('my-divulgacao_eventos-s1-importacao').innerHTML = data;
 
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
-            const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
-            const cards = document.querySelectorAll('.card');
+            const index = document.getElementById('editIndex').value - 1;
+            const cards = document.querySelectorAll('.card-wrapper');
     
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
@@ -150,9 +179,13 @@ fetch('../../../html/pages/divulgacao_eventos/section1.html')
                 }
     
                 // Atualiza o link do botão "Ver Evento"
+                const eventUrl = document.getElementById('editUrl').value;
                 selectedCard.querySelector('.my-divulgacao_eventos-s1-btnVerEventos').setAttribute(
-                    'onclick', `window.open('${document.getElementById('editUrl').value}', '_blank')`
+                    'onclick', `window.open('${eventUrl}', '_blank')`
                 );
+    
+                // Salva as alterações no local storage
+                saveEventsToLocalStorage();
     
                 // Fecha o modal
                 const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
@@ -161,6 +194,8 @@ fetch('../../../html/pages/divulgacao_eventos/section1.html')
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
+
+        // Carrega os cards do local storage quando a página carregar
+        loadEventsFromLocalStorage();
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
-
