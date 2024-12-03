@@ -71,7 +71,7 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
 .my-loja-s1-imagem {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 

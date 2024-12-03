@@ -1,6 +1,4 @@
-let cardCount = 1; // Variável para contar o número total de cards
-
-
+let cardCount = localStorage.getItem('cardCount') ? parseInt(localStorage.getItem('cardCount')) : 1;
 
 // MODAL - Pix
 function openPixModal() {
@@ -8,36 +6,62 @@ function openPixModal() {
     pixModal.show();
 }
 
+// Function to save cards to local storage
+function saveCardsToLocalStorage() {
+    const cards = document.querySelectorAll('.card-wrapper');
+    const cardData = Array.from(cards).map(card => {
+        return {
+            image: card.querySelector('.card-image').src,
+            title: card.querySelector('.card-title').textContent,
+            price: card.querySelector('.card-price').textContent,
+            description: card.querySelector('.card-description').textContent
+        };
+    });
+    localStorage.setItem('storeCards', JSON.stringify(cardData));
+    localStorage.setItem('cardCount', cardCount);
+}
 
+// Function to load cards from local storage
+function loadCardsFromLocalStorage() {
+    const savedCards = localStorage.getItem('storeCards');
+    if (savedCards) {
+        const cardContainer = document.getElementById('cards-container');
+        cardContainer.innerHTML = ''; // Clear existing cards
+
+        const cardData = JSON.parse(savedCards);
+        cardData.forEach(card => {
+            addCard(card);
+        });
+    }
+}
 
 // CARD - adicionar
-function addCard() {
+function addCard(cardInfo = null) {
     const cardContainer = document.getElementById('cards-container');
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
 
     // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
-            <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
-                    class="my-loja-s1-imagem card-image" alt="Imagem da loja">
-                <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between align-items-center">
-                    <span class="my-loja-s1-index">1</span>
-                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
-                </div>
+        <div class="card" style="height: 100%;">
+            <img src="${cardInfo ? cardInfo.image : '../../../midias/img/global/imagem.svg'}"
+                class="my-loja-s1-imagem card-image" alt="Imagem da loja">
+            <div class="card-body">
+                <h5 class="card-title">${cardInfo ? cardInfo.title : 'Título'}</h5>
+                <h6 class="card-subtitle mb-2 text-muted card-price">${cardInfo ? cardInfo.price : 'Preço'}</h6>
+                <p class="card-text text-muted card-description">${cardInfo ? cardInfo.description : 'Descrição'}</p>
             </div>
-            `;
+            <div class="card-footer d-flex justify-content-between align-items-center">
+                <span class="my-loja-s1-index admin-only">1</span>
+                <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+            </div>
+        </div>
+    `;
     cardContainer.appendChild(newCard);
     cardCount++; // Incrementa o contador de cards
     updateCardIndices(); // Atualiza todos os índices após a adição
+    saveCardsToLocalStorage(); // Salva os cards no local storage
 }
-
-
 
 // CARD - atualizar índices
 function updateCardIndices() {
@@ -47,19 +71,15 @@ function updateCardIndices() {
     });
 }
 
-
-
 // M0DAL - Excluir
 function openDeleteModal() {
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     deleteModal.show();
 }
 
-
-
 // CARD - Excluir
 function deleteCard() {
-    const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1; // Converte o índice 1-based para 0-based
+    const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1;
     const cards = document.querySelectorAll('.card-wrapper');
 
     if (indexToDelete >= 0 && indexToDelete < cards.length) {
@@ -72,6 +92,9 @@ function deleteCard() {
         // Atualiza os índices visíveis dos cards
         updateCardIndices();
 
+        // Salva as alterações no local storage
+        saveCardsToLocalStorage();
+
         // Fecha o modal de exclusão
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
         deleteModal.hide();
@@ -80,23 +103,16 @@ function deleteCard() {
     }
 }
 
-
-
 // MODAL - Edição
 function openEditModal() {
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
 }
 
-
-
-
-
 fetch('../../../html/pages/loja/section1.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('my-loja-s1-importacao').innerHTML = data;
-
 
         // Adicionar o manipulador de envio do formulário para o formulário pixForm
         document.getElementById('pixForm').addEventListener('submit', function (event) {
@@ -137,10 +153,10 @@ fetch('../../../html/pages/loja/section1.html')
                 });
         });
 
-
+        // Adiciona o evento de salvar alterações no card
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
             const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
-            const cards = document.querySelectorAll('.card');
+            const cards = document.querySelectorAll('.card-wrapper');
 
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
@@ -154,6 +170,9 @@ fetch('../../../html/pages/loja/section1.html')
                 selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
                 selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
 
+                // Salva as alterações no local storage
+                saveCardsToLocalStorage();
+
                 // Fecha o modal
                 const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
                 editModal.hide();
@@ -161,7 +180,6 @@ fetch('../../../html/pages/loja/section1.html')
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
-
 
         // Controle do botão de envio conforme aceite dos Termos e Política
         const termsCheckboxLoja = document.querySelector('#termsCheckboxLoja');
@@ -176,8 +194,7 @@ fetch('../../../html/pages/loja/section1.html')
             enviarComprovanteButton.classList.toggle('disabled', !this.checked);
         });
 
-
-
-
+        // Carrega os cards do local storage quando a página carregar
+        loadCardsFromLocalStorage();
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
