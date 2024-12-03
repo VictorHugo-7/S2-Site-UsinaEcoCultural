@@ -1,52 +1,41 @@
 /* 
 Padronização
-Usar o prefixo: (my-login-). 
-Colocar primeiro o prefixo (my-login-), depois as classes do bootstrap 
+Usar o prefixo: (my-recuperarSenha-). 
+Colocar primeiro o prefixo (my-recuperarSenha-), depois as classes do bootstrap 
 Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
 */
 
 
 
-/* Esqueceu Sua Senha */
-.my-login-esqueceuSuaSenha{
-    color: var(--cor-verdeClaro);
-    text-decoration: none;
-}
-.my-login-esqueceuSuaSenha:hover{
-    color: var(--cor-verdeClaro);
-    text-decoration: underline;
-}
-
-
-
-/* Btn Entrar */
-.my-login-btnEntrar{
+/* Btn Recuperar Senha */
+.my-recuperarSenha-btnRecuperarSenha{
     width: 100%;
     background-color: var(--cor-verdeEscuro);
     color: var(--cor-branco);
     box-shadow: var(--sombra-preta);
     padding: 5px;
     border-radius: 10px;
+
 }
-.my-login-btnEntrar:hover{
+.my-recuperarSenha-btnRecuperarSenha:hover{
     opacity: 90%;
 }
 
 
 
 /* Linha Horizontal */
-.my-login-hr{
+.my-recuperarSenha-hr{
     color: var(--cor-cinza);
 }
 
 
 
 /* Clique Aqui */
-.my-login-cliqueAqui{
+.my-recuperarSenha-cliqueAqui{
     color: var(--cor-verdeClaro);
     text-decoration: none;
 }
-.my-login-cliqueAqui:hover{
+.my-recuperarSenha-cliqueAqui:hover{
     color: var(--cor-verdeClaro);
     text-decoration: underline;
 }

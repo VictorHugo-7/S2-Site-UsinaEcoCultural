@@ -1,0 +1,58 @@
+/* 
+Padronização
+Usar o prefixo: (my-cadastro-). 
+Colocar primeiro o prefixo (my-cadastro-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Btn Cadastrar */
+.my-cadastro-btnCadastrar {
+    width: 100%;
+    background-color: var(--cor-cinzaSecundario); 
+    color: var(--cor-branco);
+    box-shadow: none; 
+    padding: 5px;
+    border-radius: 10px;
+    cursor: default; 
+}
+.my-cadastro-btnCadastrar.enabled {
+    background-color: var(--cor-verdeEscuro); 
+    box-shadow: var(--sombra-preta); 
+    cursor: pointer; 
+}
+.my-cadastro-btnCadastrar.enabled:hover {
+    opacity: 90%; 
+}
+
+
+
+
+/* Linha Horizontal */
+.my-cadastro-hr{
+    color: var(--cor-cinza);
+}
+
+
+
+/* Termos e Política | Clique Aqui */
+/* .my-cadastro-jaEmembro, .my-cadastro-termosPolitica{
+    color: var(--cor-verdeClaro);
+    text-decoration: none;
+}
+.my-cadastro-jaEmembro, .my-cadastro-termosPolitica:hover{
+    color: var(--cor-verdeClaro);
+    text-decoration: underline;
+} */
+
+
+.my-cadastro-temConta{
+    color: var(--cor-verdeClaro);
+    text-decoration: none;
+}
+
+.my-cadastro-temConta:hover{
+    color: var(--cor-verdeClaro);
+    text-decoration: underline;
+}

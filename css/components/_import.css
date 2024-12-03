@@ -1,12 +1,18 @@
 /* Olhe as especificações para adicionar classes: */
 /* Usar o prefixo ( my- ) para diferenciar nossas classes das classes do bootstrap */
 /* Usar o prefixo my- inciais do arquivo que estamos usando */
-/* login.........: my-l-  */
-/* menu..........: my-m-  */
-/* rodape........: my-r-  */
+/* login.........: my-login-           */
+/* cadastro......: my-cadastro-        */
+/* login.........: my-recuperarSenha-  */
+/* menu..........: my-menu-            */
+/* rodape........: my-rodape-          */
+
+
 
 
 @import url('./login.css');
+@import url('./cadastro.css');
+@import url('./recuperarSenha.css');
 @import url('./menu.css');
 @import url('./rodape.css');
 

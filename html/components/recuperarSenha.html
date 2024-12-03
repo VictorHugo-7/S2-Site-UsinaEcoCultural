@@ -1,0 +1,33 @@
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="forgotPasswordModalLabel">Recuperar Senha</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- Email input com ícone -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" id="forgotPasswordEmail" class="form-control form-control-sm"
+                            placeholder="Digite seu e-mail" required />
+                    </div>
+
+                    <!-- Btn Recuperar Senha -->
+                    <button type="button" class="my-recuperarSenha-btnRecuperarSenha">RECUPERAR SENHA</button> 
+                    
+                    <!-- Linha Horizontal -->
+                    <hr class="my-recuperarSenha-hr{">
+
+                    <!-- Lembrou a senha ? -->
+                    <div class="text-center">
+                        <p class="mb-1">Lembrou a senha? 
+                            <a class="my-recuperarSenha-cliqueAqui" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Clique aqui</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
