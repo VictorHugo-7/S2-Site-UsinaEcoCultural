@@ -1,0 +1,62 @@
+/* 
+Padronização
+Usar o prefixo: (my-boletim-s1-). 
+Colocar primeiro o prefixo (my-boletim-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+
+/* Boletim */
+.my-boletim-s1-boletim {
+    display: inline-block;
+    position: relative;
+}
+
+.my-boletim-s1-boletim::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Card */
+.my-boletim-s1-card{
+    box-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Título */
+.my-boletim-s1-titulo{
+    color: var(--cor-preto);
+}
+
+
+
+/* Escrita */
+.my-boletim-s1-escrita{
+    color: var(--cor-cinza);
+}
+
+
+/* Btn Ver Boletim */
+.my-boletim-s1-btnVerBoletim{
+    width: 100%;
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-preta);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.my-boletim-s1-btnVerBoletim:hover{
+    opacity: 90%;
+}
