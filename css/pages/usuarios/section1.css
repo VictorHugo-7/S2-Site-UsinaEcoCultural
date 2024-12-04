@@ -1,0 +1,49 @@
+/* 
+Padronização
+Usar o prefixo: (my-usuarios-s1-). 
+Colocar primeiro o prefixo (my-usuarios-s1-), depois as classes do bootstrap 
+Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvimento e as classes já predefinidas do bootstrap
+*/
+
+
+
+/* Termos de Uso */
+.my-usuarios-s1 {
+    display: inline-block;
+    position: relative;
+}
+.my-usuarios-s1::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 4px 0px;
+    background-color: var(--cor-verdeDestaque);
+    position: absolute;
+    left: 0;
+    border-radius: 20px;
+}
+
+
+
+/* Tabela */
+.my-usuarios-s1-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+.my-usuarios-s1-tabela th, .my-usuarios-s1-tabela td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+.my-usuarios-s1-tabela th {
+    background-color: var(--cor-verdeEscuro);
+    color: var(--cor-branco);
+    font-weight: bold;
+}
+.my-usuarios-s1-tabela tr:nth-child(even) {
+    background-color: var(--cor-brancoSecundario);
+}
+.my-usuarios-s1-tabela tr:hover {
+    background-color: #ddd;
+}

@@ -1,20 +1,23 @@
 {
-  "name": "frontend-usina",
+  "name": "site-usina",
   "version": "1.0.0",
   "description": "Bem-vindo ao repositório do projeto da Usina Eco-Cultural! Este projeto é desenvolvido como parte do Projeto Integrador para a disciplina de Front-End no curso de Ciência da Computação do Instituto Mauá de Tecnologia.",
-  "main": "index.js",
+  "main": "backend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server.js"
+    "start": "nodemon backend.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.3",
+    "axios": "^1.7.8",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.21.1",
-    "mongoose": "^8.8.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3",
+    "mongoose-unique-validator": "^4.0.1",
     "nodemon": "^3.1.7"
   }
 }
