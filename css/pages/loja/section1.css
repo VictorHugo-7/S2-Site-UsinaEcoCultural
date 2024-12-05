@@ -84,11 +84,27 @@ Isso ajuda na hora de diferenciar as classes criadas pela equipe de desenvolvime
     box-shadow: var(--sombra-preta);
     padding: 5px 10px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
 .my-loja-s1-btnComprar:hover {
     opacity: 90%;
 }
+
+/* Estado desabilitado para o botão */
+.my-loja-s1-btnComprar:disabled {
+    background-color: var(--cor-cinzaSecundario);
+    color: var(--cor-cinzaClaro);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.my-loja-s1-btnComprar:disabled:hover {
+    opacity: 100%; /* Remove o efeito de hover quando desabilitado */
+}
+
+
 
 
 
