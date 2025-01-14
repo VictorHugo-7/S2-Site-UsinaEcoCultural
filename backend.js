@@ -1,4 +1,4 @@
-// vh | 123 | mongodb+srv://cururu995:1234@cluster0.vlxky.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+// mongodb+srv://:@cluster0.vlxky.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 // npm init -y   --> Cria o projeto automaticamente, sem pedir as configurações.
 // node start    --> Tenta executar diretamente um arquivo start.js.
@@ -11,8 +11,8 @@
 // npm install mongoose -legacy-peer-deps
 // npm install mongoose-unique-validator --legacy-peer-deps
 // npm install bcrypt --legacy-peer-deps
-// npm install jsonwebtoken --legacy-peer-deps
-
+// npm install jsonwebtoken --legacy-peer-deps  
+// npm install nodemon express axios cors mongoose mongoose-unique-validator bcrypt jsonwebtoken --legacy-peer-deps
 
 PORT = 3000                                                    // Define a porta onde o servidor vai escutar as requisições
 
