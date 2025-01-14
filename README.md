@@ -1,5 +1,5 @@
 <!--TÍTULO-->
-# Usina Eco-Cultural⠀<img src="https://i.gifer.com/ZdPH.gif" height="30px" alt="Planta">
+# Site Usina Eco-Cultural⠀<img src="https://i.gifer.com/ZdPH.gif" height="30px" alt="Planta">
 
 <!--DESCRIÇÃO-->
 | Descrição                                                                                                                                                                                                                                                                                                                                                     | Imagem                                    |
@@ -11,7 +11,21 @@
 > ✔ Concluído.
 
 <!--FUNCIONALIDADES-->
-<!-- ## Funcionalidades
+## Funcionalidades
+````
+Usuário:
+    . Fazer Cadastro
+    . Fazer Login
+    . Inscrever-se na Newsletter
+    . Doar para Usina
+    . Assinar Petição
+    . Comprar na Loja
+    . Enviar Mensagem para Usina
+
+Administrador (ADM):
+    . Todas as funções disponíveis para o usuário
+    . Adicionar, Editar e Excluir: Eventos, Notícias, Trabalhos, Fotos, Vídeos
+````
 
 <!--TECNOLOGIAS-->
 ## Tecnologias
@@ -35,21 +49,51 @@
 <!--DEPENDÊNCIAS-->
 ## Dependências
 ````
-axios                     | versão ^1.7.8
-bcrypt                    | versão ^5.1.1
-cors                      | versão ^2.8.5
-express                   | versão ^4.21.1
-jsonwebtoken              | versão ^9.0.2
-mongoose                  | versão ^8.8.3
-mongoose-unique-validator | versão ^4.0.1
-nodemon                   | versão ^3.1.7
+axios                     | versão ^1.7.8  | Biblioteca para requisições HTTP.
+bcrypt                    | versão ^5.1.1  | Hashing de senhas para segurança.
+cors                      | versão ^2.8.5  | Habilita CORS para requisições entre origens.
+express                   | versão ^4.21.1 | Framework para criar servidores web e APIs.
+jsonwebtoken              | versão ^9.0.2  | Geração e verificação de tokens JWT.
+mongoose                  | versão ^8.8.3  | ODM para trabalhar com MongoDB em Node.js.
+mongoose-unique-validator | versão ^4.0.1  | Validação de unicidade para Mongoose.
+nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mudanças no código.
 ````
 
 <!--COMO UTILIZAR-->
-<!-- ## Como Utilizar
+## Como Utilizar
+````
+1. Clone o repositóro                 | git clone https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural.git
+
+2. Navegue até o diretório do projeto | cd S2-Site-UsinaEcoCultural
+
+3. Instale as dependências            | npm install
+
+4. Configure as variáveis de ambiente | PORT=3000
+                                      | MONGO_URI=mongodb://localhost:27017/nome-do-banco
+                                      | JWT_SECRET=sua_chave_secreta
+
+5. Inicialize o servidor              | npm start
+
+6. Abra o start.html                  | Hospede usando um servidor HTTP local (como o VS Code Live Server).
+````
 
 <!--CONTRIBUIÇÃO-->
-<!-- ## Contribuição
+## Contribuição
+````
+1. Fork               | Crie uma cópia do repositório no seu perfil
+
+2. Clone              | git clone https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural
+
+3. Crie uma Branch    | git checkout -b minha-branch
+
+4. Faça as Alterações | Edite os arquivos e teste.
+
+5. Commit e Push      | git add . 
+					            |	git commit -m "Descrição das alterações" 
+					            |	git push origin minha-branch
+
+6. Pull Request       | Solicite a inclusão de suas mudanças no repositório original.
+````
 
 <!--LICENÇA-->
 ## Licença
