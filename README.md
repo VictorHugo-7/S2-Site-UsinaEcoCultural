@@ -1,14 +1,17 @@
 <!--TÍTULO-->
 # Site Usina Eco-Cultural⠀<img src="https://i.gifer.com/ZdPH.gif" height="30px" alt="Planta">
 
+
 <!--DESCRIÇÃO-->
 | Descrição                                                                                                                                                                                                                                                                                                                                                     | Imagem                                    |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
 | O site da Usina Eco-Cultural foi criado com o intuito de promover uma plataforma digital que amplie o alcance e a visibilidade das atividades culturais e ecológicas oferecidas pela instituição. <br><br> A Usina Eco-Cultural é um espaço voltado para o desenvolvimento sustentável e para a valorização da cultura local, promovendo eventos, oficinas, exposições e iniciativas educacionais com foco em sustentabilidade. | <img src="https://github.com/user-attachments/assets/6027eb8e-3478-406a-89e3-107630e06978" width="20000"/> |
 
+
 <!--STATUS-->
 ## Status
 > ✔ Concluído.
+
 
 <!--FUNCIONALIDADES-->
 ## Funcionalidades
@@ -27,15 +30,18 @@ Administrador (ADM):
     . Adicionar, Editar e Excluir: Eventos, Notícias, Trabalhos, Fotos, Vídeos
 ````
 
+
 <!--TECNOLOGIAS-->
 ## Tecnologias
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" width="40"/>   | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" width="40"/> |
 |------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | HTML                                                                                                       | CSS                                                                                                        | JavaScript                                                                                                   | Bootstrap                                                                                                    | Node JS                                                                                                     | MongoDB                                                                                                      | Figma                                                                                                     |
 
+
 <!--PROTÓTIPO-->
 ## Protótipo
 ![1](https://github.com/user-attachments/assets/255d55c0-152b-40d1-957d-ad7b1c1e2a65)
+
 
 <!--PARTICIPANTES-->
 ## Participantes
@@ -45,6 +51,7 @@ Administrador (ADM):
 | Luan Camara Lopes             | 24.00376-0  | Documentação                       |
 | Lucas De Mattia Peres         | 24.00020-5  | Back-End                           |
 | Victor Hugo Pinho             | 24.00947-4  | Front-End, Back-End, Design(figma) |
+
 
 <!--DEPENDÊNCIAS-->
 ## Dependências
@@ -59,6 +66,7 @@ mongoose                  | versão ^8.8.3  | ODM para trabalhar com MongoDB em 
 mongoose-unique-validator | versão ^4.0.1  | Validação de unicidade para Mongoose.
 nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mudanças no código.
 ````
+
 
 <!--COMO UTILIZAR-->
 ## Como Utilizar
@@ -78,6 +86,7 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 6. Abra o start.html                  | Hospede usando um servidor HTTP local (como o VS Code Live Server).
 ````
 
+
 <!--CONTRIBUIÇÃO-->
 ## Contribuição
 ````
@@ -89,16 +98,18 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 
 4. Faça as Alterações | Edite os arquivos e teste.
 
-5. Commit e Push      | git add . 
-					            |	git commit -m "Descrição das alterações" 
-					            |	git push origin minha-branch
+5. Commit e Push      | git add .
+                      |	git commit -m "Descrição das alterações" 
+                      |	git push origin minha-branch
 
 6. Pull Request       | Solicite a inclusão de suas mudanças no repositório original.
 ````
 
+
 <!--LICENÇA-->
 ## Licença
 [Veja a licença](https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural/blob/main/LICENSE)
+
 
 <!--ESTRUTURA DE PASTAS-->
 ## Estrutura de Pastas
@@ -349,7 +360,11 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 │       ├── global/
 │       └── pages/
 │           ├── boletim/
-│           └── parcerias/
+│	    ├── doacao/
+│	    ├── historia/
+│	    ├── impacto/
+│	    ├── index/
+│	    └── parcerias/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -359,19 +374,9 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 ├── start.html
 ````
 
+
 <!--ESTATÍSTICAS-->
 ## Estatísticas 
 ![](https://visitor-badge.laobi.icu/badge?page_id=VictorHugo-7.Site-Usina)
 ![Tamanho do Repositório](https://img.shields.io/github/repo-size/VictorHugo-7/Site-Usina)
 ![Linguagens](https://img.shields.io/github/languages/top/VictorHugo-7/Site-Usina)
-
-
-
-
-
-
-
-
-
-
-
