@@ -1,20 +1,8 @@
-// mongodb+srv://:@cluster0.vlxky.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+require('dotenv').config();
 
-// npm init -y   --> Cria o projeto automaticamente, sem pedir as configurações.
-// node start    --> Tenta executar diretamente um arquivo start.js.
-// npm run start --> Executa o script "start" definido no package.json. | "start": "nodemon index.js"
-
-// npm install nodemon 
-// npm install express
-// npm install axios 
-// npm install cors 
-// npm install mongoose -legacy-peer-deps
-// npm install mongoose-unique-validator --legacy-peer-deps
-// npm install bcrypt --legacy-peer-deps
-// npm install jsonwebtoken --legacy-peer-deps  
-// npm install nodemon express axios cors mongoose mongoose-unique-validator bcrypt jsonwebtoken --legacy-peer-deps
-
-PORT = 3000                                                    // Define a porta onde o servidor vai escutar as requisições
+const MONGO_URL = process.env.MONGO_URL;
+const PORT = process.env.PORT || 3000;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const express = require('express')                             // Framework para criar o servidor e gerenciar rotas
 const cors = require('cors')                                   // Middleware para permitir requisições de outras origens (CORS)
@@ -29,10 +17,16 @@ app.use(express.json())                                        // Permite o back
 app.use(cors())                                                // Habilita o CORS, permitindo acesso ao back-end de outras origens (ex., outro domínio ou porta)
 
 
+
 // Conecta ao MongoDB usando o Mongoose
 async function conectarAoMongoDB() {
-    await mongoose.connect(`mongodb+srv://cururu995:1234@cluster0.vlxky.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);   // String de conexão para o MongoDB
+    if (!MONGO_URL) {
+        throw new Error("A variável MONGO_URL não está definida no arquivo .env");
+    }
+    await mongoose.connect(MONGO_URL); 
+    console.log("Conectado ao MongoDB!");
 }
+
 
 
 // Define o modelo Usuario com campos login e senha | Schema
@@ -42,6 +36,7 @@ const usuarioSchema = mongoose.Schema({
 });
 usuarioSchema.plugin(uniqueValidator);                      
 const Usuario = mongoose.model("Usuario", usuarioSchema);
+
 
 
 // Endpoint para cadastrar novos usuários
@@ -67,6 +62,8 @@ app.post('/signup', async (req, res) => {
     }
 });
 
+
+
 // Endpoint para autenticar usuários
 app.post('/login', async (req, res) => {
     const login = req.body.login;
@@ -82,13 +79,16 @@ app.post('/login', async (req, res) => {
         return res.status(401).json({ mensagem: "senha inválida" });   // Responde com erro se a senha está incorreta
     }
 
-    const token = jwt.sign(                                            // Gera um token JWT válido por 1 hora
-        { login: login }, 
-        "chave-secreta", 
+    const token = jwt.sign(
+        { login: login },
+        JWT_SECRET, 
         { expiresIn: "1h" }
     );
+    
     res.status(200).json({ token: token });                            // Responde com o token de autenticação
 });
+
+
 
 // Endpoint para listar todos os usuários
 app.get('/users', async (req, res) => {
