@@ -52,6 +52,7 @@ Administrador (ADM):
 axios                     | versão ^1.7.8  | Biblioteca para requisições HTTP.
 bcrypt                    | versão ^5.1.1  | Hashing de senhas para segurança.
 cors                      | versão ^2.8.5  | Habilita CORS para requisições entre origens.
+dotenv                    | versão ^16.4.7 | Gerenciamento de variáveis de ambiente.
 express                   | versão ^4.21.1 | Framework para criar servidores web e APIs.
 jsonwebtoken              | versão ^9.0.2  | Geração e verificação de tokens JWT.
 mongoose                  | versão ^8.8.3  | ODM para trabalhar com MongoDB em Node.js.
