@@ -40,7 +40,7 @@ Administrador (ADM):
 
 <!--PROTÓTIPO-->
 ## Protótipo
-![1](https://github.com/user-attachments/assets/255d55c0-152b-40d1-957d-ad7b1c1e2a65)
+![Protótipo](https://github.com/user-attachments/assets/a86071be-ba30-4f3c-bbe3-cf10020b1f2e)
 
 
 <!--PARTICIPANTES-->
