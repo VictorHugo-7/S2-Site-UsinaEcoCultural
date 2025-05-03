@@ -71,7 +71,7 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 <!--COMO UTILIZAR-->
 ## Como Utilizar
 ````
-1. Clone o repositóro                 | git clone https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural.git
+1. Clone o repositóro                 | git clone https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural
 
 2. Navegue até o diretório do projeto | cd S2-Site-UsinaEcoCultural
 
