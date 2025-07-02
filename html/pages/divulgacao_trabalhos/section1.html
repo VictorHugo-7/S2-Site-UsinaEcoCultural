@@ -5,29 +5,91 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar
+            Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;"
+            onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;"
+            onclick="openDeleteModal()">Excluir Card</button>
     </div>
 
 
-    <!-- Card -->
+    <!-- Cards -->
     <div class="row mt-3" id="cards-container">
+
+        <!-- CARD 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
-                    class="my-divulgacao_trabalhos-s1-imagem card-image" alt="Imagem do trabalho">
+                <img src="../../../midias/img/pages/divulgacao_trabalhos/trabalho1.jpg"
+                    class="my-divulgacao_trabalhos-s1-imagem card-image" alt="Imagem do trabalho 1">
                 <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <h5 class="card-title">Trabalho 1</h5>
+                    <p class="card-text text-muted card-description">
+                        Grupo de pessoas está reunido em um ambiente coberto, com paredes de concreto e
+                        cartazes ao fundo. Estão dispostas em semicírculo, sentadas em cadeiras e bancos de madeira para uma conversa.
+                    </p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-divulgacao_trabalhos-s1-index admin-only">1</span>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_trabalhos/trabalho2.jpg"
+                    class="my-divulgacao_trabalhos-s1-imagem card-image" alt="Imagem do trabalho 2">
+                <div class="card-body">
+                    <h5 class="card-title">Trabalho 2</h5>
+                    <p class="card-text text-muted card-description">
+                        Há barracas azuis montadas no local, possivelmente para oferecer suporte ou sombra. Outras
+                        pessoas estão em pé ao redor, observando. O ambiente parece ter uma atmosfera de comunidade ou
+                        evento social.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_trabalhos-s1-index admin-only">2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_trabalhos/trabalho3.jpg"
+                    class="my-divulgacao_trabalhos-s1-imagem card-image" alt="Imagem do trabalho 3">
+                <div class="card-body">
+                    <h5 class="card-title">Trabalho 3</h5>
+                    <p class="card-text text-muted card-description">
+                        A cena mostra um encontro ao ar livre em uma área arborizada, com construções ao fundo e
+                        diversas pessoas reunidas em um espaço aberto. Algumas estão sentadas, outras em pé.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_trabalhos-s1-index admin-only">3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_trabalhos/trabalho4.jpg"
+                    class="my-divulgacao_trabalhos-s1-imagem card-image" alt="Imagem do trabalho 4">
+                <div class="card-body">
+                    <h5 class="card-title">Trabalho 4</h5>
+                    <p class="card-text text-muted card-description">
+                        Área ao ar livre, aparentemente em uma rua, com árvores e carros estacionados ao fundo. As
+                        crianças utilizam papéis e canetas coloridas, espalhadas sobre uma lona preta, para desenhar.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_trabalhos-s1-index admin-only">4</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Modal para exclusão -->
@@ -69,11 +131,10 @@
                             placeholder="Índice Card">
                     </div>
 
-                    <!-- URL da Imagem -->
+                    <!-- Upload de Imagem -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
-                        <input type="text" class="form-control form-control-sm" id="editImage"
-                            placeholder="URL da Imagem">
+                        <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
                     </div>
 
                     <!-- Título -->
