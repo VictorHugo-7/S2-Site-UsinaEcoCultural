@@ -5,28 +5,88 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar
+            Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;"
+            onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;"
+            onclick="openDeleteModal()">Excluir Card</button>
     </div>
 
 
-    <!-- Card -->
+    <!-- Cards -->
     <div class="row mt-3" id="cards-container">
+
+        <!-- CARD 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
-                    class="my-divulgacao_galeriaFotos-s1-imagem card-image" alt="Imagem do trabalho">
+                <img src="../../../midias/img/pages/divulgacao_galeriaFotos/foto1.jpg"
+                    class="my-divulgacao_galeriaFotos-s1-imagem card-image" alt="Banner do CADES Ipiranga em árvore">
                 <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <h5 class="card-title">Banner do CADES Ipiranga em Árvore</h5>
+                    <p class="card-text text-muted card-description">A imagem mostra uma pessoa prendendo um banner em
+                        uma árvore. O banner contém textos e imagens relacionados ao CADES IPIRANGA, um conselho
+                        ambiental de São Paulo, Brasil.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-divulgacao_galeriaFotos-s1-index admin-only">1</span>
                 </div>
             </div>
         </div>
+
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_galeriaFotos/foto2.jpg"
+                    class="my-divulgacao_galeriaFotos-s1-imagem card-image" alt="Músico de rua tocando violão">
+                <div class="card-body">
+                    <h5 class="card-title">Músico de Rua Tocando Violão</h5>
+                    <p class="card-text text-muted card-description">A imagem mostra um músico de rua sentado em uma
+                        cadeira, tocando um violão. Ele está usando um chapéu de couro e uma camisa branca com detalhes
+                        na gola.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_galeriaFotos-s1-index admin-only">2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_galeriaFotos/foto3.jpg"
+                    class="my-divulgacao_galeriaFotos-s1-imagem card-image" alt="Grupo de pessoas em evento de rua">
+                <div class="card-body">
+                    <h5 class="card-title">Foto em Grupo em Evento de Rua</h5>
+                    <p class="card-text text-muted card-description">A imagem mostra um grande grupo de pessoas reunidas
+                        ao ar livre, posando para uma foto em grupo. O cenário parece ser uma rua ou uma área aberta com
+                        cadeiras e mesas ao redor.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_galeriaFotos-s1-index admin-only">3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_galeriaFotos/foto4.jpg"
+                    class="my-divulgacao_galeriaFotos-s1-imagem card-image" alt="Criança equilibrando em slackline">
+                <div class="card-body">
+                    <h5 class="card-title">Criança Equilibrando em Slackline</h5>
+                    <p class="card-text text-muted card-description">A imagem mostra uma cena em um ambiente urbano com
+                        várias pessoas envolvidas em diversas atividades. Em primeiro plano, uma criança está se
+                        equilibrando em uma slackline com a ajuda de um adulto.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_galeriaFotos-s1-index admin-only">4</span>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 
 </div>
 
@@ -69,11 +129,10 @@
                             placeholder="Índice Card">
                     </div>
 
-                    <!-- URL da Imagem -->
+                    <!-- Upload de Imagem -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
-                        <input type="text" class="form-control form-control-sm" id="editImage"
-                            placeholder="URL da Imagem">
+                        <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
                     </div>
 
                     <!-- Título -->
@@ -93,7 +152,8 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="my-divulgacao_galeriaFotos-s1-btnSalvarAlterações" id="saveChangesBtn">Salvar
+                <button type="button" class="my-divulgacao_galeriaFotos-s1-btnSalvarAlterações"
+                    id="saveChangesBtn">Salvar
                     alterações</button>
             </div>
         </div>
