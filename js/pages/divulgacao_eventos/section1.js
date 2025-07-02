@@ -1,39 +1,4 @@
-let cardCount = localStorage.getItem('eventsCardCount') ? parseInt(localStorage.getItem('eventsCardCount')) : 1;
-
-// Function to save events cards to local storage
-function saveEventsToLocalStorage() {
-    const cards = document.querySelectorAll('.card-wrapper');
-    const eventsData = Array.from(cards).map(card => {
-        return {
-            imageUrl: card.querySelector('.card-image').src,
-            title: card.querySelector('.card-title').textContent,
-            date: card.querySelector('.card-date').textContent,
-            time: card.querySelector('.card-time').textContent,
-            location: card.querySelector('.card-location').textContent,
-            price: card.querySelector('.card-price').textContent,
-            description: card.querySelector('.card-description').textContent,
-            url: card.querySelector('.my-divulgacao_eventos-s1-btnVerEventos').getAttribute('onclick')
-                .replace("window.open('", '')
-                .replace("', '_blank')", '')
-        };
-    });
-    localStorage.setItem('eventsCards', JSON.stringify(eventsData));
-    localStorage.setItem('eventsCardCount', cardCount);
-}
-
-// Function to load events cards from local storage
-function loadEventsFromLocalStorage() {
-    const savedEvents = localStorage.getItem('eventsCards');
-    if (savedEvents) {
-        const cardContainer = document.getElementById('cards-container');
-        cardContainer.innerHTML = ''; // Clear existing cards
-
-        const eventsData = JSON.parse(savedEvents);
-        eventsData.forEach(event => {
-            addCard(event);
-        });
-    }
-}
+let cardCount = 1;
 
 // Formatar a data para "dd/mm/yyyy"
 function formatDate(dateStr) {
@@ -47,7 +12,6 @@ function addCard(eventInfo = null) {
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
 
-    // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
         <div class="card" style="height: 100%;">
             <img src="${eventInfo ? eventInfo.imageUrl : '../../../midias/img/global/imagem.svg'}"
@@ -76,14 +40,13 @@ function addCard(eventInfo = null) {
         </div>
     `;
     cardContainer.appendChild(newCard);
-    cardCount++; // Incrementa o contador de cards
-    updateCardIndices(); // Atualiza todos os índices após a adição
-    saveEventsToLocalStorage(); // Salva os cards no local storage
+    cardCount++;
+    updateCardIndices();
 }
 
 // CARD - atualizar índices
 function updateCardIndices() {
-    const cards = document.querySelectorAll('.card-wrapper'); // Seleciona todos os cards
+    const cards = document.querySelectorAll('.card-wrapper');
     cards.forEach((card, index) => {
         card.querySelector('.my-divulgacao_eventos-s1-index').textContent = index + 1;
     });
@@ -101,19 +64,10 @@ function deleteCard() {
     const cards = document.querySelectorAll('.card-wrapper');
 
     if (indexToDelete >= 0 && indexToDelete < cards.length) {
-        // Remove o card selecionado
         cards[indexToDelete].remove();
-
-        // Decrementa o contador de cards para manter a contagem correta
         cardCount--;
-
-        // Atualiza os índices visíveis dos cards
         updateCardIndices();
 
-        // Salva as alterações no local storage
-        saveEventsToLocalStorage();
-
-        // Fecha o modal de exclusão
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
         deleteModal.hide();
     } else {
@@ -132,21 +86,18 @@ function sortCardsByDate() {
     const cardsContainer = document.getElementById('cards-container');
     const cards = Array.from(cardsContainer.getElementsByClassName('card-wrapper'));
 
-    // Ordena os cards com base na data (formato dd/mm/yyyy)
     cards.sort((a, b) => {
         const dateA = new Date(a.querySelector('.card-date').textContent.split('/').reverse().join('-'));
         const dateB = new Date(b.querySelector('.card-date').textContent.split('/').reverse().join('-'));
         return dateA - dateB;
     });
 
-    // Remove todos os cards e os adiciona na nova ordem
     cardsContainer.innerHTML = '';
     cards.forEach(card => cardsContainer.appendChild(card));
-
-    // Atualiza os índices dos cards após a ordenação
     updateCardIndices();
 }
 
+// Fetch da seção HTML e inicialização
 fetch('../../../html/pages/divulgacao_eventos/section1.html')
     .then(response => response.text())
     .then(data => {
@@ -155,47 +106,57 @@ fetch('../../../html/pages/divulgacao_eventos/section1.html')
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
             const index = document.getElementById('editIndex').value - 1;
             const cards = document.querySelectorAll('.card-wrapper');
-    
+
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
-    
-                // Atualiza a imagem, título, local, preço e descrição do card
-                const imageUrl = document.getElementById('editImage').value;
-                if (imageUrl) {
-                    selectedCard.querySelector('.card-image').src = imageUrl;
-                }
-                selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-                selectedCard.querySelector('.card-location').innerText = document.getElementById('editLocation').value;
-                selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
-                selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
-    
-                // Formata e exibe a data e hora
+
+                const fileInput = document.getElementById('editImage');
+                const file = fileInput.files[0];
+
+                const title = document.getElementById('editTitle').value;
+                const location = document.getElementById('editLocation').value;
+                const price = document.getElementById('editPrice').value;
+                const description = document.getElementById('editDescription').value;
                 const dateInput = document.getElementById('editDate').value;
                 const timeInput = document.getElementById('editTime').value;
-                if (dateInput && timeInput) {
-                    const formattedDate = formatDate(dateInput); // Formatação da data
-                    selectedCard.querySelector('.card-date').innerText = formattedDate;
-                    selectedCard.querySelector('.card-time').innerText = timeInput;
-                }
-    
-                // Atualiza o link do botão "Ver Evento"
                 const eventUrl = document.getElementById('editUrl').value;
-                selectedCard.querySelector('.my-divulgacao_eventos-s1-btnVerEventos').setAttribute(
-                    'onclick', `window.open('${eventUrl}', '_blank')`
-                );
-    
-                // Salva as alterações no local storage
-                saveEventsToLocalStorage();
-    
-                // Fecha o modal
-                const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-                editModal.hide();
+
+                const updateCardFields = (imageDataUrl) => {
+                    if (imageDataUrl) {
+                        selectedCard.querySelector('.card-image').src = imageDataUrl;
+                    }
+
+                    selectedCard.querySelector('.card-title').innerText = title;
+                    selectedCard.querySelector('.card-location').innerText = location;
+                    selectedCard.querySelector('.card-price').innerText = "R$ " + price;
+                    selectedCard.querySelector('.card-description').innerText = description;
+
+                    if (dateInput && timeInput) {
+                        const formattedDate = formatDate(dateInput);
+                        selectedCard.querySelector('.card-date').innerText = formattedDate;
+                        selectedCard.querySelector('.card-time').innerText = timeInput;
+                    }
+
+                    selectedCard.querySelector('.my-divulgacao_eventos-s1-btnVerEventos')
+                        .setAttribute('onclick', `window.open('${eventUrl}', '_blank')`);
+
+                    const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                    editModal.hide();
+                };
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        updateCardFields(e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    updateCardFields();
+                }
+
             } else {
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
-
-        // Carrega os cards do local storage quando a página carregar
-        loadEventsFromLocalStorage();
     })
     .catch(error => console.error('Erro ao carregar a página:', error));

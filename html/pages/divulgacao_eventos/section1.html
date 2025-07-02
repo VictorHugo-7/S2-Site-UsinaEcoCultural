@@ -5,39 +5,120 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
-        <button type="button" class="btn btn-info admin-only" style="display: none;" onclick="sortCardsByDate()">Ordenar por Data</button>
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()">Adicionar
+            Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;"
+            onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;"
+            onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-info admin-only" style="display: none;" onclick="sortCardsByDate()">Ordenar
+            por Data</button>
     </div>
 
-
-    <!-- Card -->
+    <!-- Cards -->
     <div class="row mt-3" id="cards-container">
+
+        <!-- CARD 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
-                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento">
+                <img src="../../../midias/img/pages/divulgacao_eventos/arraiaNaUsina.png"
+                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento Arraiá na Usina">
                 <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
-                            class="card-time">Horário</span></h6>
-                    <h6 class="card-subtitle mb-2 text-muted card-location">Local</h6>
-                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <h5 class="card-title">Arraiá na Usina</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">07/07/2024</span> | <span
+                            class="card-time">14:00</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-location">Usina Eco-Cultural, Rua Breno Ferraz do
+                        Amaral, 415, SP</h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 0</h6>
+                    <p class="card-text text-muted card-description">Um dia de luta e resistência com a comunidade para
+                        transformar o antigo em algo novo por meio da cultura popular, comidas típicas, música e
+                        tradições juninas.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-divulgacao_eventos-s1-index admin-only">1</span>
                     <button class="my-divulgacao_eventos-s1-btnVerEventos"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                        onclick="window.open('https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D444560141764242&tbnid=4vvYRwi45gDVBM&vet=12ahUKEwj3z-uCh52OAxVvPrkGHdGnBNkQxiAoB3oECAAQLw..i&imgrefurl=https%3A%2F%2Fwww.facebook.com%2Fusinaecocultural%2F&docid=MDe2p2pBz9QiBM&w=1440&h=1440&itg=1&q=dia%20das%20m%C3%A3es%20usina%20eco%20cultural&ved=2ahUKEwj3z-uCh52OAxVvPrkGHdGnBNkQxiAoB3oECAAQLw', '_blank')">Ver
                         Evento</button>
-
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_eventos/semeandoPassos.jpeg"
+                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento Semeando Passos">
+                <div class="card-body">
+                    <h5 class="card-title">Semeando Passos</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">18/05/2024</span> | <span
+                            class="card-time">09:00</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-location">Usina Eco-Cultural, Rua Breno Ferraz do
+                        Amaral, 415, SP</h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 0</h6>
+                    <p class="card-text text-muted card-description">Um encontro com a comunidade, começando com um café
+                        da manhã colaborativo e atividades voltadas ao fortalecimento de vínculos e construção coletiva.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_eventos-s1-index admin-only">2</span>
+                    <button class="my-divulgacao_eventos-s1-btnVerEventos"
+                        onclick="window.open('https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D429679373252319&tbnid=SoeOIyhVjeNgEM&vet=12ahUKEwj3z-uCh52OAxVvPrkGHdGnBNkQxiAoAXoECAAQKw..i&imgrefurl=https%3A%2F%2Fwww.facebook.com%2Fusinaecocultural%2F&docid=MDe2p2pBz9QiBM&w=1080&h=1080&itg=1&q=dia%20das%20m%C3%A3es%20usina%20eco%20cultural&ved=2ahUKEwj3z-uCh52OAxVvPrkGHdGnBNkQxiAoAXoECAAQKw', '_blank')">Ver
+                        Evento</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_eventos/almocoSolidario.jpeg"
+                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento Almoço Solidário">
+                <div class="card-body">
+                    <h5 class="card-title">Almoço Solidário</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">18/05/2024</span> | <span
+                            class="card-time">12:00</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-location">Casa Ó, Rua Dom Silvério Pimenta 227, São
+                        Paulo - SP</h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 25,00</h6>
+                    <p class="card-text text-muted card-description">Almoço solidário em apoio às vítimas das enchentes
+                        no RS, com doação de itens de higiene, alimentos e afeto.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_eventos-s1-index admin-only">3</span>
+                    <button class="my-divulgacao_eventos-s1-btnVerEventos"
+                        onclick="window.open('https://www.google.com/imgres?q=dia%20das%20m%C3%A3es%20usina%20eco%20cultural&imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D423444190542504&imgrefurl=https%3A%2F%2Fwww.facebook.com%2Fusinaecocultural%2F&docid=MDe2p2pBz9QiBM&tbnid=ArdJXDCOqtLQtM&vet=12ahUKEwjZsbT4hp2OAxX0LbkGHVWwJWYQM3oECGcQAA..i&w=1079&h=1079&hcb=2&ved=2ahUKEwjZsbT4hp2OAxX0LbkGHVWwJWYQM3oECGcQAA', '_blank')">Ver
+                        Evento</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_eventos/diaDasMaesNaUsina.jpeg"
+                    class="my-divulgacao_eventos-s1-imagem card-image" alt="Imagem do evento Dia das Mães na Usina">
+                <div class="card-body">
+                    <h5 class="card-title">Dia das Mães na Usina</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">09/05/2024</span> | <span
+                            class="card-time">19:30</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-location">Usina Eco-Cultural, Rua Breno Ferraz do
+                        Amaral, 415, SP</h6>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 0</h6>
+                    <p class="card-text text-muted card-description">Um evento especial para celebrar o Dia das Mães,
+                        com quatro mães usineiras falando sobre suas histórias, maternidade e resistência.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_eventos-s1-index admin-only">4</span>
+                    <button class="my-divulgacao_eventos-s1-btnVerEventos"
+                        onclick="window.open('https://www.google.com/imgres?q=dia%20das%20m%C3%A3es%20usina%20eco%20cultural&imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D424174047136185&imgrefurl=https%3A%2F%2Fwww.facebook.com%2Fusinaecocultural%2F&docid=MDe2p2pBz9QiBM&tbnid=I39JmWKHDe0EjM&vet=12ahUKEwjZsbT4hp2OAxX0LbkGHVWwJWYQM3oECGAQAA..i&w=1080&h=1080&hcb=2&ved=2ahUKEwjZsbT4hp2OAxX0LbkGHVWwJWYQM3oECGAQAA', '_blank')">Ver
+                        Evento</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
+
 
 <!-- Modal para exclusão -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -78,11 +159,10 @@
                             placeholder="Índice Card">
                     </div>
 
-                    <!-- URL da Imagem -->
+                    <!-- Upload de Imagem -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
-                        <input type="text" class="form-control form-control-sm" id="editImage"
-                            placeholder="URL da Imagem">
+                        <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
                     </div>
 
                     <!-- Título -->
@@ -145,4 +225,3 @@
         </div>
     </div>
 </div>
-
