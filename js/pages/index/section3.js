@@ -50,8 +50,11 @@ fetch('../../../html/pages/index/section3.html')
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
 
-                // Pega os valores do modal
-                const imageUrl = document.getElementById('editImageUrlEventosProximos').value;
+                // Pega o arquivo do input file
+                const fileInput = document.getElementById('uploadImageEventosProximos');
+                const file = fileInput.files[0];
+
+                // Pega os outros valores do modal
                 const title = document.getElementById('editTitleEventosProximos').value;
                 const date = document.getElementById('editDateEventosProximos').value;
                 const time = document.getElementById('editTimeEventosProximos').value;
@@ -61,37 +64,48 @@ fetch('../../../html/pages/index/section3.html')
                 const url = document.getElementById('editUrlEventosProximos').value;
 
                 // Validação dos campos
-                if (!imageUrl || !title || !date || !time || !location || !price || !description || !url) {
-                    alert('Por favor, preencha todos os campos antes de salvar.');
+                if (!file || !title || !date || !time || !location || !price || !description || !url) {
+                    alert('Por favor, preencha todos os campos e selecione uma imagem antes de salvar.');
                     return;
                 }
 
-                // Atualiza os elementos do card
-                const dataFormatada = formatarDataExibicao(date);
-                selectedCard.querySelector('.my-index-s3-imagem').src = imageUrl;
-                selectedCard.querySelector('.card-title').innerText = title;
-                selectedCard.querySelector('.card-date').innerText = dataFormatada;
-                selectedCard.querySelector('.card-time').innerText = time;
-                selectedCard.querySelector('.card-location').innerText = location;
-                selectedCard.querySelector('.card-price').innerText = "R$ " + price;
-                selectedCard.querySelector('.card-text').innerText = description;
-                selectedCard.querySelector('.my-index-s3-btnVerEventosProximos').setAttribute('onclick', `window.open('${url}', '_blank')`);
+                // Função para salvar depois que ler a imagem
+                const salvarComImagem = (imageDataUrl) => {
+                    const dataFormatada = formatarDataExibicao(date);
+                    selectedCard.querySelector('.my-index-s3-imagem').src = imageDataUrl;
+                    selectedCard.querySelector('.card-title').innerText = title;
+                    selectedCard.querySelector('.card-date').innerText = dataFormatada;
+                    selectedCard.querySelector('.card-time').innerText = time;
+                    selectedCard.querySelector('.card-location').innerText = location;
+                    selectedCard.querySelector('.card-price').innerText = "R$ " + price;
+                    selectedCard.querySelector('.card-text').innerText = description;
+                    selectedCard.querySelector('.my-index-s3-btnVerEventosProximos').setAttribute('onclick', `window.open('${url}', '_blank')`);
 
-                // Salva os dados no Local Storage
-                const cardsData = JSON.parse(localStorage.getItem('eventosProximos')) || [];
-                cardsData[index] = { imageUrl, title, date, time, location, price, description, url };
-                localStorage.setItem('eventosProximos', JSON.stringify(cardsData));
+                    // Salva os dados no Local Storage
+                    const cardsData = JSON.parse(localStorage.getItem('eventosProximos')) || [];
+                    cardsData[index] = { imageUrl: imageDataUrl, title, date, time, location, price, description, url };
+                    localStorage.setItem('eventosProximos', JSON.stringify(cardsData));
 
-                // Fecha o modal
-                const editModalInstance = bootstrap.Modal.getInstance(document.getElementById('editModalEventosProximos'));
-                if (editModalInstance) {
-                    editModalInstance.hide();
-                }
+                    // Fecha o modal
+                    const editModalInstance = bootstrap.Modal.getInstance(document.getElementById('editModalEventosProximos'));
+                    if (editModalInstance) {
+                        editModalInstance.hide();
+                    }
 
-                alert('Alterações salvas com sucesso!');
+                    alert('Alterações salvas com sucesso!');
+                };
+
+                // Lê o arquivo da imagem
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    salvarComImagem(e.target.result);
+                };
+                reader.readAsDataURL(file);
+
             } else {
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
+
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
