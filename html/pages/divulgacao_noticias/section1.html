@@ -5,34 +5,104 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
-        <button type="button" class="btn btn-info admin-only" style="display: none;" onclick="sortCardsByDate()">Ordenar por Data</button>
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar
+            Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;"
+            onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;"
+            onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-info admin-only" style="display: none;" onclick="sortCardsByDate()">Ordenar
+            por Data</button>
     </div>
 
-
-    <!-- Card -->
+    <!-- Cards -->
     <div class="row mt-3" id="cards-container">
+
+        <!-- CARD 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg"
+                <img src="../../../midias/img/pages/divulgacao_noticias/noticia1.jpg"
                     class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
                 <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <h6 class="card-subtitle mb-2"><span class="card-date">Dia</span> | <span
-                            class="card-time">Horário</span></h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <h5 class="card-title">TCC Larissa Candro</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">27/06/2017</span> | <span
+                            class="card-time">14:30</span></h6>
+                    <p class="card-text text-muted card-description">Permanências: memória e projeto no Ipiranga
+                        (trabalho final de graduação)</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-divulgacao_noticias-s1-index admin-only">1</span>
                     <button class="my-divulgacao_noticias-s1-btnVernoticias"
-                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver
+                        onclick="window.open('https://www.exemplo3.com', '_blank')">Ver Notícia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_noticias/noticia2.jpg"
+                    class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
+                <div class="card-body">
+                    <h5 class="card-title">TCC Nathalia de Siena Haga</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">18/12/2019</span> | <span
+                            class="card-time">14:30</span></h6>
+                    <p class="card-text text-muted card-description">Arquitetura Compartilhada – Projetando sobre o
+                        construído | TFG Arquitetura e Urbanismo</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_noticias-s1-index admin-only">2</span>
+                    <button class="my-divulgacao_noticias-s1-btnVernoticias"
+                        onclick="window.open('https://issuu.com/nathaliashaga/docs/nath_lia_de_siena_haga_caderno_tfg_2_semestre_p_s', '_blank')">Ver
                         Notícia</button>
                 </div>
             </div>
         </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_noticias/noticia3.jpg"
+                    class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
+                <div class="card-body">
+                    <h5 class="card-title">TCC Diogo Horvath</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">05/12/2019</span> | <span
+                            class="card-time">14:30</span></h6>
+                    <p class="card-text text-muted card-description">Trabalho Final de Graduação Arquitetura e Urbanismo
+                        – FIAM-FAAM/SP</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_noticias-s1-index admin-only">3</span>
+                    <button class="my-divulgacao_noticias-s1-btnVernoticias"
+                        onclick="window.open('https://issuu.com/diogohorvath/docs/campus_startups_vergueiro_-_monografia', '_blank')">Ver
+                        Notícia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/divulgacao_noticias/noticia4.jpg"
+                    class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
+                <div class="card-body">
+                    <h5 class="card-title">TCC Thaynara Monteiro</h5>
+                    <h6 class="card-subtitle mb-2"><span class="card-date">12/12/2023</span> | <span
+                            class="card-time">14:30</span></h6>
+                    <p class="card-text text-muted card-description">Espaços públicos de vivência, cultura e educação
+                        ambiental: proposta para Usina Eco-cultural</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_noticias-s1-index admin-only">4</span>
+                    <button class="my-divulgacao_noticias-s1-btnVernoticias"
+                        onclick="window.open('https://repositorio.animaeducacao.com.br/items/1c466401-f34f-4322-9e89-3693419ac328', '_blank')">Ver
+                        Notícia</button>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 
 </div>
 
@@ -75,11 +145,10 @@
                             placeholder="Índice Card">
                     </div>
 
-                    <!-- URL da Imagem -->
+                    <!-- Upload de Imagem -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
-                        <input type="text" class="form-control form-control-sm" id="editImage"
-                            placeholder="URL da Imagem">
+                        <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
                     </div>
 
                     <!-- Título -->
@@ -130,4 +199,3 @@
         </div>
     </div>
 </div>
-

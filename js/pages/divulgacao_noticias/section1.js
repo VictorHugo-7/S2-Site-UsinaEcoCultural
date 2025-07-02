@@ -1,37 +1,4 @@
-let cardCount = localStorage.getItem('newsCardCount') ? parseInt(localStorage.getItem('newsCardCount')) : 1;
-
-// Function to save news cards to local storage
-function saveNewsToLocalStorage() {
-    const cards = document.querySelectorAll('.card-wrapper');
-    const newsData = Array.from(cards).map(card => {
-        return {
-            imageUrl: card.querySelector('.card-image').src,
-            title: card.querySelector('.card-title').textContent,
-            date: card.querySelector('.card-date').textContent,
-            time: card.querySelector('.card-time').textContent,
-            description: card.querySelector('.card-description').textContent,
-            url: card.querySelector('.my-divulgacao_noticias-s1-btnVernoticias').getAttribute('onclick')
-                .replace("window.open('", '')
-                .replace("', '_blank')", '')
-        };
-    });
-    localStorage.setItem('newsCards', JSON.stringify(newsData));
-    localStorage.setItem('newsCardCount', cardCount);
-}
-
-// Function to load news cards from local storage
-function loadNewsFromLocalStorage() {
-    const savedNews = localStorage.getItem('newsCards');
-    if (savedNews) {
-        const cardContainer = document.getElementById('cards-container');
-        cardContainer.innerHTML = ''; // Clear existing cards
-
-        const newsData = JSON.parse(savedNews);
-        newsData.forEach(news => {
-            addCard(news);
-        });
-    }
-}
+let cardCount = 1;
 
 // Formatar a data para "dd/mm/yyyy"
 function formatDate(dateStr) {
@@ -45,11 +12,10 @@ function addCard(newsInfo = null) {
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
 
-    // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
         <div class="card" style="height: 100%;">
             <img src="${newsInfo ? newsInfo.imageUrl : '../../../midias/img/global/imagem.svg'}"
-                class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem do noticia">
+                class="my-divulgacao_noticias-s1-imagem card-image" alt="Imagem da notícia">
             <div class="card-body">
                 <h5 class="card-title">${newsInfo ? newsInfo.title : 'Título'}</h5>
                 <h6 class="card-subtitle mb-2">
@@ -59,51 +25,41 @@ function addCard(newsInfo = null) {
                 <p class="card-text text-muted card-description">${newsInfo ? newsInfo.description : 'Descrição'}</p>
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center">
-                <span class="my-divulgacao_noticias-s1-index admin-only">1</span>
+                <span class="my-divulgacao_noticias-s1-index admin-only">${cardCount}</span>
                 <button class="my-divulgacao_noticias-s1-btnVernoticias"
                     onclick="window.open('${newsInfo ? newsInfo.url : 'https://www.exemplo3.com'}', '_blank')">Ver Notícia</button>
             </div>
         </div>
     `;
     cardContainer.appendChild(newCard);
-    cardCount++; // Incrementa o contador de cards
-    updateCardIndices(); // Atualiza todos os índices após a adição
-    saveNewsToLocalStorage(); // Salva os cards no local storage
+    cardCount++;
+    updateCardIndices();
 }
 
-// CARD - atualizar índices
+// Atualizar índices
 function updateCardIndices() {
-    const cards = document.querySelectorAll('.card-wrapper'); // Seleciona todos os cards
+    const cards = document.querySelectorAll('.card-wrapper');
     cards.forEach((card, index) => {
         card.querySelector('.my-divulgacao_noticias-s1-index').textContent = index + 1;
     });
 }
 
-// M0DAL - Excluir
+// Abrir modal de exclusão
 function openDeleteModal() {
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     deleteModal.show();
 }
 
-// CARD - Excluir
+// Excluir card
 function deleteCard() {
     const indexToDelete = parseInt(document.getElementById('deleteIndex').value, 10) - 1;
     const cards = document.querySelectorAll('.card-wrapper');
 
     if (indexToDelete >= 0 && indexToDelete < cards.length) {
-        // Remove o card selecionado
         cards[indexToDelete].remove();
-
-        // Decrementa o contador de cards para manter a contagem correta
         cardCount--;
-
-        // Atualiza os índices visíveis dos cards
         updateCardIndices();
 
-        // Salva as alterações no local storage
-        saveNewsToLocalStorage();
-
-        // Fecha o modal de exclusão
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
         deleteModal.hide();
     } else {
@@ -111,38 +67,29 @@ function deleteCard() {
     }
 }
 
-// MODAL - Edição
+// Abrir modal de edição
 function openEditModal() {
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
 }
 
-// CARD - Ordenar por data
+// Ordenar por data
 function sortCardsByDate() {
     const cardsContainer = document.getElementById('cards-container');
     const cards = Array.from(cardsContainer.getElementsByClassName('card-wrapper'));
 
     cards.sort((a, b) => {
-        const dateAElement = a.querySelector('.card-date');
-        const dateBElement = b.querySelector('.card-date');
-        
-        // Verifica se os elementos de data estão presentes
-        if (!dateAElement || !dateBElement) return 0;
-        
-        const dateA = new Date(dateAElement.textContent.split('/').reverse().join('-'));
-        const dateB = new Date(dateBElement.textContent.split('/').reverse().join('-'));
-
+        const dateA = new Date(a.querySelector('.card-date').textContent.split('/').reverse().join('-'));
+        const dateB = new Date(b.querySelector('.card-date').textContent.split('/').reverse().join('-'));
         return dateA - dateB;
     });
 
-    // Limpa e reinsere os cards ordenados no container
     cardsContainer.innerHTML = '';
     cards.forEach(card => cardsContainer.appendChild(card));
-
-    // Atualiza os índices dos cards após a ordenação
     updateCardIndices();
 }
 
+// Fetch da seção HTML e inicialização
 fetch('../../../html/pages/divulgacao_noticias/section1.html')
     .then(response => response.text())
     .then(data => {
@@ -155,41 +102,49 @@ fetch('../../../html/pages/divulgacao_noticias/section1.html')
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
 
-                // Atualiza a imagem, título, descrição, data, hora e URL do card
-                const imageUrl = document.getElementById('editImage').value;
-                if (imageUrl) {
-                    selectedCard.querySelector('.card-image').src = imageUrl;
-                }
-                selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-                selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
+                const fileInput = document.getElementById('editImage');
+                const file = fileInput.files[0];
 
-                // Formata e exibe a data e hora
+                const title = document.getElementById('editTitle').value;
+                const description = document.getElementById('editDescription').value;
                 const dateInput = document.getElementById('editDate').value;
                 const timeInput = document.getElementById('editTime').value;
-                if (dateInput && timeInput) {
-                    const formattedDate = formatDate(dateInput); // Formatação da data
-                    selectedCard.querySelector('.card-date').innerText = formattedDate;
-                    selectedCard.querySelector('.card-time').innerText = timeInput;
+                const newsUrl = document.getElementById('editUrl').value;
+
+                const updateCardFields = (imageDataUrl) => {
+                    if (imageDataUrl) {
+                        selectedCard.querySelector('.card-image').src = imageDataUrl;
+                    }
+
+                    selectedCard.querySelector('.card-title').innerText = title;
+                    selectedCard.querySelector('.card-description').innerText = description;
+
+                    if (dateInput && timeInput) {
+                        const formattedDate = formatDate(dateInput);
+                        selectedCard.querySelector('.card-date').innerText = formattedDate;
+                        selectedCard.querySelector('.card-time').innerText = timeInput;
+                    }
+
+                    selectedCard.querySelector('.my-divulgacao_noticias-s1-btnVernoticias')
+                        .setAttribute('onclick', `window.open('${newsUrl}', '_blank')`);
+
+                    const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                    editModal.hide();
+                };
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        updateCardFields(e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    updateCardFields();
                 }
 
-                // Atualiza o link do botão "Ver noticia"
-                const newsUrl = document.getElementById('editUrl').value;
-                selectedCard.querySelector('.my-divulgacao_noticias-s1-btnVernoticias').setAttribute(
-                    'onclick', `window.open('${newsUrl}', '_blank')`
-                );
-
-                // Salva as alterações no local storage
-                saveNewsToLocalStorage();
-
-                // Fecha o modal
-                const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-                editModal.hide();
             } else {
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
-
-        // Carrega os cards do local storage quando a página carregar
-        loadNewsFromLocalStorage();
     })
     .catch(error => console.error('Erro ao carregar a página:', error));
