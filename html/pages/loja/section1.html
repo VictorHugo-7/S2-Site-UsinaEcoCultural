@@ -5,22 +5,26 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()"> Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()">Adicionar
+            Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;"
+            onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;"
+            onclick="openDeleteModal()">Excluir Card</button>
     </div>
 
-
-    <!-- Card -->
+    <!-- Cards -->
     <div class="row mt-3" id="cards-container">
+
+        <!-- CARD 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
-                <img src="../../../midias/img/global/imagem.svg" class="my-loja-s1-imagem card-image"
+                <img src="../../../midias/img/pages/loja/bone.jpg" class="my-loja-s1-imagem card-image"
                     alt="Imagem da loja">
                 <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <h6 class="card-subtitle mb-2 text-muted card-price">Preço</h6>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <h5 class="card-title">Boné</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 30</h6>
+                    <p class="card-text text-muted card-description">Boné da Usina</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-loja-s1-index admin-only">1</span>
@@ -28,9 +32,198 @@
                 </div>
             </div>
         </div>
+
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/broche.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Broche</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 10</h6>
+                    <p class="card-text text-muted card-description">Broche da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">2</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/caderno.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Caderno</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 25</h6>
+                    <p class="card-text text-muted card-description">Caderno da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">3</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/caderneta.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Caderneta</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 20</h6>
+                    <p class="card-text text-muted card-description">Caderneta da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">4</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/caneca.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Caneca</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 35</h6>
+                    <p class="card-text text-muted card-description">Caneca da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">5</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/calendario.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Calendário</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 18</h6>
+                    <p class="card-text text-muted card-description">Calendário da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">6</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/caneta.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Caneta</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 8</h6>
+                    <p class="card-text text-muted card-description">Caneta da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">7</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/camiseta.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Camiseta</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 45</h6>
+                    <p class="card-text text-muted card-description">Camiseta da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">8</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/estampa.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Estampa</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 12</h6>
+                    <p class="card-text text-muted card-description">Estampa da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">9</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/moldura.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Moldura</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 40</h6>
+                    <p class="card-text text-muted card-description">Moldura da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">10</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/quadro.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Quadro</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 50</h6>
+                    <p class="card-text text-muted card-description">Quadro da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">11</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <img src="../../../midias/img/pages/loja/skate.jpg" class="my-loja-s1-imagem card-image"
+                    alt="Imagem da loja">
+                <div class="card-body">
+                    <h5 class="card-title">Skate</h5>
+                    <h6 class="card-subtitle mb-2 text-muted card-price">R$ 200</h6>
+                    <p class="card-text text-muted card-description">Skate da Usina</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-loja-s1-index admin-only">12</span>
+                    <button class="my-loja-s1-btnComprar" onclick="openPixModal()">Comprar</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>
+
 
 
 <!-- Modal para Código PIX -->
@@ -43,7 +236,8 @@
             </div>
             <div class="modal-body">
                 <div class="text-center">
-                    <img src="../../../midias/img/global/QRCode.svg" alt="Código PIX" class="img-fluid" style="height: 200px;">
+                    <img src="../../../midias/img/global/QRCode.svg" alt="Código PIX" class="img-fluid"
+                        style="height: 200px;">
                     <p class="mt-3">Escaneie o código PIX</p>
                     <p><strong>Insira o valor correto para não haver problemas na compra.</strong></p>
                 </div>
@@ -75,7 +269,7 @@
                         <input type="text" class="form-control form-control-sm" id="localizacao" name="localizacao"
                             placeholder="Localização" required>
                     </div>
-                    
+
                     <!-- Descrição -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-align-left"></i></span>
@@ -159,11 +353,10 @@
                             placeholder="Índice Card">
                     </div>
 
-                    <!-- URL da Imagem -->
+                    <!-- Upload de Imagem -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
-                        <input type="text" class="form-control form-control-sm" id="editImage"
-                            placeholder="URL da Imagem">
+                        <input type="file" class="form-control form-control-sm" id="editImage" accept="image/*">
                     </div>
 
                     <!-- Título -->

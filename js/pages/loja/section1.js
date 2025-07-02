@@ -24,16 +24,30 @@ function saveCardsToLocalStorage() {
 // Function to load cards from local storage
 function loadCardsFromLocalStorage() {
     const savedCards = localStorage.getItem('storeCards');
-    if (savedCards) {
-        const cardContainer = document.getElementById('cards-container');
-        cardContainer.innerHTML = ''; // Clear existing cards
+    const cards = document.querySelectorAll('.card-wrapper');
 
+    if (savedCards) {
         const cardData = JSON.parse(savedCards);
-        cardData.forEach(card => {
-            addCard(card);
-        });
+
+        // Garante que há elementos suficientes para aplicar os dados
+        for (let i = 0; i < cardData.length && i < cards.length; i++) {
+            const card = cards[i];
+            const data = cardData[i];
+            card.querySelector('.card-image').src = data.image;
+            card.querySelector('.card-title').innerText = data.title;
+            card.querySelector('.card-price').innerText = data.price;
+            card.querySelector('.card-description').innerText = data.description;
+        }
+
+        // Se houver mais cards salvos que no HTML, cria os extras
+        for (let i = cards.length; i < cardData.length; i++) {
+            addCard(cardData[i]);
+        }
     }
+
+    updateCardIndices();
 }
+
 
 // CARD - adicionar
 function addCard(cardInfo = null) {
@@ -155,31 +169,50 @@ fetch('../../../html/pages/loja/section1.html')
 
         // Adiciona o evento de salvar alterações no card
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
-            const index = document.getElementById('editIndex').value - 1; // Índice baseado em 1
+            const index = document.getElementById('editIndex').value - 1;
             const cards = document.querySelectorAll('.card-wrapper');
 
             if (index >= 0 && index < cards.length) {
                 const selectedCard = cards[index];
 
-                // Atualiza a imagem, título, preço e descrição do card
-                const imageUrl = document.getElementById('editImage').value;
-                if (imageUrl) {
-                    selectedCard.querySelector('.card-image').src = imageUrl;
+                const fileInput = document.getElementById('editImage');
+                const file = fileInput.files[0];
+
+                const title = document.getElementById('editTitle').value;
+                const price = document.getElementById('editPrice').value;
+                const description = document.getElementById('editDescription').value;
+
+                const aplicarAlteracoes = (imageDataUrl) => {
+                    if (imageDataUrl) {
+                        selectedCard.querySelector('.card-image').src = imageDataUrl;
+                    }
+                    selectedCard.querySelector('.card-title').innerText = title;
+                    selectedCard.querySelector('.card-price').innerText = "R$ " + price;
+                    selectedCard.querySelector('.card-description').innerText = description;
+
+                    // Salva as alterações no local storage
+                    saveCardsToLocalStorage();
+
+                    // Fecha o modal
+                    const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                    editModal.hide();
+                };
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        aplicarAlteracoes(e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    aplicarAlteracoes(null); // Aplica as alterações sem mudar a imagem
                 }
-                selectedCard.querySelector('.card-title').innerText = document.getElementById('editTitle').value;
-                selectedCard.querySelector('.card-price').innerText = "R$ " + document.getElementById('editPrice').value;
-                selectedCard.querySelector('.card-description').innerText = document.getElementById('editDescription').value;
 
-                // Salva as alterações no local storage
-                saveCardsToLocalStorage();
-
-                // Fecha o modal
-                const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
-                editModal.hide();
             } else {
                 alert('Índice inválido. Por favor, escolha um índice de card válido.');
             }
         });
+
 
         // Controle do botão de envio conforme aceite dos Termos e Política
         const termsCheckboxLoja = document.querySelector('#termsCheckboxLoja');
