@@ -9,27 +9,6 @@ fetch('../../../html/pages/index/section3.html')
     .then(data => {
         document.getElementById('my-index-s3-importacao').innerHTML = data;
 
-        // Função para carregar dados salvos do Local Storage
-        function carregarDadosDosCards() {
-            const cardsData = JSON.parse(localStorage.getItem('eventosProximos')) || [];
-            const cards = document.querySelectorAll('.my-index-s3-cardAlteracao');
-
-            // Atualiza os cards com os dados armazenados
-            cards.forEach((card, index) => {
-                if (cardsData[index]) {
-                    const dataFormatada = formatarDataExibicao(cardsData[index].date); // Formatação da data
-                    card.querySelector('.my-index-s3-imagem').src = cardsData[index].imageUrl;
-                    card.querySelector('.card-title').innerText = cardsData[index].title;
-                    card.querySelector('.card-date').innerText = dataFormatada;
-                    card.querySelector('.card-time').innerText = cardsData[index].time;
-                    card.querySelector('.card-location').innerText = cardsData[index].location;
-                    card.querySelector('.card-price').innerText = "R$ " + cardsData[index].price;
-                    card.querySelector('.card-text').innerText = cardsData[index].description;
-                    card.querySelector('.my-index-s3-btnVerEventosProximos').setAttribute('onclick', `window.open('${cardsData[index].url}', '_blank')`);
-                }
-            });
-        }
-
         // Função para formatar a data para exibição
         function formatarDataExibicao(dataISO) {
             const data = new Date(dataISO);
@@ -38,9 +17,6 @@ fetch('../../../html/pages/index/section3.html')
             const ano = data.getFullYear();
             return `${dia}/${mes}/${ano}`;
         }
-
-        // Carrega os dados dos cards na inicialização
-        carregarDadosDosCards();
 
         // Adiciona o event listener para o botão de salvar
         document.getElementById('saveChangesBtnEventosProximos').addEventListener('click', function () {
@@ -69,7 +45,7 @@ fetch('../../../html/pages/index/section3.html')
                     return;
                 }
 
-                // Função para salvar depois que ler a imagem
+                // Função para aplicar alterações após leitura da imagem
                 const salvarComImagem = (imageDataUrl) => {
                     const dataFormatada = formatarDataExibicao(date);
                     selectedCard.querySelector('.my-index-s3-imagem').src = imageDataUrl;
@@ -80,11 +56,6 @@ fetch('../../../html/pages/index/section3.html')
                     selectedCard.querySelector('.card-price').innerText = "R$ " + price;
                     selectedCard.querySelector('.card-text').innerText = description;
                     selectedCard.querySelector('.my-index-s3-btnVerEventosProximos').setAttribute('onclick', `window.open('${url}', '_blank')`);
-
-                    // Salva os dados no Local Storage
-                    const cardsData = JSON.parse(localStorage.getItem('eventosProximos')) || [];
-                    cardsData[index] = { imageUrl: imageDataUrl, title, date, time, location, price, description, url };
-                    localStorage.setItem('eventosProximos', JSON.stringify(cardsData));
 
                     // Fecha o modal
                     const editModalInstance = bootstrap.Modal.getInstance(document.getElementById('editModalEventosProximos'));

@@ -8,23 +8,6 @@ fetch('../../../html/pages/index/section4.html')
     .then(data => {
         document.getElementById('my-index-s4-importacao').innerHTML = data;
 
-        function carregarDadosDosCardsNoticias() {
-            const cardsData = JSON.parse(localStorage.getItem('noticiasAtuais')) || [];
-            const cards = document.querySelectorAll('.my-index-s4-cardAlteracao');
-
-            cards.forEach((card, index) => {
-                if (cardsData[index]) {
-                    const dataFormatada = formatarDataExibicao(cardsData[index].date);
-                    card.querySelector('.my-index-s4-imagem').src = cardsData[index].imageUrl;
-                    card.querySelector('.card-title').innerText = cardsData[index].title;
-                    card.querySelector('.card-date').innerText = dataFormatada;
-                    card.querySelector('.card-time').innerText = cardsData[index].time;
-                    card.querySelector('.card-text').innerText = cardsData[index].description;
-                    card.querySelector('.my-index-s4-btnVerNoticiasAtuais').setAttribute('onclick', `window.open('${cardsData[index].url}', '_blank')`);
-                }
-            });
-        }
-
         function formatarDataExibicao(dataISO) {
             const data = new Date(dataISO);
             const dia = String(data.getDate()).padStart(2, '0');
@@ -32,8 +15,6 @@ fetch('../../../html/pages/index/section4.html')
             const ano = data.getFullYear();
             return `${dia}/${mes}/${ano}`;
         }
-
-        carregarDadosDosCardsNoticias();
 
         document.getElementById('saveChangesBtnNoticiasAtuais').addEventListener('click', function () {
             const index = parseInt(document.getElementById('editIndexNoticiasAtuais').value) - 1;
@@ -64,10 +45,6 @@ fetch('../../../html/pages/index/section4.html')
                     selectedCard.querySelector('.card-time').innerText = time;
                     selectedCard.querySelector('.card-text').innerText = description;
                     selectedCard.querySelector('.my-index-s4-btnVerNoticiasAtuais').setAttribute('onclick', `window.open('${url}', '_blank')`);
-
-                    const cardsData = JSON.parse(localStorage.getItem('noticiasAtuais')) || [];
-                    cardsData[index] = { imageUrl: imageDataUrl, title, date, time, description, url };
-                    localStorage.setItem('noticiasAtuais', JSON.stringify(cardsData));
 
                     const editModalInstance = bootstrap.Modal.getInstance(document.getElementById('editModalNoticiasAtuais'));
                     if (editModalInstance) {
