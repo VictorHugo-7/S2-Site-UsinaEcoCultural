@@ -1,32 +1,4 @@
-let cardCount = localStorage.getItem('videoCardCount') ? parseInt(localStorage.getItem('videoCardCount')) : 1;
-
-// Function to save video cards to local storage
-function saveVideosToLocalStorage() {
-    const cards = document.querySelectorAll('.card-wrapper');
-    const videoData = Array.from(cards).map(card => {
-        return {
-            videoUrl: card.querySelector('.card-video').src,
-            title: card.querySelector('.card-title').textContent,
-            description: card.querySelector('.card-description').textContent
-        };
-    });
-    localStorage.setItem('videoCards', JSON.stringify(videoData));
-    localStorage.setItem('videoCardCount', cardCount);
-}
-
-// Function to load video cards from local storage
-function loadVideosFromLocalStorage() {
-    const savedVideos = localStorage.getItem('videoCards');
-    if (savedVideos) {
-        const cardContainer = document.getElementById('cards-container');
-        cardContainer.innerHTML = ''; // Clear existing cards
-
-        const videoData = JSON.parse(savedVideos);
-        videoData.forEach(video => {
-            addCard(video);
-        });
-    }
-}
+let cardCount = 1;
 
 // CARD - adicionar
 function addCard(videoInfo = null) {
@@ -34,7 +6,6 @@ function addCard(videoInfo = null) {
     const newCard = document.createElement('div');
     newCard.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-4', 'card-wrapper');
 
-    // Card HTML com o índice correto atualizado
     newCard.innerHTML = `
         <div class="card" style="height: 100%;">
             <iframe class="my-divulgacao_galeriaVideos-s1-video card-video" width="100%" height="200"
@@ -45,25 +16,24 @@ function addCard(videoInfo = null) {
                 <p class="card-text text-muted card-description">${videoInfo ? videoInfo.description : 'Descrição'}</p>
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center">
-                <span class="my-divulgacao_galeriaVideos-s1-index admin-only">1</span>
+                <span class="my-divulgacao_galeriaVideos-s1-index admin-only">${cardCount}</span>
             </div>
         </div>
     `;
     cardContainer.appendChild(newCard);
-    cardCount++; // Incrementa o contador de cards
-    updateCardIndices(); // Atualiza todos os índices após a adição
-    saveVideosToLocalStorage(); // Salva os cards no local storage
+    cardCount++;
+    updateCardIndices();
 }
 
 // CARD - atualizar índices
 function updateCardIndices() {
-    const cards = document.querySelectorAll('.card-wrapper'); // Seleciona todos os cards
+    const cards = document.querySelectorAll('.card-wrapper');
     cards.forEach((card, index) => {
         card.querySelector('.my-divulgacao_galeriaVideos-s1-index').textContent = index + 1;
     });
 }
 
-// M0DAL - Excluir
+// MODAL - Excluir
 function openDeleteModal() {
     const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
     deleteModal.show();
@@ -75,19 +45,10 @@ function deleteCard() {
     const cards = document.querySelectorAll('.card-wrapper');
 
     if (indexToDelete >= 0 && indexToDelete < cards.length) {
-        // Remove o card selecionado
         cards[indexToDelete].remove();
-
-        // Decrementa o contador de cards para manter a contagem correta
         cardCount--;
-
-        // Atualiza os índices visíveis dos cards
         updateCardIndices();
 
-        // Salva as alterações no local storage
-        saveVideosToLocalStorage();
-
-        // Fecha o modal de exclusão
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
         deleteModal.hide();
     } else {
@@ -101,26 +62,25 @@ function openEditModal() {
     editModal.show();
 }
 
+// Fetch da seção HTML
 fetch('../../../html/pages/divulgacao_galeriaVideos/section1.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('my-divulgacao_galeriaVideos-s1-importacao').innerHTML = data;
 
-        // Adiciona o evento de salvar alterações no card
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
             const editIndex = parseInt(document.getElementById('editIndex').value, 10) - 1;
             const videoUrl = document.getElementById('editVideo').value;
             const newTitle = document.getElementById('editTitle').value;
             const newDescription = document.getElementById('editDescription').value;
 
-            // Função para transformar URLs do YouTube no formato embed
+            // Formatar link do YouTube
             function formatYouTubeUrl(url) {
                 const youtubeRegex = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu.be\/)([\w-]{11})(?:[&?][\w-]+)*$/;
                 const match = url.match(youtubeRegex);
                 return match ? `https://www.youtube.com/embed/${match[1]}` : url;
             }
 
-            // Verifique se a URL fornecida é do YouTube e formate-a
             const formattedVideoUrl = formatYouTubeUrl(videoUrl);
 
             const cards = document.querySelectorAll('.card-wrapper');
@@ -130,9 +90,6 @@ fetch('../../../html/pages/divulgacao_galeriaVideos/section1.html')
                 card.querySelector('.card-title').textContent = newTitle;
                 card.querySelector('.card-description').textContent = newDescription;
 
-                // Salva as alterações no local storage
-                saveVideosToLocalStorage();
-
                 const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
                 editModal.hide();
             } else {
@@ -140,7 +97,5 @@ fetch('../../../html/pages/divulgacao_galeriaVideos/section1.html')
             }
         });
 
-        // Carrega os cards do local storage quando a página carregar
-        loadVideosFromLocalStorage();
     })
     .catch(error => console.error('Erro ao carregar a página:', error));

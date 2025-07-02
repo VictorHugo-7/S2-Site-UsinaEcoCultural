@@ -5,28 +5,100 @@
 
     <!-- Botões -->
     <div>
-        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()">Adicionar Card</button>
-        <button type="button" class="btn btn-secondary admin-only" style="display: none;" onclick="openEditModal()">Editar Card</button>
-        <button type="button" class="btn btn-danger admin-only" style="display: none;" onclick="openDeleteModal()">Excluir Card</button>
+        <button type="button" class="btn btn-success admin-only" style="display: none;" onclick="addCard()">Adicionar
+            Card</button>
+        <button type="button" class="btn btn-secondary admin-only" style="display: none;"
+            onclick="openEditModal()">Editar Card</button>
+        <button type="button" class="btn btn-danger admin-only" style="display: none;"
+            onclick="openDeleteModal()">Excluir Card</button>
     </div>
 
 
-    <!-- Card -->
+    <!-- Cards -->
     <div class="row mt-3" id="cards-container">
+
+        <!-- CARD 1 -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
             <div class="card" style="height: 100%;">
                 <iframe class="my-divulgacao_galeriaVideos-s1-video card-video" width="100%" height="200"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video do trabalho" allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/q12dSGr1JIE" title="Usina Eco-Cultural" allowfullscreen></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">Título</h5>
-                    <p class="card-text text-muted card-description">Descrição</p>
+                    <h5 class="card-title">Usina Eco-Cultural</h5>
+                    <p class="card-text text-muted card-description">
+                        Apresentação completa da Usina Eco-Cultural, um espaço de resistência, arte e cultura que
+                        promove atividades coletivas em um antigo incinerador desativado. O vídeo mostra os principais
+                        pilares do projeto, depoimentos e imagens das ações realizadas no local.
+                    </p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <span class="my-divulgacao_galeriaVideos-s1-index admin-only">1</span>
                 </div>
             </div>
         </div>
+
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <iframe class="my-divulgacao_galeriaVideos-s1-video card-video" width="100%" height="200"
+                    src="https://www.youtube.com/embed/DarEmOyc2mE?start=242" title="Enigmas Urbanos"
+                    allowfullscreen></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">Enigmas Urbanos</h5>
+                    <p class="card-text text-muted card-description">
+                        Episódio da série "Enigmas Urbanos" que explora o mistério do antigo incinerador abandonado na
+                        Vergueiro, em São Paulo. O vídeo investiga a história do local, sua importância para a cidade e
+                        o processo de transformação do espaço em centro cultural.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_galeriaVideos-s1-index admin-only">2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <iframe class="my-divulgacao_galeriaVideos-s1-video card-video" width="100%" height="200"
+                    src="https://www.youtube.com/embed/ylQ0G0vBcXw?start=3" title="Bom Dia SP sobre a Usina"
+                    allowfullscreen></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">Bom Dia SP sobre a Usina</h5>
+                    <p class="card-text text-muted card-description">
+                        Reportagem do Bom Dia SP que destaca a luta da comunidade e de artistas pela preservação da
+                        Usina. O vídeo retrata como o espaço foi ressignificado e transformado em polo cultural, com
+                        foco na participação popular e nas iniciativas de ocupação urbana.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_galeriaVideos-s1-index admin-only">3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 card-wrapper">
+            <div class="card" style="height: 100%;">
+                <iframe class="my-divulgacao_galeriaVideos-s1-video card-video" width="100%" height="200"
+                    src="https://www.youtube.com/embed/IO00Pn9Kk_E?start=1" title="Oswaldo Moraes no Festival da Usina"
+                    allowfullscreen></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">Oswaldo Moraes na Usina</h5>
+                    <p class="card-text text-muted card-description">
+                        Entrevista com o ator Oswaldo Moraes durante o Festival Usina Lado B. Ele fala sobre a
+                        importância do evento, sua relação com o espaço cultural e a relevância de iniciativas como essa
+                        para a valorização da arte independente e da ocupação cidadã.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="my-divulgacao_galeriaVideos-s1-index admin-only">4</span>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 
 </div>
 
@@ -72,7 +144,8 @@
                     <!-- URL do Vídeo -->
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-video"></i></span>
-                        <input type="text" class="form-control form-control-sm" id="editVideo" placeholder="URL do Vídeo">
+                        <input type="text" class="form-control form-control-sm" id="editVideo"
+                            placeholder="URL do Vídeo">
                     </div>
 
                     <!-- Título -->
@@ -92,7 +165,8 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="my-divulgacao_galeriaVideos-s1-btnSalvarAlterações" id="saveChangesBtn">Salvar
+                <button type="button" class="my-divulgacao_galeriaVideos-s1-btnSalvarAlterações"
+                    id="saveChangesBtn">Salvar
                     alterações</button>
             </div>
         </div>
