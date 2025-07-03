@@ -1,11 +1,10 @@
 <!--TÍTULO-->
-# Site Usina Eco-Cultural⠀<img src="https://i.gifer.com/ZdPH.gif" height="30px" alt="Planta">
+# Site Usina Eco-Cultural⠀
 
 
 <!--DESCRIÇÃO-->
-| Descrição                                                                                                                                                                                                                                                                                                                                                     | Imagem                                    |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
-| O site da Usina Eco-Cultural foi criado com o intuito de promover uma plataforma digital que amplie o alcance e a visibilidade das atividades culturais e ecológicas oferecidas pela instituição. <br><br> A Usina Eco-Cultural é um espaço voltado para o desenvolvimento sustentável e para a valorização da cultura local, promovendo eventos, oficinas, exposições e iniciativas educacionais com foco em sustentabilidade. | <img src="https://github.com/user-attachments/assets/6027eb8e-3478-406a-89e3-107630e06978" width="20000"/> |
+> Site desenvolvido para a Usina Eco-Cultural. <br/>
+> O site consiste em uma plataforma digital que amplia o alcance e a visibilidade das atividades culturais e ecológicas oferecidas pela instituição.
 
 
 <!--STATUS-->
@@ -25,9 +24,9 @@ Usuário:
     . Comprar na Loja
     . Enviar Mensagem para Usina
 
-Administrador (ADM):
+Administrador:
     . Todas as funções disponíveis para o usuário
-    . Adicionar, Editar e Excluir: Eventos, Notícias, Trabalhos, Fotos, Vídeos
+    . Adicionar, Editar e Excluir: Produtos da Loja, Eventos, Notícias, Trabalhos, Fotos, Vídeos
 ````
 
 
@@ -40,50 +39,57 @@ Administrador (ADM):
 
 <!--PROTÓTIPO-->
 ## Protótipo
-![Protótipo](https://github.com/user-attachments/assets/a86071be-ba30-4f3c-bbe3-cf10020b1f2e)
+[![](https://img.shields.io/badge/Figma--5C5C5C?logo=figma&logoColor=white)]()
 
 
 <!--PARTICIPANTES-->
 ## Participantes
-| Nome                          | RA          | Contribuição                       |
-|-------------------------------|-------------|------------------------------------|
-| Eduardo Aguiar Leite da Silva | 24.00380-8  | Front-End                          |
-| Luan Camara Lopes             | 24.00376-0  | Documentação                       |
-| Lucas De Mattia Peres         | 24.00020-5  | Back-End                           |
-| Victor Hugo Pinho             | 24.00947-4  | Front-End, Back-End, Design(figma) |
+| Nome                          |
+|-------------------------------|
+| Eduardo Aguiar Leite da Silva |
+| Luan Camara Lopes             |
+| Lucas De Mattia Peres         |
+| Victor Hugo Pinho             |
 
 
 <!--DEPENDÊNCIAS-->
 ## Dependências
 ````
-axios                     | versão ^1.7.8  | Biblioteca para requisições HTTP.
+axios                     | versão ^1.8.4  | Biblioteca para requisições HTTP.
 bcrypt                    | versão ^5.1.1  | Hashing de senhas para segurança.
 cors                      | versão ^2.8.5  | Habilita CORS para requisições entre origens.
 dotenv                    | versão ^16.4.7 | Gerenciamento de variáveis de ambiente.
-express                   | versão ^4.21.1 | Framework para criar servidores web e APIs.
+express                   | versão ^4.21.2 | Framework para criar servidores web e APIs.
 jsonwebtoken              | versão ^9.0.2  | Geração e verificação de tokens JWT.
-mongoose                  | versão ^8.8.3  | ODM para trabalhar com MongoDB em Node.js.
+mongoose                  | versão ^7.0.0  | ODM para trabalhar com MongoDB em Node.js.
 mongoose-unique-validator | versão ^4.0.1  | Validação de unicidade para Mongoose.
-nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mudanças no código.
+nodemon                   | versão ^3.1.9  | Reinicia o servidor ao detectar mudanças no código.
 ````
 
 
 <!--COMO UTILIZAR-->
 ## Como Utilizar
 ````
-1. Clone o repositóro                 | git clone https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural
+Requisitos:
+   . Node.js 16+ para executar o backend
+   . npm para gerenciador de pacotes
+   . MongoDB 5.0+ para banco de dados NoSQL
+   . IDE (VS Code recomendado com Live Server)
 
-2. Navegue até o diretório do projeto | cd S2-Site-UsinaEcoCultural
+Execução:
+    1. Clone o repositóro                 | git clone https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural
 
-3. Instale as dependências            | npm install
+    2. Navegue até o diretório do projeto | cd S2-Site-UsinaEcoCultural
 
-4. Configure as variáveis de ambiente | PORT=3000
-                                      | MONGO_URI=mongodb://localhost:27017/nome-do-banco
-                                      | JWT_SECRET=sua_chave_secreta
+    3. Instale as dependências            | npm install
 
-5. Inicialize o servidor              | npm start
+    4. Configure as variáveis de ambiente | PORT=3000
+                                          | MONGO_URI=mongodb://localhost:27017/nome-do-banco
+                                          | JWT_SECRET=sua_chave_secreta
 
-6. Abra o start.html                  | Hospede usando um servidor HTTP local (como o VS Code Live Server).
+    5. Inicialize o servidor              | npm start
+
+    6. Abra o start.html                  | Hospede usando um servidor HTTP local (como o VS Code Live Server).
 ````
 
 
@@ -104,11 +110,6 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 
 6. Pull Request       | Solicite a inclusão de suas mudanças no repositório original.
 ````
-
-
-<!--LICENÇA-->
-## Licença
-[Veja a licença](https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural/blob/main/LICENSE)
 
 
 <!--ESTRUTURA DE PASTAS-->
@@ -360,11 +361,16 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 │       ├── global/
 │       └── pages/
 │           ├── boletim/
-│	    ├── doacao/
-│	    ├── historia/
-│	    ├── impacto/
-│	    ├── index/
-│	    └── parcerias/
+│			├── divulgacao_eventos/
+│			├── divulgacao_galeriaFotos/
+│			├── divulgacao_noticias/
+│			├── divulgacao_trabalhos/
+│	        ├── doacao/
+│	        ├── historia/
+│	        ├── impacto/
+│	        ├── index/
+│			├── loja/
+│	        └── parcerias/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -380,3 +386,8 @@ nodemon                   | versão ^3.1.7  | Reinicia o servidor ao detectar mu
 ![](https://visitor-badge.laobi.icu/badge?page_id=VictorHugo-7.Site-Usina)
 ![Tamanho do Repositório](https://img.shields.io/github/repo-size/VictorHugo-7/Site-Usina)
 ![Linguagens](https://img.shields.io/github/languages/top/VictorHugo-7/Site-Usina)
+
+
+<!--LICENÇA-->
+## Licença
+[Veja a licença](https://github.com/VictorHugo-7/S2-Site-UsinaEcoCultural/blob/main/LICENSE)
