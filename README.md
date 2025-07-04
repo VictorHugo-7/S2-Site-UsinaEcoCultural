@@ -39,7 +39,7 @@ Administrador:
 
 <!--PROTÓTIPO-->
 ## Protótipo
-[![](https://img.shields.io/badge/Figma--5C5C5C?logo=figma&logoColor=white)]()
+[![](https://img.shields.io/badge/Figma--5C5C5C?logo=figma&logoColor=white)](https://www.figma.com/design/gNywiVwI8QWsgY8PUh8d85/S2-Site-UsinaEcoCultural?node-id=1-3&t=a0s8FTaGoWjLnqtR-1)
 
 
 <!--PARTICIPANTES-->
