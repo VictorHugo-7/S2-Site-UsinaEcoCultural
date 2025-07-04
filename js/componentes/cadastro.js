@@ -6,12 +6,12 @@ fetch('../../components/cadastro.html')
 
         // Função para o cadastro (mostrar/ocultar senha)
         const toggleRegisterPassword = document.querySelector('#toggleRegisterPassword');
-        const passwordCadastroInput = document.querySelector('#passwordCadastroInput');
+        const registerPassword = document.querySelector('#registerPassword');
         const registerEyeIcon = document.querySelector('#registerEyeIcon');
 
         toggleRegisterPassword.addEventListener('click', function () {
-            const type = passwordCadastroInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordCadastroInput.setAttribute('type', type);
+            const type = registerPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            registerPassword.setAttribute('type', type);
             registerEyeIcon.classList.toggle('fa-eye');
             registerEyeIcon.classList.toggle('fa-eye-slash');
         });
@@ -40,10 +40,10 @@ fetch('../../components/cadastro.html')
 
         // Função assíncrona que cadastra um novo usuário no backend
         async function cadastrarUsuario() {
-            const usuarioCadastroInput = document.querySelector('#usuarioCadastroInput');
-            const passwordCadastroInput = document.querySelector('#passwordCadastroInput');
-            const usuarioCadastro = usuarioCadastroInput.value;
-            const passwordCadastro = passwordCadastroInput.value;
+            const registerEmail = document.querySelector('#registerEmail');
+            const registerPassword = document.querySelector('#registerPassword');
+            const usuarioCadastro = registerEmail.value;
+            const passwordCadastro = registerPassword.value;
 
             if (usuarioCadastro && passwordCadastro) { // Verifica se os campos não estão vazios
                 try {
@@ -53,8 +53,8 @@ fetch('../../components/cadastro.html')
 
                     await axios.post(URLCompleta, { login: usuarioCadastro, password: passwordCadastro }); // Faz a requisição POST
 
-                    usuarioCadastroInput.value = ""; // Limpa os campos de entrada
-                    passwordCadastroInput.value = "";
+                    registerEmail.value = ""; // Limpa os campos de entrada
+                    registerPassword.value = "";
 
                     // Exibe uma mensagem de sucesso ao usuário
                     alert("Usuário cadastrado com sucesso!");

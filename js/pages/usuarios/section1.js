@@ -8,17 +8,13 @@ async function carregarUsuarios() {
         const tabela = document.getElementById('usuariosTabela');
         tabela.innerHTML = ''; // Limpa o conteúdo da tabela
 
-        // Preenche a tabela com os usuários
+        // Preenche a tabela com os logins dos usuários
         usuarios.forEach(usuario => {
             const linha = document.createElement('tr');
-
-            const colunaId = document.createElement('td');
-            colunaId.textContent = usuario._id;
 
             const colunaLogin = document.createElement('td');
             colunaLogin.textContent = usuario.login;
 
-            linha.appendChild(colunaId);
             linha.appendChild(colunaLogin);
             tabela.appendChild(linha);
         });
